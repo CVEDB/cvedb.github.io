@@ -30,7 +30,7 @@ jobs:
         ls -lh 
     - name: Run Notebooks
       env:
-        GH_TOKEN:  ${{ secrets.ORG_REPO_TOKEN }}
+        GH_TOKEN:  ${{ secrets.GH_TOKEN }}
       run: |
          jupyter nbconvert  --to notebook --inplace --execute CVEAll.ipynb
          jupyter nbconvert  --to notebook --inplace --execute CVE2016.ipynb
@@ -49,6 +49,7 @@ jobs:
          jupyter nbconvert  --to notebook --inplace --execute CVECVSS.ipynb
          jupyter nbconvert  --to notebook --inplace --execute CVECNA.ipynb
          jupyter nbconvert  --to notebook --inplace --execute CVECWE.ipynb
+         jupyter nbconvert  --to notebook --inplace --execute CVECPE.ipynb
     
     - name: Commit changes
       uses: EndBug/add-and-commit@v9
