@@ -3,7 +3,7 @@ cve-icu is an innovative research project led by [KhulnaSoft Security](https://w
 
 The central purpose of this project is to conduct an essential data analysis, curate and graphically present the data in a comprehendible manner. This automated analysis is crucial as it aids in spotting patterns, enabling researchers and cybersecurity professionals to understand and anticipate security threats more effectively.
 
-The [source code](https://github.com/khulnasoft/cve-icu) for this project has been made available to the public for further development and utilization through a GitHub repository. This open-source approach promotes transparency, collaboration, and the potential for continual improvement by other developers and researchers in the field.
+The [source code](https://github.com/cvedb/cve-icu) for this project has been made available to the public for further development and utilization through a GitHub repository. This open-source approach promotes transparency, collaboration, and the potential for continual improvement by other developers and researchers in the field.
 
 To ensure the data's relevance and timeliness, these pages undergo daily updates facilitated by GitHub Actions. This automated process guarantees that the data on display is current, providing the most recent insights into the ever-evolving landscape of cybersecurity vulnerabilities.
 
