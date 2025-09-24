@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CNA Data &#8212; khulnasoft/cve-icu</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-DSHJ2DJFJZ"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-DSHJ2DJFJZ');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-DSHJ2DJFJZ');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CVECNA';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CNA MAP" href="CVECNAMap.html" />
+    <link rel="prev" title="CVE Growth" href="CVEGrowth.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ambulance.png" class="logo__image only-light" alt="khulnasoft/cve-icu - Home"/>
+    <script>document.write(`<img src="_static/ambulance.png" class="logo__image only-dark" alt="khulnasoft/cve-icu - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    About
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Combined Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CVEAll.html">All CVEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVECalendar.html">Daily Calendar View</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Yearly Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CVE2025.html">2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2024.html">2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2023.html">2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2022.html">2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2021.html">2021</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2020.html">2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2019.html">2019</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2018.html">2018</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2017.html">2017</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVE2016.html">2016-2000</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other CVE Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CVECVSS.html">CVSS Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVECWE.html">CWE Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVEGrowth.html">CVE Growth</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">CNA Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVECNAMap.html">CNA MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVECPE.html">CPE Data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cvedb/cve-icu" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cvedb/cve-icu/issues/new?title=Issue%20on%20page%20%2FCVECNA.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CVECNA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CNA Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cna-assigner-graphs">CNA Assigner Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-cve-assigners">Top CVE Assigners</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cna-data">
+<h1>CNA Data<a class="headerlink" href="#cna-data" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="cna-assigner-graphs">
+<h2>CNA Assigner Graphs<a class="headerlink" href="#cna-assigner-graphs" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/ab77ef59ee2b1fb6100f270f16fa3e181e6830d664f167b5d2056e8c04e62334.png" src="_images/ab77ef59ee2b1fb6100f270f16fa3e181e6830d664f167b5d2056e8c04e62334.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/b2a0a40de738dea6f43575dec17fe9cf6bbdb442d7075329a7b46a05a7ad82db.png" src="_images/b2a0a40de738dea6f43575dec17fe9cf6bbdb442d7075329a7b46a05a7ad82db.png" />
+</div>
+</div>
+</section>
+<section id="top-cve-assigners">
+<h2>Top CVE Assigners<a class="headerlink" href="#top-cve-assigners" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><!--| quarto-html-table-processing: none -->
+<table id="itables_ff7ff243_347b_4c82_82bd_5cce10c72410"><tbody><tr>
+    <td style="vertical-align:middle; text-align:left">
+    <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
+    <g style="fill:#d9d7fc">
+        <path d="M100,400H500V357H100Z" />
+        <path d="M100,300H400V257H100Z" />
+        <path d="M0,200H400V157H0Z" />
+        <path d="M100,100H500V57H100Z" />
+        <path d="M100,350H500V307H100Z" />
+        <path d="M100,250H400V207H100Z" />
+        <path d="M0,150H400V107H0Z" />
+        <path d="M100,50H500V7H100Z" />
+    </g>
+    <g style="fill:#1a1366;stroke:#1a1366;">
+   <rect x="100" y="7" width="400" height="43">
+    <animate
+      attributeName="width"
+      values="0;400;0"
+      dur="5s"
+      repeatCount="indefinite" />
+      <animate
+      attributeName="x"
+      values="100;100;500"
+      dur="5s"
+      repeatCount="indefinite" />
+  </rect>
+        <rect x="0" y="107" width="400" height="43">
+    <animate
+      attributeName="width"
+      values="0;400;0"
+      dur="3.5s"
+      repeatCount="indefinite" />
+    <animate
+      attributeName="x"
+      values="0;0;400"
+      dur="3.5s"
+      repeatCount="indefinite" />
+  </rect>
+        <rect x="100" y="207" width="300" height="43">
+    <animate
+      attributeName="width"
+      values="0;300;0"
+      dur="3s"
+      repeatCount="indefinite" />
+    <animate
+      attributeName="x"
+      values="100;100;400"
+      dur="3s"
+      repeatCount="indefinite" />
+  </rect>
+        <rect x="100" y="307" width="400" height="43">
+    <animate
+      attributeName="width"
+      values="0;400;0"
+      dur="4s"
+      repeatCount="indefinite" />
+      <animate
+      attributeName="x"
+      values="100;100;500"
+      dur="4s"
+      repeatCount="indefinite" />
+  </rect>
+        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
+            <g transform="translate(45 50) rotate(-45)">
+                <circle r="33" cx="0" cy="0" />
+                <rect x="-8" y="32" width="16" height="30" />
+            </g>
+
+            <g transform="translate(450 152)">
+                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20" />
+                <rect x="-15" y="-40" width="60" height="60" />
+            </g>
+
+            <g transform="translate(50 352)">
+                <polygon points="-35,-5 0,-40 35,-5" />
+                <polygon points="-35,10 0,45 35,10" />
+            </g>
+
+            <g transform="translate(75 250)">
+                <polyline points="-30,30 -60,0 -30,-30" />
+                <polyline points="0,30 -30,0 0,-30" />
+            </g>
+
+            <g transform="translate(425 250) rotate(180)">
+                <polyline points="-30,30 -60,0 -30,-30" />
+                <polyline points="0,30 -30,0 0,-30" />
+            </g>
+        </g>
+    </g>
+</svg>
+</a>
+    Loading ITables v2.5.2 from the internet...
+    (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td>
+    </tr></tbody></table>
+<link href="https://www.unpkg.com/dt_for_itables@2.4.0/dt_bundle.css" rel="stylesheet">
+<script type="module">
+    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.4.0/dt_bundle.js';
+
+    document.querySelectorAll("#itables_ff7ff243_347b_4c82_82bd_5cce10c72410:not(.dataTable)").forEach(table => {
+        if (!(table instanceof HTMLTableElement))
+            return;
+
+        let dt_args = {"scrollCollapse": true, "paging": true, "layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "dom": "tpir", "classes": ["display", "nowrap"], "text_in_header_can_be_selected": true, "order": [], "style": {"table-layout": "auto", "width": "auto"}, "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Assigner</th>\n      <th>counts</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"mitre.org\", 110297], [\"patchstack.com\", 12591], [\"microsoft.com\", 11200], [\"redhat.com\", 10623], [\"vuldb.com\", 10291], [\"github.com (security-advisories)\", 8714], [\"kernel.org\", 8178], [\"oracle.com\", 8164], [\"wordfence.com\", 7011], [\"adobe.com\", 6564], [\"us.ibm.com\", 6454], [\"apple.com\", 6348], [\"cisco.com (psirt)\", 6014], [\"android.com\", 4939], [\"wpscan.com\", 4124], [\"google.com (chrome-cve-admin)\", 3391], [\"hq.dhs.gov\", 3296], [\"trendmicro.com (zdi-disclosures)\", 3095], [\"cert.org\", 2936], [\"jpcert.or.jp\", 2896], [\"qualcomm.com\", 2884], [\"huntr.dev\", 2314], [\"cisco.com (talos-cna)\", 2301], [\"mozilla.org\", 2141], [\"huawei.com\", 2021], [\"intel.com\", 2018], [\"emc.com\", 1856], [\"apache.org\", 1698], [\"siemens.com\", 1697], [\"hackerone.com\", 1505], [\"googlegroups.com\", 1425], [\"sap.com\", 1351], [\"hpe.com\", 1230], [\"samsung.com (mobile.security)\", 1195], [\"gitlab.com\", 986], [\"hp.com\", 881], [\"fortinet.com\", 860], [\"snyk.io\", 824], [\"juniper.net\", 815], [\"mediatek.com\", 805], [\"incibe.es\", 784], [\"nvidia.com\", 751], [\"cert.org.tw\", 727], [\"se.com\", 694], [\"f5.com\", 692], [\"debian.org\", 642], [\"unisoc.com\", 619], [\"vmware.com\", 601], [\"opentext.com\", 579], [\"tenable.com\", 521], [\"flexerasoftware.com\", 497], [\"trendmicro.com (security)\", 487], [\"cert.vde.com\", 487], [\"usom.gov.tr\", 449], [\"lenovo.com\", 445], [\"vulncheck.com\", 427], [\"qnapsecurity.com.tw\", 423], [\"ubuntu.com\", 401], [\"atlassian.com\", 386], [\"hcl.com\", 348], [\"trellix.com\", 333], [\"amd.com\", 329], [\"paloaltonetworks.com\", 325], [\"symantec.com\", 322], [\"mattermost.com\", 300], [\"autodesk.com\", 294], [\"fluidattacks.com\", 272], [\"jetbrains.com\", 265], [\"synology.com\", 263], [\"puiterwijk.org\", 258], [\"cyber.gov.il\", 246], [\"ch.abb.com\", 242], [\"google.com (dsap-vuln-management)\", 235], [\"rapid7.com\", 234], [\"drupal.org\", 234], [\"google.com (cve-coordination)\", 225], [\"nozominetworks.com\", 211], [\"cert.pl\", 206], [\"zoom.us\", 198], [\"krcert.or.kr\", 187], [\"elastic.co\", 181], [\"suse.de\", 174], [\"tibco.com\", 172], [\"freebsd.org\", 171], [\"rockwellautomation.com\", 171], [\"fb.com\", 168], [\"sonicwall.com\", 167], [\"solarwinds.com\", 162], [\"brocade.com\", 161], [\"eclipse.org\", 160], [\"openharmony.io\", 160], [\"liferay.com\", 159], [\"bress.net\", 157], [\"zte.com.cn\", 154], [\"kaspersky.com\", 153], [\"mend.io\", 150], [\"acronis.com\", 147], [\"joomla.org\", 147], [\"3c1d8aa1-5a33-4ea4-8992-aadd6440af75\", 145], [\"zyxel.com.tw\", 139], [\"golang.org\", 136], [\"progress.com\", 136], [\"netapp.com\", 126], [\"esri.com\", 125], [\"bosch.com\", 121], [\"xen.org\", 121], [\"sick.de\", 120], [\"cert-in.org.in\", 120], [\"yd.MitsubishiElectric.co.jp\", 119], [\"splunk.com\", 110], [\"zephyrproject.org\", 110], [\"jfrog.com\", 108], [\"bitdefender.com\", 101], [\"hitachienergy.com\", 99], [\"ncsc.ch\", 98], [\"github.com (product-cna)\", 97], [\"isc.org\", 96], [\"checkpoint.com\", 95], [\"devolutions.net\", 92], [\"liggitt.net\", 91], [\"mongodb.com\", 86], [\"divd.nl\", 85], [\"silabs.com\", 85], [\"puppet.com\", 84], [\"checkmk.com\", 83], [\"9119a7d8-5eab-497f-8521-727c672e3725\", 79], [\"openssl.org\", 78], [\"3ds.com\", 77], [\"php.net\", 76], [\"0fc0942c-577d-436f-ae8e-945763c79b02\", 75], [\"hashicorp.com\", 75], [\"otrs.com\", 73], [\"asrg.io\", 69], [\"ca.com\", 69], [\"jci.com\", 68], [\"me.com\", 67], [\"open-xchange.com\", 66], [\"zabbix.com\", 65], [\"axis.com\", 65], [\"551230f0-3615-47bd-b7cc-93e92e730bbf\", 64], [\"c4f26cc8-17ff-4c99-b5e2-38fc1793eacc\", 64], [\"citrix.com\", 63], [\"octopus.com\", 62], [\"arista.com\", 60], [\"selinc.com\", 60], [\"hitachi.co.jp\", 58], [\"pivotal.io\", 58], [\"blackberry.com\", 57], [\"themissinglink.com.au\", 57], [\"cloudflare.com\", 56], [\"xiaomi.com\", 56], [\"gallagher.com\", 55], [\"honeywell.com\", 54], [\"moxa.com\", 53], [\"synopsys.com\", 53], [\"ni.com\", 52], [\"m-files.com\", 50], [\"cyber.jp.nec.com\", 49], [\"sophos.com\", 48], [\"wdc.com\", 47], [\"arm.com\", 46], [\"f-secure.com\", 46], [\"avaya.com\", 45], [\"pandorafms.com\", 45], [\"ami.com\", 45], [\"hitachivantara.com\", 45], [\"3836d913-7555-4dd0-a509-f5667fdf5fe4\", 45], [\"pingidentity.com\", 45], [\"dahuatech.com\", 44], [\"367425dc-4d06-4041-9650-c2dc6aaa27ce\", 44], [\"9b29abf9-4ab0-4765-b253-1875cd9b441e\", 43], [\"ecc0f906-8666-484c-bcf8-c3b7520a72f0\", 43], [\"zscaler.com\", 43], [\"6f8de1f0-f67e-45a6-b68f-98777fdb759c\", 42], [\"secomea.com\", 42], [\"cyberdanube.com\", 41], [\"palantir.com\", 41], [\"openeuler.org\", 39], [\"samsung.com (PSIRT)\", 39], [\"exodusintel.com\", 37], [\"grafana.com\", 37], [\"eaton.com\", 36], [\"tech.gov.sg\", 36], [\"zuso.ai\", 35], [\"documentfoundation.org\", 35], [\"odoo.com\", 34], [\"openvpn.net\", 34], [\"starlabs.sg\", 34], [\"mautic.org\", 34], [\"yandex-team.ru\", 33], [\"salesforce.com\", 33], [\"navercorp.com\", 31], [\"ff89ba41-3aa1-4d27-914a-91399e9639e5\", 31], [\"pega.com\", 31], [\"f98c90f0-e9bd-4fa7-911b-51993f3571fd\", 29], [\"ed10eef1-636d-4fbe-9993-6890dfa878f8\", 29], [\"takeonme.org\", 29], [\"lge.com\", 29], [\"aliasrobotics.com\", 29], [\"759f5e80-c8e1-4224-bead-956d7b33c98b\", 28], [\"python.org\", 28], [\"ncsc.nl\", 28], [\"eset.com\", 28], [\"f86ef6dc-4d3a-42ad-8f28-e6d5547a5007\", 27], [\"netmotionsoftware.com\", 27], [\"nortonlifelock.com\", 26], [\"securifera.com\", 25], [\"edk2.groups.io\", 25], [\"baidu.com\", 25], [\"forcepoint.com\", 25], [\"df4dee71-de3a-4139-9588-11b62fe6c0ff\", 24], [\"vaadin.com\", 24], [\"hikvision.com\", 24], [\"docker.com\", 22], [\"bd.com\", 22], [\"oppo.com\", 21], [\"ff5b8ace-8b95-4078-9743-eac1ca5451de\", 21], [\"proofpoint.com\", 21], [\"onekey.com\", 20], [\"nlnetlabs.nl\", 20], [\"openanolis.org\", 20], [\"a6d3dc9e-0591-4a13-bce7-0f5b31ff6158\", 20], [\"teradici.com\", 20], [\"2499f714-1537-4658-8207-48ae4bb9eae9\", 19], [\"bbf0bd87-ece2-41be-b873-96928ee8fab9\", 18], [\"10b61619-3869-496c-8a1e-f291b0e71e3f\", 18], [\"3f572a00-62e2-4423-959a-7ea25eff1638\", 18], [\"craftersoftware.com\", 18], [\"iojs.org\", 18], [\"vivo.com\", 18], [\"68630edc-a58c-4cbd-9b01-0e130455c8ae\", 18], [\"baxter.com\", 18], [\"yugabyte.com\", 17], [\"36c7be3b-2937-45df-85ea-ca7133ea542c\", 17], [\"5d1c2695-1a31-4499-88ae-e847036fd7e3\", 17], [\"carrier.com\", 17], [\"dragos.com\", 17], [\"purestorage.com\", 17], [\"servicenow.com\", 17], [\"xpdfreader.com\", 17], [\"wolfssl.com\", 17], [\"airbus.com\", 16], [\"7bc73191-a2b6-4c63-9918-753964601853\", 16], [\"907edf6c-bf03-423e-ab1a-8da27e1aa1ea\", 16], [\"asustor.com\", 16], [\"opennms.com\", 16], [\"13061848-ea10-403d-bd75-c83a022c2891\", 15], [\"f23511db-6c3e-4e32-a477-6aa17d310630\", 15], [\"b48c3b8f-639e-4c16-8725-497bc411dad0\", 15], [\"54bf65a7-a193-42d2-b1ba-8e150d3c35e1\", 15], [\"bluespice.com\", 15], [\"hypr.com\", 15], [\"netflix.com\", 14], [\"eb41dac7-0af8-4f84-9f6d-0272772514f4\", 14], [\"gg.jp.panasonic.com\", 13], [\"sierrawireless.com\", 13], [\"appcheck-ng.com\", 13], [\"okta.com\", 13], [\"fidelissecurity.com\", 13], [\"a341c0d1-ebf7-493f-a84e-38cf86618674\", 12], [\"41c37e40-543d-43a2-b660-2fee83ea851a\", 12], [\"teamviewer.com\", 12], [\"fc9afe74-3f80-4fb7-a313-e6f036a89882\", 12], [\"linecorp.com\", 12], [\"5f57b9bf-260d-4433-bf07-b6a79e9bb7d4\", 12], [\"7f6e188d-c52a-4a19-8674-3c3fa7d1fc7f\", 12], [\"vdoo.com\", 11], [\"dc3f6da9-85b5-4a73-84a2-2ec90b40fca5\", 11], [\"b7efe717-a805-47cf-8e9a-921fca0ce0ce\", 11], [\"f4fb688c-4412-4426-b4b8-421ecf27b14a\", 11], [\"430a6cef-dc26-47e3-9fa8-52fb7f19644e\", 11], [\"thalesgroup.com\", 11], [\"cybersecurityworks.com\", 11], [\"2fdefc65-d750-4b8d-96ee-6e2c0c42dbfe\", 11], [\"bc94ec7e-8909-4cbb-83df-d2fc9330fa88\", 11], [\"netskope.com\", 11], [\"8338d8cb-57f7-4252-abc0-96fd13e98d21\", 10], [\"forums.swift.org\", 10], [\"sailpoint.com\", 10], [\"google.com (mandiant-cve)\", 10], [\"596c5446-0ce5-4ba2-aa66-48b3b757a647\", 10], [\"snowsoftware.com\", 10], [\"103e4ec9-0a87-450b-af77-479448ddef11\", 10], [\"f946a70c-00eb-42ce-8e9b-634d1f7b5a6f\", 10], [\"80f39f49-2521-4ee7-9e17-af5d55e8032f\", 10], [\"dd59f033-460c-4b88-a075-d4d3fedb6191\", 10], [\"3ff69d7a-14f2-4f67-a097-88dee7810d18\", 10], [\"85b1779b-6ecd-4f52-bcc5-73eac4659dcf\", 10], [\"forgerock.com\", 9], [\"qualys.com\", 9], [\"knime.com\", 9], [\"search-guard.com\", 9], [\"171caf72-b841-4e04-a68e-93493aff2b94\", 9], [\"silver-peak.com\", 8], [\"db4dfee8-a97e-4877-bfae-eba6d14a2166\", 8], [\"a5532a13-c4dd-4202-bef1-e0b8f2f8d12b\", 8], [\"22d9ba52-f336-4b0d-bf1f-0efbdcc3c1de\", 8], [\"15ede60e-6fda-426e-be9c-e788f151a377\", 8], [\"5fea7123-217b-4b2d-ada8-8892719b43cd\", 8], [\"tcpdump.org\", 8], [\"bd4443e6-1eef-43f3-9886-25fc9ceeaae7\", 8], [\"1e.com\", 8], [\"lists.openmainframeproject.org\", 7], [\"25b0b659-c4b4-483f-aecb-067757d23ef3\", 7], [\"6b3ad84c-e1a6-4bf7-a703-f496b71e49db\", 7], [\"2505284f-8ffb-486c-bf60-e19c1097a90b\", 7], [\"a87f365f-9d39-4848-9b3a-58c7cae69cab\", 7], [\"1e3a9e0f-5156-4bf8-b8a3-cc311bfc0f4a\", 7], [\"de5a6978-88fe-4c27-a7df-d0d5b52d5b52\", 7], [\"blacklanternsecurity.com\", 6], [\"logitech.com\", 6], [\"769c9ae7-73c3-4e47-ae19-903170fc3eb8\", 6], [\"dotcms.com\", 6], [\"obdev.at\", 6], [\"a59d8014-47c4-4630-ab43-e1b13cbe58e3\", 6], [\"shopbeat.co.za\", 6], [\"medtronic.com\", 6], [\"9947ef80-c5d5-474a-bbab-97341a59000e\", 6], [\"360.cn\", 6], [\"duo.com\", 6], [\"7168b535-132a-4efe-a076-338f829b2eb9\", 6], [\"91579145-5d7b-4cc5-b925-a0262ff19630\", 5], [\"opera.com\", 5], [\"87c8e6ad-f0f5-4ca8-89e2-89f26d6ed932\", 5], [\"bba440f9-ef23-4224-aa62-7ac0935d18d1\", 5], [\"46fe6300-5254-4a98-9594-a9567bec8179\", 5], [\"96148269-fe82-4198-b1bf-3a73ce8bc92e\", 5], [\"synaptics.com\", 5], [\"def9a96e-e099-41a9-bfac-30fd4f82c411\", 5], [\"0a72a055-908d-47f5-a16a-1f09049c16c6\", 5], [\"mirantis.com\", 5], [\"1443cd92-d354-46d2-9290-d812316ca43a\", 5], [\"6b35d637-e00f-4228-858c-b20ad6e1d07b\", 5], [\"1c6b5737-9389-4011-8117-89fa251edfb2\", 5], [\"7ffcee3d-2c14-4c3e-b844-86c6a321a158\", 5], [\"baicells.com\", 5], [\"ge.com\", 5], [\"1b7e193f-2525-49a1-b171-84af8827c9eb\", 5], [\"temporal.io\", 5], [\"bbraun.com\", 4], [\"8a9629cb-c5e7-4d2a-a894-111e8039b7ea\", 4], [\"0beee27a-7d8c-424f-8e46-ac453fa147e6\", 4], [\"74b3a70d-cca6-4d34-9789-e83b222ae3be\", 4], [\"050066fd-a2f9-4f32-ab5d-4c53f48bc333\", 4], [\"ebf2cdfb-f390-4894-8ec9-f81bf1c57e6b\", 4], [\"tigera.io\", 4], [\"genetec.com\", 3], [\"halborn.com\", 3], [\"nbu.gov.sk\", 3], [\"4586e0a2-224d-4f8a-9cb4-8882b208c0b3\", 3], [\"a14582b7-06f4-4d66-8e82-3d7ba3739e88\", 3], [\"68870bb1-d075-4169-957d-e580b18692b9\", 3], [\"cb7ba516-3b07-4c98-b0c2-715220f1a8f6\", 3], [\"hillstonenet.com\", 3], [\"5ac195ad-69e7-48e7-9c1e-bfc958c39761\", 3], [\"20705f08-db8b-4497-8f94-7eea62317651\", 3], [\"0bf9931a-6ebf-4f48-bd14-39ee5e1d61f8\", 3], [\"d7ff35af-cf88-454c-bab9-af60602f10f8\", 3], [\"09832df1-09c1-45b4-8a85-16c601d30feb\", 3], [\"42gears.com\", 3], [\"7d616e1a-3288-43b1-a0dd-0a65d3e70a49\", 3], [\"bd8dbf88-98d9-42c6-be08-cf8e48a32093\", 3], [\"cf45122d-9d50-442a-9b23-e05cde9943d8\", 3], [\"cybellum.com\", 2], [\"ce714d77-add3-4f53-aff5-83d477b104bb\", 2], [\"655498c3-6ec5-4f0b-aea6-853b334d05a6\", 2], [\"5cdcf916-2b10-4ec8-bfc1-d054821e439e\", 2], [\"a2826606-91e7-4eb6-899e-8484bd4575d5\", 2], [\"f45cbf4e-4146-4068-b7e1-655ffc2c548c\", 2], [\"3ad20294-822c-4ebc-9301-f9a7cf62d46e\", 2], [\"001d69cf-3fc9-4203-93fb-9865b54e05b2\", 2], [\"1c053176-eef3-4d6a-ae0b-24728c86587b\", 2], [\"lists.ozlabs.org\", 2], [\"profelis.com.tr\", 2], [\"replicated.com\", 2], [\"mimsoftware.com\", 2], [\"algosec.com\", 2], [\"d42dc95b-23f1-4e06-9076-20753a0fb0df\", 2], [\"57dba5dd-1a03-47f6-8b36-e84e47d335d8\", 2], [\"20be33e2-bf35-4d13-8fad-18bd2f3e3659\", 2], [\"67325c3f-c596-46c5-a235-e1a1e73abe4e\", 2], [\"opencloudos.tech\", 1], [\"7f247420-63a8-4d59-ac93-d85dd04cd014\", 1], [\"c0ec9282-ea44-45d7-9b32-48d87cb37538\", 1], [\"8ca67973-55d1-4246-bb7c-ce7e65ad8782\", 1], [\"e8a6bb0b-e373-42b1-a5de-93e314325576\", 1], [\"02762ae7-200e-4b20-9b2b-a77d5b8fc4cb\", 1], [\"88ee5874-cf24-4952-aea0-31affedb7ff2\", 1], [\"56c94bcb-ac34-4d7f-b660-d297a6b7ff82\", 1], [\"illumio.com\", 1], [\"greenrocketsecurity.com\", 1], [\"ea.com\", 1], [\"7bd90cf1-1651-495e-9ae8-9415fb3c9feb\", 1], [\"36106deb-8e95-420b-a0a0-e70af5d245df\", 1], [\"deepsurface.com\", 1], [\"list.alibaba-inc.com\", 1], [\"96d4e157-0bf0-48b3-8efd-382c68caf4e0\", 1], [\"13ddcd98-6f4a-40a8-8e24-29ca0aee4661\", 1], [\"cspcert.ph\", 1], [\"1d66c9f9-fff2-411a-aa19-ca6312fa25e9\", 1], [\"33c584b5-0579-4c06-b2a0-8d8329fcab9c\", 1], [\"4ad3d9a7-bd20-4af3-8862-46d6b5a570db\", 1], [\"5d978718-751a-428d-ac8e-4f9445ebfd11\", 1], [\"22e2d327-25fe-45d7-9f0c-dcd23b7108df\", 1], [\"68e1e1d3-5247-4d65-9f39-ef1a02cf571e\", 1], [\"9c1820ae-fb77-4810-a8aa-ca46e7474d2f\", 1], [\"c6156efd-4bd0-48d7-8520-680200527478\", 1], [\"05b98450-cf83-4905-9546-e47a66a8fec2\", 1], [\"4ac701fe-44e9-4bcd-9585-dd6449257611\", 1], [\"37c6977f-aa3f-41e8-829b-3e8ff4df3c14\", 1], [\"10de8ef9-5c89-4b17-8228-e97b74acf4bd\", 1], [\"3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6\", 1], [\"db6d2600-d19b-4111-a010-f3c4ed70cd50\", 1]]"};
+        new ITable(table, dt_args);
+    });
+</script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<p>This report is updated automatically every day, last generated on: <strong>2025-09-24 22:53:51.808049</strong></p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CVEGrowth.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CVE Growth</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CVECNAMap.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CNA MAP</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cna-assigner-graphs">CNA Assigner Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-cve-assigners">Top CVE Assigners</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By KhulnaSoft Security
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
