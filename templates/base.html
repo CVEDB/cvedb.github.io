@@ -87,9 +87,9 @@
                         <a href="about.html" class="text-decoration-none">About CVEDB</a><br>
                         <a href="https://cnascorecard.org" target="_blank" class="text-decoration-none">CNA
                             Scorecard</a><br>
-                        <a href="https://cvceforecast.org" target="_blank" class="text-decoration-none">CVE
+                        <a href="https://cveforecast.org" target="_blank" class="text-decoration-none">CVE
                             Forecast</a><br>
-                        <a href="https://github.com/yourusername/cvedb.github.io" target="_blank"
+                        <a href="https://github.com/cvedbs/cvedb.github.io" target="_blank"
                             class="text-decoration-none">GitHub Repository</a>
                     </p>
                 </div>
@@ -97,8 +97,8 @@
             <hr class="my-2">
             <div class="text-center">
                 <small class="text-muted">
-                    &copy; {{ current_year if current_year else '2025' }} CVEDB • Built by <a
-                        href="https://cvedb.github.io" target="_blank" class="text-decoration-none">CVEDB</a><br>
+                    &copy; {{ current_year if current_year else '2025' }} CVEDB • Built by <a href="https://cvedbs.net"
+                        target="_blank" class="text-decoration-none">RogoLabs</a><br>
                     Data updated every 6 hours • CVE coverage: 1999-{{ current_year if current_year else '2025' }}
                 </small>
             </div>
@@ -119,7 +119,7 @@
             const lastUpdatedElement = document.getElementById('lastUpdated');
             if (!lastUpdatedElement) return;
 
-            fetch('data/cve_all.json')
+            fetch('data/cve_all.json?v=' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
                     if (data.generated_at) {
@@ -130,6 +130,8 @@
                             day: 'numeric',
                             hour: '2-digit',
                             minute: '2-digit',
+                            hour12: false, // Use 24-hour clock
+                            timeZone: 'UTC', // Always show UTC
                             timeZoneName: 'short'
                         };
                         const formattedDate = date.toLocaleString('en-US', options);
