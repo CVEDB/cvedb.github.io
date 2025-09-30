@@ -1,4 +1,4 @@
-/* CVEDB Design System - Matching cnascorecard.org */
+/* CVEDB Design System - Matching cvedb.github.io */
 
 /* CSS Reset and Base Styles */
 * {
@@ -26,19 +26,29 @@
     --color-success: #198754;
     --color-warning: #ffc107;
     --color-danger: #dc3545;
-    
+
     /* Light Blue to Light Grey Visualization Palette */
-    --viz-color-1: #e3f2fd;  /* Very light blue */
-    --viz-color-2: #bbdefb;  /* Light blue */
-    --viz-color-3: #90caf9;  /* Medium light blue */
-    --viz-color-4: #64b5f6;  /* Medium blue */
-    --viz-color-5: #42a5f5;  /* Blue */
-    --viz-color-6: #2196f3;  /* Primary blue */
-    --viz-color-7: #1e88e5;  /* Darker blue */
-    --viz-color-8: #1976d2;  /* Dark blue */
-    --viz-color-9: #9e9e9e;  /* Medium grey */
-    --viz-color-10: #757575; /* Dark grey */
-    
+    --viz-color-1: #e3f2fd;
+    /* Very light blue */
+    --viz-color-2: #bbdefb;
+    /* Light blue */
+    --viz-color-3: #90caf9;
+    /* Medium light blue */
+    --viz-color-4: #64b5f6;
+    /* Medium blue */
+    --viz-color-5: #42a5f5;
+    /* Blue */
+    --viz-color-6: #2196f3;
+    /* Primary blue */
+    --viz-color-7: #1e88e5;
+    /* Darker blue */
+    --viz-color-8: #1976d2;
+    /* Dark blue */
+    --viz-color-9: #9e9e9e;
+    /* Medium grey */
+    --viz-color-10: #757575;
+    /* Dark grey */
+
     /* Chart Color Palette - Light Blue to Grey Gradient */
     --chart-primary: #2196f3;
     --chart-secondary: #64b5f6;
@@ -50,12 +60,12 @@
     --chart-grey-light: #e0e0e0;
     --chart-grey-medium: #9e9e9e;
     --chart-grey-dark: #616161;
-    
+
     /* Semantic Colors */
     --color-info: #17a2b8;
     --color-light: #f8f9fa;
     --color-dark: #343a40;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -63,7 +73,7 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-xxl: 3rem;
-    
+
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-size-base: 16px;
@@ -71,7 +81,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    
+
     /* Layout */
     --container-max-width: 1200px;
     --border-radius: 0.5rem;
@@ -92,7 +102,12 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: var(--font-weight-semibold);
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
@@ -301,11 +316,11 @@ main {
         padding: var(--spacing-lg) var(--spacing-md);
         margin-top: var(--spacing-md);
     }
-    
+
     .page-header h1 {
         font-size: 2rem;
     }
-    
+
     .page-header small {
         font-size: 0.9rem;
     }
@@ -376,7 +391,7 @@ main {
     padding: 2rem 1.5rem;
     text-align: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
+    box-shadow:
         0 1px 3px rgba(0, 0, 0, 0.05),
         0 1px 2px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -389,16 +404,16 @@ main {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, 
-        var(--chart-primary) 0%, 
-        var(--chart-secondary) 50%, 
-        var(--chart-tertiary) 100%);
+    background: linear-gradient(90deg,
+            var(--chart-primary) 0%,
+            var(--chart-secondary) 50%,
+            var(--chart-tertiary) 100%);
     opacity: 0.8;
 }
 
 .stat-card:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.1),
         0 6px 10px rgba(0, 0, 0, 0.05);
     border-color: rgba(59, 130, 246, 0.3);
@@ -415,9 +430,9 @@ main {
     justify-content: center;
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.1) 0%, 
-        rgba(147, 197, 253, 0.1) 100%);
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.1) 0%,
+            rgba(147, 197, 253, 0.1) 100%);
     border-radius: 16px;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -427,9 +442,9 @@ main {
 
 .stat-card:hover .stat-icon {
     transform: scale(1.1);
-    background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.15) 0%, 
-        rgba(147, 197, 253, 0.15) 100%);
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.15) 0%,
+            rgba(147, 197, 253, 0.15) 100%);
 }
 
 .stat-content {
@@ -461,16 +476,16 @@ main {
 
 /* Enhanced stats cards for specific use cases */
 .stat-card.highlight {
-    background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.02) 0%, 
-        rgba(147, 197, 253, 0.02) 100%);
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.02) 0%,
+            rgba(147, 197, 253, 0.02) 100%);
     border-color: rgba(59, 130, 246, 0.2);
 }
 
 .stat-card.highlight::before {
-    background: linear-gradient(90deg, 
-        var(--chart-primary) 0%, 
-        var(--color-success) 100%);
+    background: linear-gradient(90deg,
+            var(--chart-primary) 0%,
+            var(--color-success) 100%);
 }
 
 /* Growth/trend indicators */
@@ -505,11 +520,11 @@ main {
     .stat-card {
         padding: 1.5rem 1.25rem;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .stat-icon {
         width: 48px;
         height: 48px;
@@ -522,7 +537,7 @@ main {
     .stat-card {
         padding: 1.25rem 1rem;
     }
-    
+
     .stat-number {
         font-size: 1.75rem;
     }
@@ -598,14 +613,14 @@ main {
     background-color: var(--color-primary-light);
 }
 
-.year-item input[type="checkbox"]:checked + .year-label {
+.year-item input[type="checkbox"]:checked+.year-label {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     color: white;
     font-weight: var(--font-weight-semibold);
 }
 
-.year-item input[type="checkbox"]:focus + .year-label {
+.year-item input[type="checkbox"]:focus+.year-label {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
@@ -965,33 +980,95 @@ tbody tr:hover {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Utility Classes */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-.text-muted { color: var(--color-text-secondary); }
-.text-primary { color: var(--color-accent); }
-.text-success { color: var(--color-success); }
-.text-warning { color: var(--color-warning); }
-.text-danger { color: var(--color-danger); }
+.text-center {
+    text-align: center;
+}
 
-.mb-0 { margin-bottom: 0; }
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
-.mb-4 { margin-bottom: var(--spacing-lg); }
-.mb-5 { margin-bottom: var(--spacing-xl); }
+.text-left {
+    text-align: left;
+}
 
-.mt-0 { margin-top: 0; }
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
-.mt-4 { margin-top: var(--spacing-lg); }
-.mt-5 { margin-top: var(--spacing-xl); }
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: var(--color-text-secondary);
+}
+
+.text-primary {
+    color: var(--color-accent);
+}
+
+.text-success {
+    color: var(--color-success);
+}
+
+.text-warning {
+    color: var(--color-warning);
+}
+
+.text-danger {
+    color: var(--color-danger);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.mb-2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-4 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-5 {
+    margin-bottom: var(--spacing-xl);
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-1 {
+    margin-top: var(--spacing-xs);
+}
+
+.mt-2 {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-3 {
+    margin-top: var(--spacing-md);
+}
+
+.mt-4 {
+    margin-top: var(--spacing-lg);
+}
+
+.mt-5 {
+    margin-top: var(--spacing-xl);
+}
 
 /* Footer */
 .footer {
@@ -1178,54 +1255,54 @@ tbody tr:hover {
         text-align: center;
         padding: var(--spacing-sm);
     }
-    
+
     .insight-icon {
         margin-right: 0;
         margin-bottom: var(--spacing-xs);
         font-size: 1.5rem;
     }
-    
+
     .export-buttons {
         justify-content: center;
     }
-    
+
     .export-buttons .btn {
         flex: 1;
         min-width: 120px;
     }
-    
+
     .metric-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: var(--spacing-sm);
     }
-    
+
     .metric-card {
         padding: var(--spacing-md);
     }
-    
+
     .metric-value {
         font-size: 1.5rem;
     }
-    
+
     .chart-container {
         height: 300px;
         padding: var(--spacing-sm);
     }
-    
+
     .viz-card {
         padding: var(--spacing-md);
     }
-    
+
     .chart-legend {
         flex-direction: column;
         align-items: center;
         gap: var(--spacing-sm);
     }
-    
+
     .data-table {
         font-size: 0.8rem;
     }
-    
+
     .data-table th,
     .data-table td {
         padding: var(--spacing-xs) var(--spacing-sm);
@@ -1250,40 +1327,40 @@ tbody tr:hover {
         padding: var(--spacing-md);
         box-shadow: var(--box-shadow-lg);
     }
-    
+
     .nav-menu.active {
         display: flex;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .stats-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: var(--spacing-md);
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     .container {
         padding: 0 var(--spacing-md);
     }
-    
+
     .nav-container {
         padding: 0 var(--spacing-md);
     }
-    
+
     .chart-container {
         height: 300px;
     }
@@ -1293,40 +1370,41 @@ tbody tr:hover {
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stat-number {
         font-size: 1.75rem;
     }
-    
+
     .card {
         padding: var(--spacing-md);
     }
-    
-    th, td {
+
+    th,
+    td {
         padding: var(--spacing-sm);
     }
-    
+
     .chart-container {
         height: 250px;
         padding: var(--spacing-xs);
     }
-    
+
     .metric-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .metric-value {
         font-size: 1.25rem;
     }
-    
+
     .viz-title {
         font-size: 1.1rem;
     }
-    
+
     .chart-legend {
         gap: var(--spacing-xs);
     }
-    
+
     .legend-item {
         font-size: 0.75rem;
     }
