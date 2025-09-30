@@ -1,14 +1,14 @@
 {
-  "generated_at": "2025-07-30T13:06:28.973606",
-  "total_unique_cpes": 354960,
-  "total_cpe_entries": 2275177,
-  "total_cves_with_cpes": 261143,
-  "total_unique_vendors": 34591,
-  "total_unique_products": 107893,
+  "generated_at": "2025-09-30T13:02:06.086884",
+  "total_unique_cpes": 358718,
+  "total_cpe_entries": 2323107,
+  "total_cves_with_cpes": 268609,
+  "total_unique_vendors": 34897,
+  "total_unique_products": 108636,
   "top_cpes": [
     {
       "cpe": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
-      "count": 21541,
+      "count": 24010,
       "vendor": "linux",
       "product": "linux_kernel",
       "type": "Operating System"
@@ -22,17 +22,24 @@
     },
     {
       "cpe": "cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
-      "count": 3852,
+      "count": 3906,
       "vendor": "apple",
       "product": "iphone_os",
       "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*",
-      "count": 3687,
+      "count": 3718,
       "vendor": "google",
       "product": "chrome",
       "type": "Application"
+    },
+    {
+      "cpe": "cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+      "count": 3607,
+      "vendor": "apple",
+      "product": "macos",
+      "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
@@ -42,32 +49,32 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
-      "count": 3320,
-      "vendor": "apple",
-      "product": "macos",
+      "cpe": "cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+      "count": 3329,
+      "vendor": "microsoft",
+      "product": "windows_server_2012",
       "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
-      "count": 3308,
+      "count": 3320,
       "vendor": "debian",
       "product": "debian_linux",
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
-      "count": 3275,
+      "cpe": "cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+      "count": 3166,
       "vendor": "microsoft",
       "product": "windows_server_2012",
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
-      "count": 3114,
-      "vendor": "microsoft",
-      "product": "windows_server_2012",
-      "type": "Operating System"
+      "cpe": "cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+      "count": 2776,
+      "vendor": "gitlab",
+      "product": "gitlab",
+      "type": "Application"
     },
     {
       "cpe": "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
@@ -91,17 +98,17 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
-      "count": 2503,
-      "vendor": "gitlab",
-      "product": "gitlab",
+      "cpe": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*",
+      "count": 2453,
+      "vendor": "mozilla",
+      "product": "firefox",
       "type": "Application"
     },
     {
-      "cpe": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*",
-      "count": 2449,
-      "vendor": "mozilla",
-      "product": "firefox",
+      "cpe": "cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+      "count": 2420,
+      "vendor": "gitlab",
+      "product": "gitlab",
       "type": "Application"
     },
     {
@@ -120,17 +127,10 @@
     },
     {
       "cpe": "cpe:2.3:o:microsoft:windows_server_2008:r2:sp1:*:*:*:*:x64:*",
-      "count": 2256,
+      "count": 2300,
       "vendor": "microsoft",
       "product": "windows_server_2008",
       "type": "Operating System"
-    },
-    {
-      "cpe": "cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
-      "count": 2187,
-      "vendor": "gitlab",
-      "product": "gitlab",
-      "type": "Application"
     },
     {
       "cpe": "cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
@@ -148,7 +148,7 @@
     },
     {
       "cpe": "cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
-      "count": 1964,
+      "count": 1966,
       "vendor": "adobe",
       "product": "acrobat_dc",
       "type": "Application"
@@ -162,7 +162,7 @@
     },
     {
       "cpe": "cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:continuous:*:*:*",
-      "count": 1952,
+      "count": 1954,
       "vendor": "adobe",
       "product": "acrobat_reader_dc",
       "type": "Application"
@@ -175,6 +175,13 @@
       "type": "Operating System"
     },
     {
+      "cpe": "cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+      "count": 1905,
+      "vendor": "apple",
+      "product": "ipados",
+      "type": "Operating System"
+    },
+    {
       "cpe": "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
       "count": 1889,
       "vendor": "microsoft",
@@ -183,16 +190,9 @@
     },
     {
       "cpe": "cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
-      "count": 1851,
+      "count": 1887,
       "vendor": "apple",
       "product": "tvos",
-      "type": "Operating System"
-    },
-    {
-      "cpe": "cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
-      "count": 1837,
-      "vendor": "apple",
-      "product": "ipados",
       "type": "Operating System"
     },
     {
@@ -210,6 +210,13 @@
       "type": "Operating System"
     },
     {
+      "cpe": "cpe:2.3:o:google:android:12.0:*:*:*:*:*:*:*",
+      "count": 1781,
+      "vendor": "google",
+      "product": "android",
+      "type": "Operating System"
+    },
+    {
       "cpe": "cpe:2.3:o:microsoft:windows_10:1809:*:*:*:*:*:*:*",
       "count": 1777,
       "vendor": "microsoft",
@@ -224,25 +231,25 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:o:google:android:12.0:*:*:*:*:*:*:*",
-      "count": 1771,
-      "vendor": "google",
-      "product": "android",
-      "type": "Operating System"
-    },
-    {
       "cpe": "cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
-      "count": 1769,
+      "count": 1773,
       "vendor": "canonical",
       "product": "ubuntu_linux",
       "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
-      "count": 1581,
+      "count": 1617,
       "vendor": "apple",
       "product": "watchos",
       "type": "Operating System"
+    },
+    {
+      "cpe": "cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+      "count": 1551,
+      "vendor": "apple",
+      "product": "safari",
+      "type": "Application"
     },
     {
       "cpe": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
@@ -252,10 +259,10 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
-      "count": 1530,
-      "vendor": "apple",
-      "product": "safari",
+      "cpe": "cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*",
+      "count": 1517,
+      "vendor": "f5",
+      "product": "big-ip_access_policy_manager",
       "type": "Application"
     },
     {
@@ -266,15 +273,8 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*",
-      "count": 1506,
-      "vendor": "f5",
-      "product": "big-ip_access_policy_manager",
-      "type": "Application"
-    },
-    {
       "cpe": "cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
-      "count": 1489,
+      "count": 1491,
       "vendor": "canonical",
       "product": "ubuntu_linux",
       "type": "Operating System"
@@ -288,17 +288,24 @@
     },
     {
       "cpe": "cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
-      "count": 1435,
+      "count": 1461,
       "vendor": "google",
       "product": "android",
       "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:a:mozilla:thunderbird:*:*:*:*:*:*:*:*",
-      "count": 1413,
+      "count": 1427,
       "vendor": "mozilla",
       "product": "thunderbird",
       "type": "Application"
+    },
+    {
+      "cpe": "cpe:2.3:o:google:android:13.0:*:*:*:*:*:*:*",
+      "count": 1399,
+      "vendor": "google",
+      "product": "android",
+      "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:o:microsoft:windows_10:1803:*:*:*:*:*:*:*",
@@ -309,102 +316,95 @@
     },
     {
       "cpe": "cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*",
-      "count": 1361,
+      "count": 1369,
       "vendor": "f5",
       "product": "big-ip_application_security_manager",
       "type": "Application"
     },
     {
       "cpe": "cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*",
-      "count": 1301,
+      "count": 1306,
       "vendor": "f5",
       "product": "big-ip_advanced_firewall_manager",
       "type": "Application"
     },
     {
-      "cpe": "cpe:2.3:o:google:android:13.0:*:*:*:*:*:*:*",
-      "count": 1287,
-      "vendor": "google",
-      "product": "android",
+      "cpe": "cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*",
+      "count": 1298,
+      "vendor": "debian",
+      "product": "debian_linux",
       "type": "Operating System"
     },
     {
       "cpe": "cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*",
-      "count": 1285,
+      "count": 1290,
       "vendor": "f5",
       "product": "big-ip_local_traffic_manager",
       "type": "Application"
     },
     {
-      "cpe": "cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*",
-      "count": 1283,
-      "vendor": "debian",
-      "product": "debian_linux",
-      "type": "Operating System"
+      "cpe": "cpe:2.3:a:f5:big-ip_policy_enforcement_manager:*:*:*:*:*:*:*:*",
+      "count": 1255,
+      "vendor": "f5",
+      "product": "big-ip_policy_enforcement_manager",
+      "type": "Application"
     },
     {
       "cpe": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
-      "count": 1251,
+      "count": 1253,
       "vendor": "debian",
       "product": "debian_linux",
       "type": "Operating System"
-    },
-    {
-      "cpe": "cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:*:*:*",
-      "count": 1246,
-      "vendor": "mariadb",
-      "product": "mariadb",
-      "type": "Application"
     }
   ],
   "top_vendors": [
     {
       "vendor": "qualcomm",
-      "count": 182537
+      "count": 185195
     },
     {
       "vendor": "cisco",
-      "count": 164352
-    },
-    {
-      "vendor": "microsoft",
-      "count": 113610
+      "count": 177192
     },
     {
       "vendor": "linux",
-      "count": 112355
+      "count": 116533
+    },
+    {
+      "vendor": "microsoft",
+      "count": 115334
     },
     {
       "vendor": "apple",
-      "count": 90168
+      "count": 90712
     },
     {
       "vendor": "mozilla",
-      "count": 84296
+      "count": 84393
     },
     {
       "vendor": "adobe",
-      "count": 79986
+      "count": 81286
     },
     {
       "vendor": "ibm",
-      "count": 67177
+      "count": 68771
     },
     {
       "vendor": "oracle",
-      "count": 66429
+      "count": 66594
     },
     {
       "vendor": "juniper",
-      "count": 64192
+      "count": 64401
     },
     {
       "vendor": "google",
-      "count": 59907
+      "count": 60445
     },
     {
       "vendor": "intel",
-      "count": 58011
+      "count": 58064
     },
     {
       "vendor": "sun",
@@ -412,11 +412,11 @@
     },
     {
       "vendor": "redhat",
-      "count": 32365
+      "count": 32490
     },
     {
       "vendor": "f5",
-      "count": 31658
+      "count": 31788
     },
     {
       "vendor": "hp",
@@ -424,11 +424,11 @@
     },
     {
       "vendor": "dell",
-      "count": 28869
+      "count": 28918
     },
     {
       "vendor": "samsung",
-      "count": 26721
+      "count": 28628
     },
     {
       "vendor": "opera",
@@ -436,45 +436,45 @@
     },
     {
       "vendor": "huawei",
-      "count": 20819
+      "count": 20989
     }
   ],
   "top_products": [
     {
       "product": "linux_kernel",
-      "count": 112117
+      "count": 116295
     },
     {
       "product": "ios",
-      "count": 66658
+      "count": 67800
     },
     {
       "product": "junos",
-      "count": 58086
+      "count": 58150
     },
     {
       "product": "android",
-      "count": 45648
+      "count": 47962
     },
     {
       "product": "firefox",
-      "count": 36728
+      "count": 36783
     },
     {
       "product": "chrome",
-      "count": 33916
-    },
-    {
-      "product": "jre",
-      "count": 28498
+      "count": 33947
     },
     {
       "product": "ios_xe",
-      "count": 25715
+      "count": 28815
+    },
+    {
+      "product": "jre",
+      "count": 28530
     },
     {
       "product": "jdk",
-      "count": 24150
+      "count": 24182
     },
     {
       "product": "seamonkey",
@@ -490,7 +490,7 @@
     },
     {
       "product": "safari",
-      "count": 19224
+      "count": 19245
     },
     {
       "product": "flash_player",
@@ -502,7 +502,7 @@
     },
     {
       "product": "php",
-      "count": 16490
+      "count": 16502
     },
     {
       "product": "itunes",
@@ -510,31 +510,31 @@
     },
     {
       "product": "debian_linux",
-      "count": 15430
+      "count": 15461
     },
     {
       "product": "thunderbird",
-      "count": 13849
+      "count": 13887
     },
     {
       "product": "ubuntu_linux",
-      "count": 13739
+      "count": 13766
     }
   ],
   "cpe_type_distribution": [
     {
       "type": "Application",
-      "count": 1216256,
-      "percentage": 53.5
+      "count": 1241413,
+      "percentage": 53.4
     },
     {
       "type": "Operating System",
-      "count": 1003858,
-      "percentage": 44.1
+      "count": 1026628,
+      "percentage": 44.2
     },
     {
       "type": "Hardware",
-      "count": 55063,
+      "count": 55066,
       "percentage": 2.4
     }
   ],
@@ -577,11 +577,15 @@
     },
     {
       "cve": "CVE-2019-1761",
-      "cpe_count": 1762
+      "cpe_count": 1761
     },
     {
       "cve": "CVE-2021-34705",
       "cpe_count": 1721
+    },
+    {
+      "cve": "CVE-2022-20920",
+      "cpe_count": 1596
     },
     {
       "cve": "CVE-2025-20171",
@@ -590,10 +594,6 @@
     {
       "cve": "CVE-2009-5040",
       "cpe_count": 1550
-    },
-    {
-      "cve": "CVE-2022-20920",
-      "cpe_count": 1446
     },
     {
       "cve": "CVE-2007-5381",
@@ -620,5 +620,5 @@
       "cpe_count": 1321
     }
   ],
-  "average_cpes_per_cve": 8.7
+  "average_cpes_per_cve": 8.6
 }
