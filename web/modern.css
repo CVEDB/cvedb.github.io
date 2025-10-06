@@ -46,7 +46,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -57,117 +58,187 @@ html, body {
   min-height: 100vh;
 }
 
-h1, .main-title {
+h1,
+.main-title {
   font-size: var(--font-size-h1);
   font-weight: 700;
-  line-height: var(--line-height-heading);
-  letter-spacing: -0.025em;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--spacing-sm);
-}
-h2 {
-  font-size: var(--font-size-h2);
-  font-weight: 700;
-  line-height: var(--line-height-heading);
-  margin-bottom: var(--spacing-xs);
-}
-h3 {
-  font-size: var(--font-size-h3);
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-h4 {
-  font-size: var(--font-size-h4);
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-p, ul, ol {
-  font-size: var(--font-size-base);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-xs);
-}
-.subtitle {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  font-weight: 400;
-  margin-bottom: var(--spacing-md);
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  max-width: 600px;
-}
 
-.hero-description, .section-intro {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-lg);
-}
+  html,
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #f7fafd 0%, #eaf3ff 100%);
+    color: #23272f;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
 
-/* Header Styles */
-header {
-  background: var(--surface);
-  padding: 3rem 2rem 2rem 2rem;
-  box-shadow: var(--shadow-sm);
-  text-align: center;
-  border-bottom: 1px solid var(--border-light);
-}
+  header,
+  nav,
+  main,
+  footer {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
 
-.header-content h1 {
-  margin: 0 0 1rem 0;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.025em;
-}
+  header {
+    background: linear-gradient(90deg, #1a2a3a 60%, #0078d7 100%);
+    color: #fff;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
+  }
 
-.subtitle {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  margin: 0 0 2rem 0;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 400;
-}
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.2rem;
+    font-size: 1.13rem;
+    flex-wrap: wrap;
+  }
 
-.header-stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
+  nav a {
+    color: #0078d7;
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 8px;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    font-weight: 500;
+  }
 
-.stat {
-  background: var(--gradient-subtle);
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-sm);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
+  nav a:hover,
+  nav a.active {
+    background: #dbefff;
+    color: #005fa3;
+    box-shadow: 0 2px 8px rgba(0, 120, 215, 0.08);
+  }
 
-/* Navigation Styles */
-nav {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 0;
-}
+  main {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+    padding: 2.2rem 2rem 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+    min-height: 60vh;
+  }
 
-.nav-container {
-  display: flex;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    color: #1a2a3a;
+    margin-top: 0;
+    letter-spacing: 0.2px;
+  }
 
-.nav-link {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.7rem 0;
+    background: #fafdff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  th,
+  td {
+    padding: 0.85rem 1.1rem;
+    text-align: left;
+  }
+
+  th {
+    background: #eaf3ff;
+    color: #1a2a3a;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+  }
+
+  tr:nth-child(even) {
+    background: #f3f8fd;
+  }
+
+  tr:hover {
+    background: #e0f0ff;
+    transition: background 0.15s;
+  }
+
+  button,
+  .button {
+    background: linear-gradient(90deg, #0078d7 60%, #005fa3 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+    box-shadow: 0 2px 8px rgba(0, 120, 215, 0.08);
+    font-weight: 600;
+  }
+
+  button:hover,
+  .button:hover {
+    background: linear-gradient(90deg, #005fa3 60%, #0078d7 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(0, 120, 215, 0.13);
+  }
+
+  footer {
+    color: #7a8599;
+    font-size: 1.01rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 1.7rem 0 0.7rem 0;
+    letter-spacing: 0.1px;
+  }
+
+  /* Card styles for summary/info blocks */
+  .card,
+  .summary-card,
+  .info-card {
+    background: #fafdff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 120, 215, 0.07);
+    padding: 1.5rem 1.3rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #eaf3ff;
+  }
+
+  /* Utility classes */
+  .text-center {
+    text-align: center;
+  }
+
+  .mt-2 {
+    margin-top: 2rem;
+  }
+
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
+
+  .fw-bold {
+    font-weight: 700;
+  }
+
+  .fw-semi {
+    font-weight: 500;
+  }
+
+  .rounded {
+    border-radius: 12px;
+  }
+
+  .shadow {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
@@ -179,7 +250,8 @@ nav {
   transition: all 0.2s;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
   color: var(--primary);
   border-bottom-color: var(--primary);
   background: var(--border-light);
@@ -239,7 +311,9 @@ main {
   flex-wrap: wrap;
 }
 
-.btn, .btn-primary, .btn-secondary {
+.btn,
+.btn-primary,
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -258,7 +332,8 @@ main {
   box-shadow: var(--shadow-md);
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
   background: var(--primary-dark);
   box-shadow: var(--shadow-lg);
 }
@@ -269,7 +344,8 @@ main {
   border-color: var(--border);
 }
 
-.btn-secondary:hover, .btn-secondary:focus {
+.btn-secondary:hover,
+.btn-secondary:focus {
   background: var(--border-light);
   border-color: var(--primary);
 }
@@ -450,13 +526,18 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: var(--primary-dark);
   text-decoration: underline;
 }
 
 /* Card Section and Card Styles */
-.card, .feature-section.card, .about-section.card, .contact-section.card, .hero-section.card {
+.card,
+.feature-section.card,
+.about-section.card,
+.contact-section.card,
+.hero-section.card {
   background: var(--surface);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
@@ -467,6 +548,7 @@ a:hover, a:focus {
   width: 100%;
   box-sizing: border-box;
 }
+
 .card-section {
   display: flex;
   flex-direction: column;
@@ -474,10 +556,12 @@ a:hover, a:focus {
   margin: var(--spacing-md) 0;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 2rem;
   margin-bottom: var(--spacing-xs);
 }
+
 li {
   margin-bottom: 0.5rem;
 }
@@ -503,11 +587,14 @@ li {
   text-align: left;
 }
 
-.intelligence-card > div {
+.intelligence-card>div {
   text-align: left;
 }
 
-.card, .feature-section.card, .about-section.card, .contact-section.card {
+.card,
+.feature-section.card,
+.about-section.card,
+.contact-section.card {
   text-align: left;
 }
 
@@ -550,7 +637,12 @@ li {
 }
 
 @media (max-width: 950px) {
-  .card, .feature-section.card, .about-section.card, .contact-section.card, .hero-section.card {
+
+  .card,
+  .feature-section.card,
+  .about-section.card,
+  .contact-section.card,
+  .hero-section.card {
     max-width: 100%;
     padding: 2rem 0.5rem;
   }
@@ -562,6 +654,7 @@ li {
     align-items: flex-start;
     padding: 1.25rem 1rem;
   }
+
   .intelligence-card .feature-icon {
     margin-bottom: 0.5rem;
   }
@@ -572,56 +665,56 @@ li {
   header {
     padding: 2rem 1rem 1.5rem 1rem;
   }
-  
+
   .header-stats {
     gap: 1rem;
   }
-  
+
   main {
     padding: 0 1rem;
   }
-  
+
   .hero-section {
     margin: 2rem -1rem 3rem -1rem;
     padding: 3rem 0 4rem 0;
   }
-  
+
   .nav-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .nav-link {
     padding: 0.75rem 1rem;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 100%;
     max-width: 280px;
     justify-content: center;
   }
-  
+
   .sources-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .contact-links {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  
+
   .contact-link {
     width: 100%;
     max-width: 280px;
@@ -634,27 +727,34 @@ li {
     font-size: 0.75rem;
     padding: 0.375rem 0.75rem;
   }
-  
+
   .source-card {
     padding: 1.5rem;
   }
-  
+
   .stat-item {
     padding: 1rem;
   }
 }
 
 /* Remove forced left alignment for all text inside cards, except where needed */
-.hero-section.card, .hero-content, .hero-section.card * {
+.hero-section.card,
+.hero-content,
+.hero-section.card * {
   text-align: inherit !important;
 }
 
-.card, .feature-section.card, .about-section.card, .contact-section.card, .hero-section.card {
+.card,
+.feature-section.card,
+.about-section.card,
+.contact-section.card,
+.hero-section.card {
   text-align: inherit;
 }
 
 /* For .card-section and .card, use default text alignment (left for LTR, but allow override) */
-.card-section, .card {
+.card-section,
+.card {
   text-align: initial;
 }
 
