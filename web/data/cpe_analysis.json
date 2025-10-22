@@ -1,14 +1,14 @@
 {
-  "generated_at": "2025-10-21T06:50:32.513264",
-  "total_unique_cpes": 359392,
-  "total_cpe_entries": 2336623,
-  "total_cves_with_cpes": 271288,
-  "total_unique_vendors": 35076,
-  "total_unique_products": 108895,
+  "generated_at": "2025-10-22T02:04:05.373999",
+  "total_unique_cpes": 359454,
+  "total_cpe_entries": 2339923,
+  "total_cves_with_cpes": 271533,
+  "total_unique_vendors": 35082,
+  "total_unique_products": 108909,
   "top_cpes": [
     {
       "cpe": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
-      "count": 25445,
+      "count": 25751,
       "vendor": "linux",
       "product": "linux_kernel",
       "type": "Operating System"
@@ -238,6 +238,13 @@
       "type": "Operating System"
     },
     {
+      "cpe": "cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*",
+      "count": 1651,
+      "vendor": "f5",
+      "product": "big-ip_access_policy_manager",
+      "type": "Application"
+    },
+    {
       "cpe": "cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
       "count": 1618,
       "vendor": "apple",
@@ -259,13 +266,6 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*",
-      "count": 1517,
-      "vendor": "f5",
-      "product": "big-ip_access_policy_manager",
-      "type": "Application"
-    },
-    {
       "cpe": "cpe:2.3:o:microsoft:windows_8.1:-:*:*:*:*:*:*:*",
       "count": 1509,
       "vendor": "microsoft",
@@ -278,6 +278,13 @@
       "vendor": "canonical",
       "product": "ubuntu_linux",
       "type": "Operating System"
+    },
+    {
+      "cpe": "cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*",
+      "count": 1489,
+      "vendor": "f5",
+      "product": "big-ip_application_security_manager",
+      "type": "Application"
     },
     {
       "cpe": "cpe:2.3:o:microsoft:windows_7:-:sp1:*:*:*:*:*:*",
@@ -301,6 +308,20 @@
       "type": "Application"
     },
     {
+      "cpe": "cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*",
+      "count": 1419,
+      "vendor": "f5",
+      "product": "big-ip_advanced_firewall_manager",
+      "type": "Application"
+    },
+    {
+      "cpe": "cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*",
+      "count": 1403,
+      "vendor": "f5",
+      "product": "big-ip_local_traffic_manager",
+      "type": "Application"
+    },
+    {
       "cpe": "cpe:2.3:o:google:android:13.0:*:*:*:*:*:*:*",
       "count": 1402,
       "vendor": "google",
@@ -315,52 +336,31 @@
       "type": "Operating System"
     },
     {
-      "cpe": "cpe:2.3:a:f5:big-ip_application_security_manager:*:*:*:*:*:*:*:*",
-      "count": 1369,
+      "cpe": "cpe:2.3:a:f5:big-ip_policy_enforcement_manager:*:*:*:*:*:*:*:*",
+      "count": 1371,
       "vendor": "f5",
-      "product": "big-ip_application_security_manager",
+      "product": "big-ip_policy_enforcement_manager",
       "type": "Application"
     },
     {
-      "cpe": "cpe:2.3:o:microsoft:windows_11_22h2:*:*:*:*:*:*:*:*",
-      "count": 1322,
-      "vendor": "microsoft",
-      "product": "windows_11_22h2",
-      "type": "Operating System"
-    },
-    {
-      "cpe": "cpe:2.3:a:f5:big-ip_advanced_firewall_manager:*:*:*:*:*:*:*:*",
-      "count": 1306,
+      "cpe": "cpe:2.3:a:f5:big-ip_link_controller:*:*:*:*:*:*:*:*",
+      "count": 1354,
       "vendor": "f5",
-      "product": "big-ip_advanced_firewall_manager",
+      "product": "big-ip_link_controller",
       "type": "Application"
     },
     {
-      "cpe": "cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*",
-      "count": 1305,
-      "vendor": "debian",
-      "product": "debian_linux",
-      "type": "Operating System"
-    },
-    {
-      "cpe": "cpe:2.3:o:microsoft:windows_10_21h2:*:*:*:*:*:*:*:*",
-      "count": 1292,
-      "vendor": "microsoft",
-      "product": "windows_10_21h2",
-      "type": "Operating System"
-    },
-    {
-      "cpe": "cpe:2.3:a:f5:big-ip_local_traffic_manager:*:*:*:*:*:*:*:*",
-      "count": 1290,
+      "cpe": "cpe:2.3:a:f5:big-ip_application_acceleration_manager:*:*:*:*:*:*:*:*",
+      "count": 1350,
       "vendor": "f5",
-      "product": "big-ip_local_traffic_manager",
+      "product": "big-ip_application_acceleration_manager",
       "type": "Application"
     }
   ],
   "top_vendors": [
     {
       "vendor": "qualcomm",
-      "count": 189025
+      "count": 189185
     },
     {
       "vendor": "cisco",
@@ -368,11 +368,11 @@
     },
     {
       "vendor": "linux",
-      "count": 118863
+      "count": 119210
     },
     {
       "vendor": "microsoft",
-      "count": 116982
+      "count": 116988
     },
     {
       "vendor": "apple",
@@ -388,11 +388,11 @@
     },
     {
       "vendor": "ibm",
-      "count": 68830
+      "count": 68838
     },
     {
       "vendor": "oracle",
-      "count": 66595
+      "count": 66596
     },
     {
       "vendor": "juniper",
@@ -411,12 +411,12 @@
       "count": 56588
     },
     {
-      "vendor": "redhat",
-      "count": 32511
+      "vendor": "f5",
+      "count": 34387
     },
     {
-      "vendor": "f5",
-      "count": 31788
+      "vendor": "redhat",
+      "count": 32515
     },
     {
       "vendor": "hp",
@@ -442,7 +442,7 @@
   "top_products": [
     {
       "product": "linux_kernel",
-      "count": 118625
+      "count": 118972
     },
     {
       "product": "ios",
@@ -524,12 +524,12 @@
   "cpe_type_distribution": [
     {
       "type": "Application",
-      "count": 1245853,
-      "percentage": 53.3
+      "count": 1248609,
+      "percentage": 53.4
     },
     {
       "type": "Operating System",
-      "count": 1035704,
+      "count": 1036248,
       "percentage": 44.3
     },
     {
