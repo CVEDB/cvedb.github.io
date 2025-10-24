@@ -826,18 +826,22 @@
     "vulnerability_status": [
       {
         "status": "Modified",
-        "count": 17280
+        "count": 17255
       },
       {
         "status": "Analyzed",
-        "count": 25
+        "count": 47
+      },
+      {
+        "status": "Undergoing Analysis",
+        "count": 3
       }
     ],
     "cve_tags": [],
     "reference_tags": [
       {
         "tag": "Third Party Advisory",
-        "count": 51030
+        "count": 51031
       },
       {
         "tag": "Vendor Advisory",
@@ -869,18 +873,18 @@
       },
       {
         "tag": "Broken Link",
-        "count": 1547
+        "count": 1549
       },
       {
         "tag": "Product",
         "count": 1235
       },
       {
-        "tag": "Mitigation",
-        "count": 762
+        "tag": "US Government Resource",
+        "count": 784
       },
       {
-        "tag": "US Government Resource",
+        "tag": "Mitigation",
         "count": 762
       },
       {
@@ -910,7 +914,7 @@
     ]
   },
   "processing_stats": {
-    "processed_at": "2025-10-22T18:46:21.654780",
+    "processed_at": "2025-10-24T18:42:59.166280",
     "data_source": "data/cache/nvd.jsonl"
   }
 }
