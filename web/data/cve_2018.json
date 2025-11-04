@@ -809,14 +809,18 @@
     "vulnerability_status": [
       {
         "status": "Modified",
-        "count": 16439
+        "count": 16436
       },
       {
         "status": "Analyzed",
-        "count": 70
+        "count": 72
       },
       {
         "status": "Deferred",
+        "count": 1
+      },
+      {
+        "status": "Undergoing Analysis",
         "count": 1
       }
     ],
@@ -864,7 +868,7 @@
       },
       {
         "tag": "US Government Resource",
-        "count": 1119
+        "count": 1121
       },
       {
         "tag": "Permissions Required",
@@ -897,7 +901,7 @@
     ]
   },
   "processing_stats": {
-    "processed_at": "2025-11-03T02:03:20.513715",
+    "processed_at": "2025-11-04T06:46:25.035750",
     "data_source": "data/cache/nvd.jsonl"
   }
 }
