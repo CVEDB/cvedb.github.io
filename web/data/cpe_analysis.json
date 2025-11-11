@@ -1,14 +1,14 @@
 {
-  "generated_at": "2025-11-10T06:53:21.840213",
-  "total_unique_cpes": 359910,
-  "total_cpe_entries": 2352279,
-  "total_cves_with_cpes": 273759,
-  "total_unique_vendors": 35120,
-  "total_unique_products": 109022,
+  "generated_at": "2025-11-11T06:52:07.906091",
+  "total_unique_cpes": 359952,
+  "total_cpe_entries": 2354093,
+  "total_cves_with_cpes": 273946,
+  "total_unique_vendors": 35123,
+  "total_unique_products": 109032,
   "top_cpes": [
     {
       "cpe": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
-      "count": 27863,
+      "count": 28285,
       "vendor": "linux",
       "product": "linux_kernel",
       "type": "Operating System"
@@ -329,6 +329,13 @@
       "type": "Operating System"
     },
     {
+      "cpe": "cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*",
+      "count": 1385,
+      "vendor": "debian",
+      "product": "debian_linux",
+      "type": "Operating System"
+    },
+    {
       "cpe": "cpe:2.3:o:microsoft:windows_11_22h2:*:*:*:*:*:*:*:*",
       "count": 1385,
       "vendor": "microsoft",
@@ -348,13 +355,6 @@
       "vendor": "f5",
       "product": "big-ip_policy_enforcement_manager",
       "type": "Application"
-    },
-    {
-      "cpe": "cpe:2.3:o:debian:debian_linux:11.0:*:*:*:*:*:*:*",
-      "count": 1374,
-      "vendor": "debian",
-      "product": "debian_linux",
-      "type": "Operating System"
     }
   ],
   "top_vendors": [
@@ -368,7 +368,7 @@
     },
     {
       "vendor": "linux",
-      "count": 122687
+      "count": 123459
     },
     {
       "vendor": "microsoft",
@@ -428,7 +428,7 @@
     },
     {
       "vendor": "dell",
-      "count": 29060
+      "count": 29061
     },
     {
       "vendor": "opera",
@@ -442,7 +442,7 @@
   "top_products": [
     {
       "product": "linux_kernel",
-      "count": 122449
+      "count": 123221
     },
     {
       "product": "ios",
@@ -506,7 +506,7 @@
     },
     {
       "product": "debian_linux",
-      "count": 15540
+      "count": 15551
     },
     {
       "product": "itunes",
@@ -524,12 +524,12 @@
   "cpe_type_distribution": [
     {
       "type": "Application",
-      "count": 1252146,
+      "count": 1253117,
       "percentage": 53.2
     },
     {
       "type": "Operating System",
-      "count": 1045067,
+      "count": 1045910,
       "percentage": 44.4
     },
     {
