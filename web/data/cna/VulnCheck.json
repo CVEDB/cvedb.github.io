@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "VulnCheck",
-    "total_cves": 596,
-    "total_cves_scored": 596,
+    "total_cves": 597,
+    "total_cves_scored": 597,
     "organizationName": "VulnCheck",
     "scope": "Vulnerabilities observed by, discovered by, or reported to VulnCheck that are not in another CNA’s scope.",
     "advisories": [
@@ -39,20 +39,20 @@
   "percentile": 94.5,
   "cna_scoring": [
     {
-      "total_cves": 596,
-      "total_cves_scored": 596,
-      "recent_cves_count": 596,
-      "overall_average_score": 84.85,
+      "total_cves": 597,
+      "total_cves_scored": 597,
+      "recent_cves_count": 597,
+      "overall_average_score": 84.86,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
       "average_software_identification": 0.05,
       "average_severity_context": 15.0,
-      "average_patchinfo": 4.8,
+      "average_patchinfo": 4.81,
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 100.0,
       "percent_software_identification": 0.5,
       "percent_severity_and_impact": 100.0,
-      "percent_patchinfo": 47.99,
+      "percent_patchinfo": 48.07,
       "trend_direction": "steady",
       "trend_description": "No significant change",
       "monthly_trends": []
@@ -6999,6 +6999,19 @@
         "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2025-34320",
+      "assigningCna": "VulnCheck",
+      "datePublished": "2025-11-20",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
       }
     },
     {
