@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "Nozomi",
-    "total_cves": 16,
-    "total_cves_scored": 16,
+    "total_cves": 17,
+    "total_cves_scored": 17,
     "organizationName": "Nozomi Networks Inc.",
     "scope": "All Nozomi Networks products, as well as vulnerabilities in third-party software discovered by Nozomi Networks that are not in another CNA’s scope.",
     "advisories": [
@@ -34,25 +34,25 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 24,
+  "rank": 25,
   "active_cna_count": 311,
-  "percentile": 92.6,
+  "percentile": 92.3,
   "cna_scoring": [
     {
-      "total_cves": 16,
-      "total_cves_scored": 16,
-      "recent_cves_count": 16,
-      "overall_average_score": 82.5,
+      "total_cves": 17,
+      "total_cves_scored": 17,
+      "recent_cves_count": 17,
+      "overall_average_score": 82.35,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
       "average_software_identification": 0.0,
       "average_severity_context": 15.0,
-      "average_patchinfo": 2.5,
+      "average_patchinfo": 2.35,
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 100.0,
       "percent_software_identification": 0.0,
       "percent_severity_and_impact": 100.0,
-      "percent_patchinfo": 25.0,
+      "percent_patchinfo": 23.53,
       "trend_direction": "steady",
       "trend_description": "No significant change",
       "monthly_trends": []
@@ -154,6 +154,19 @@
       "cveId": "CVE-2025-40888",
       "assigningCna": "Nozomi",
       "datePublished": "2025-10-07",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2025-40890",
+      "assigningCna": "Nozomi",
+      "datePublished": "2025-11-25",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
