@@ -62,7 +62,7 @@ def load_all_year_data(data_dir: Path) -> list:
 
 def print_header(title: str, emoji: str = "🔄"):
     """Print a consistent header for rebuild scripts."""
-    print(f"{emoji} CVE.ICU {title}")
+    print(f"{emoji} CVE DB {title}")
     print("=" * 40)
 
 

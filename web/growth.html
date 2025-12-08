@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growth Trends - CVEDB</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Growth Trends - CVE DB</title>
+    
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="static/images/logo.png">
-
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="static/css/style.css">
-
+    
     <!-- Meta tags for SEO -->
-    <meta name="description"
-        content="CVEDB provides comprehensive analysis and visualization of Common Vulnerabilities and Exposures (CVE) data from 1999 to present.">
+    <meta name="description" content="CVE DB provides comprehensive analysis and visualization of Common Vulnerabilities and Exposures (CVE) data from 1999 to present.">
     <meta name="keywords" content="CVE, vulnerabilities, security, analysis, dashboard, cybersecurity">
-    <meta name="author" content="CVEDB">
-
+    <meta name="author" content="CVE DB">
+    
+    <!-- Mobile-specific meta tags -->
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CVE DB">
+    <meta name="format-detection" content="telephone=no">
+    
     <!-- Open Graph tags -->
-    <meta property="og:title" content="CVEDB - CVE Analysis Dashboard">
-    <meta property="og:description"
-        content="Comprehensive CVE analysis and visualization from 1999 to present">
+    <meta property="og:title" content="CVE DB - CVE Analysis Dashboard">
+    <meta property="og:description" content="Comprehensive CVE analysis and visualization from 1999 to present">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cvedb.github.io">
     <meta property="og:image" content="https://cvedb.github.io/static/images/logo.png">
 </head>
-
 <body>
     <!-- Header and Navigation -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="static/images/logo.png" alt="CVEDB Logo">
-                CVEDB
+                <img src="static/images/logo.png" alt="CVE DB Logo">
+                CVE DB
             </a>
-
+            
             <nav class="nav">
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="years.html">Yearly Analysis</a></li>
-                    <li><a href="cna.html">CNA</a></li>
+                    <li class="nav-dropdown">
+                        <a href="cna-hub.html" class="dropdown-toggle">CNA</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cna.html">CNA Intelligence</a></li>
+                            <li><a href="data-quality.html">Name Matching</a></li>
+                        </ul>
+                    </li>
                     <li><a href="cpe.html">CPE</a></li>
                     <li><a href="cwe.html">CWE</a></li>
-                    <li><a href="cvss.html">CVSS</a></li>
+                    <li class="nav-dropdown">
+                        <a href="scoring.html" class="dropdown-toggle">Scoring</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cvss.html">CVSS</a></li>
+                            <li><a href="epss.html">EPSS</a></li>
+                            <li><a href="kev.html">KEV</a></li>
+                        </ul>
+                    </li>
                     <li><a href="growth.html">Growth</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                 </ul>
@@ -296,8 +312,7 @@
                 <div style="flex: 1; min-width: 200px;">
                     <p class="mb-1"><strong>Data Sources:</strong></p>
                     <p class="text-muted small mb-0">
-                        <a href="https://nvd.nist.gov/" target="_blank" class="text-decoration-none">National
-                            Vulnerability Database (NVD)</a><br>
+                        <a href="https://nvd.nist.gov/" target="_blank" class="text-decoration-none">National Vulnerability Database (NVD)</a><br>
                         <a href="https://cve.org/" target="_blank" class="text-decoration-none">CVE Program</a><br>
                         Last updated: <span id="lastUpdated">Loading...</span>
                     </p>
@@ -305,21 +320,17 @@
                 <div style="flex: 1; min-width: 200px; text-align: right;">
                     <p class="mb-1"><strong>Platform Links:</strong></p>
                     <p class="text-muted small mb-0">
-                        <a href="about.html" class="text-decoration-none">About CVEDB</a><br>
-                        <a href="https://cvedb.github.io" target="_blank" class="text-decoration-none">CNA
-                            Scorecard</a><br>
-                        <a href="https://cvedb.github.io" target="_blank" class="text-decoration-none">CVE
-                            Forecast</a><br>
-                        <a href="https://github.com/cvedbs/cvedb.github.io" target="_blank"
-                            class="text-decoration-none">GitHub Repository</a>
+                        <a href="about.html" class="text-decoration-none">About CVE DB</a><br>
+                        <a href="https://cnascorecard.org" target="_blank" class="text-decoration-none">CNA Scorecard</a><br>
+                        <a href="https://cveforecast.org" target="_blank" class="text-decoration-none">CVE Forecast</a><br>
+                        <a href="https://github.com/cvedb/cvedb.github.io" target="_blank" class="text-decoration-none">GitHub Repository</a>
                     </p>
                 </div>
             </div>
             <hr class="my-2">
             <div class="text-center">
                 <small class="text-muted">
-                    &copy; 2025 CVEDB • Built by <a
-                        href="https://cvedb.github.io" target="_blank" class="text-decoration-none">CVEDB</a><br>
+                    &copy; 2025 CVE DB • Built by <a href="https://khulnasoft.com" target="_blank" class="text-decoration-none">CVEDB</a><br>
                     Data updated every 6 hours • CVE coverage: 1999-2025
                 </small>
             </div>
@@ -328,55 +339,96 @@
 
     <!-- Chart.js Library (UMD version) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    
     <!-- D3.js for advanced visualizations -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
+    
     <!-- Universal timestamp loader -->
     <script>
-        // Universal function to load and display the last updated timestamp
-        // Uses cve_all.json as the single source of truth for all pages
-        function loadUniversalTimestamp() {
-            const lastUpdatedElement = document.getElementById('lastUpdated');
-            if (!lastUpdatedElement) return;
-
-            fetch('data/cve_all.json?v=' + new Date().getTime())
-                .then(response => response.json())
-                .then(data => {
-                    if (data.generated_at) {
-                        const date = new Date(data.generated_at);
-                        const options = {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            hour12: false, // Use 24-hour clock
-                            timeZone: 'UTC', // Always show UTC
-                            timeZoneName: 'short'
-                        };
-                        const formattedDate = date.toLocaleString('en-US', options);
-                        lastUpdatedElement.textContent = formattedDate;
+    // Universal function to load and display the last updated timestamp
+    // Uses cve_all.json as the single source of truth for all pages
+    function loadUniversalTimestamp() {
+        const lastUpdatedElement = document.getElementById('lastUpdated');
+        if (!lastUpdatedElement) return;
+        
+        fetch('data/cve_all.json?v=' + new Date().getTime())
+            .then(response => response.json())
+            .then(data => {
+                if (data.generated_at) {
+                    const date = new Date(data.generated_at);
+                    const options = {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false, // Use 24-hour clock
+                        timeZone: 'UTC', // Always show UTC
+                        timeZoneName: 'short'
+                    };
+                    const formattedDate = date.toLocaleString('en-US', options);
+                    lastUpdatedElement.textContent = formattedDate;
+                } else {
+                    lastUpdatedElement.textContent = 'Unknown';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading timestamp:', error);
+                lastUpdatedElement.textContent = 'Error loading timestamp';
+            });
+    }
+    
+    // Load timestamp when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        loadUniversalTimestamp();
+    });
+    </script>
+    
+    <!-- Mobile Navigation Enhancement -->
+    <script>
+        // Enhanced mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    
+                    // Prevent body scroll when menu is open
+                    if (navMenu.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
                     } else {
-                        lastUpdatedElement.textContent = 'Unknown';
+                        document.body.style.overflow = '';
                     }
-                })
-                .catch(error => {
-                    console.error('Error loading timestamp:', error);
-                    lastUpdatedElement.textContent = 'Error loading timestamp';
                 });
-        }
-
-        // Load timestamp when DOM is ready
-        document.addEventListener('DOMContentLoaded', function () {
-            loadUniversalTimestamp();
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInside = navToggle.contains(event.target) || navMenu.contains(event.target);
+                    
+                    if (!isClickInside && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close menu when a nav link is clicked
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
         });
     </script>
-
+    
     <!-- Custom JavaScript -->
     <script>
         // Wait for Chart.js to load before configuring
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             if (typeof Chart !== 'undefined') {
                 // Global configuration for Chart.js with design system
                 Chart.defaults.responsive = true;
@@ -417,15 +469,15 @@
                 Chart.defaults.elements.point.borderColor = '#2196f3';
                 Chart.defaults.elements.line.borderColor = '#2196f3';
                 Chart.defaults.elements.bar.backgroundColor = '#2196f3';
-
+                
                 // Note: Scale-specific defaults are set per chart type in Chart.js v4
                 // Global scale defaults are handled differently
             }
-
+            
             // Add active class to current page navigation link
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('.nav-menu a');
-
+            
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href === currentPage || (currentPage === '' && href === 'index.html')) {
@@ -433,17 +485,17 @@
                 }
             });
         });
-
+        
         // Enhanced Color palette for consistent styling (Light Blue to Grey)
         window.CVE_COLORS = window.CVE_COLORS || {
             primary: '#2196f3',
-            secondary: '#64b5f6',
+            secondary: '#64b5f6', 
             success: '#81c784',
             warning: '#ffb74d',
             danger: '#f06292',
             light: '#f8f9fa',
             dark: '#212529',
-
+            
             // Light Blue to Grey Visualization Palette
             vizColors: [
                 '#e3f2fd', // Very light blue
@@ -457,7 +509,7 @@
                 '#9e9e9e', // Medium grey
                 '#757575'  // Dark grey
             ],
-
+            
             // Chart-specific colors
             chartColors: [
                 '#2196f3', // Primary blue
@@ -471,7 +523,7 @@
                 '#9e9e9e', // Medium grey
                 '#616161'  // Dark grey
             ],
-
+            
             // Gradient colors for backgrounds
             gradients: {
                 primary: 'linear-gradient(135deg, #e3f2fd, #bbdefb)',
@@ -479,18 +531,18 @@
                 tertiary: 'linear-gradient(135deg, #90caf9, #64b5f6)'
             }
         };
-
+        
         // Enhanced utility function to generate colors for charts
         function getChartColors(count, type = 'chart') {
             const colors = [];
             const palette = type === 'viz' ? CVE_COLORS.vizColors : CVE_COLORS.chartColors;
-
+            
             for (let i = 0; i < count; i++) {
                 colors.push(palette[i % palette.length]);
             }
             return colors;
         }
-
+        
         // Generate light blue to grey gradient colors
         function getGradientColors(count) {
             const colors = [];
@@ -504,7 +556,7 @@
             }
             return colors;
         }
-
+        
         // Get color with opacity
         function getColorWithOpacity(color, opacity = 0.8) {
             if (color.startsWith('#')) {
@@ -515,7 +567,7 @@
             }
             return color;
         }
-
+        
         // Utility function to format numbers
         function formatNumber(num) {
             if (num >= 1000000) {
@@ -525,7 +577,7 @@
             }
             return num.toString();
         }
-
+        
         // Utility function to show loading state
         function showLoading(containerId) {
             const container = document.getElementById(containerId);
@@ -533,7 +585,7 @@
                 container.innerHTML = '<div class="loading"><div class="spinner"></div>Loading data...</div>';
             }
         }
-
+        
         // Utility function to hide loading state
         function hideLoading(containerId) {
             const container = document.getElementById(containerId);
@@ -544,15 +596,59 @@
                 }
             }
         }
-
+        
         // Get current year for dynamic functionality
         const CURRENT_YEAR = new Date().getFullYear();
         const AVAILABLE_YEARS = [];
         for (let year = 1999; year <= CURRENT_YEAR; year++) {
             AVAILABLE_YEARS.push(year);
         }
+        
+        // Mobile table enhancement - add touch scroll indicators
+        function enhanceMobileTable(tableContainer) {
+            if (window.innerWidth <= 768 && tableContainer) {
+                const table = tableContainer.querySelector('table');
+                if (table && table.scrollWidth > tableContainer.clientWidth) {
+                    tableContainer.style.overflowX = 'auto';
+                    tableContainer.style.webkitOverflowScrolling = 'touch';
+                    
+                    // Add scroll shadow indicators
+                    tableContainer.addEventListener('scroll', function() {
+                        const scrollLeft = this.scrollLeft;
+                        const maxScroll = this.scrollWidth - this.clientWidth;
+                        
+                        if (scrollLeft > 0) {
+                            this.classList.add('scrolled-left');
+                        } else {
+                            this.classList.remove('scrolled-left');
+                        }
+                        
+                        if (scrollLeft < maxScroll - 1) {
+                            this.classList.add('scrolled-right');
+                        } else {
+                            this.classList.remove('scrolled-right');
+                        }
+                    });
+                }
+            }
+        }
+        
+        // Apply mobile table enhancements on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableContainers = document.querySelectorAll('.table-container');
+            tableContainers.forEach(enhanceMobileTable);
+            
+            // Re-apply on window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    tableContainers.forEach(enhanceMobileTable);
+                }, 250);
+            });
+        });
     </script>
-
+    
     
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
 <script>
@@ -640,10 +736,10 @@ function updateStatsCards(data) {
     if (currentYearData && typeof currentYearData.ytd_vs_prev_ytd === 'number') {
         const ytdGrowth = currentYearData.ytd_vs_prev_ytd;
         const currentYearCVEs = currentYearData.cves;
-        const prevYearYTDEstimate = currentYearData.prev_year_ytd_estimate || 0;
+        const prevYearYTDActual = currentYearData.prev_year_ytd_actual || 0;
         
         document.getElementById('ytdComparison').textContent = `${ytdGrowth > 0 ? '+' : ''}${ytdGrowth}%`;
-        document.getElementById('ytdSubtext').innerHTML = `${currentYearCVEs.toLocaleString()} vs ${prevYearYTDEstimate.toLocaleString()} CVEs<br>(YTD vs Same Period Last Year)`;
+        document.getElementById('ytdSubtext').innerHTML = `${currentYearCVEs.toLocaleString()} vs ${prevYearYTDActual.toLocaleString()} CVEs<br>(YTD vs Same Period Last Year)`;
     } else {
         console.log('YTD validation failed:', { 
             hasData: !!currentYearData, 
@@ -1117,5 +1213,4 @@ function showErrorState() {
 </script>
 
 </body>
-
 </html>

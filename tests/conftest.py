@@ -1,5 +1,5 @@
 """
-Pytest configuration and shared fixtures for CVEDB tests.
+Pytest configuration and shared fixtures for CVE DB tests.
 """
 
 import json

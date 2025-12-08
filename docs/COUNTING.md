@@ -1,6 +1,6 @@
-# CVEDB Data Counting Methodology
+# CVE DB Data Counting Methodology
 
-This document explains how CVE data is counted and filtered throughout the CVEDB pipeline, ensuring all numbers are auditable and consistent.
+This document explains how CVE DATA is counted and filtered throughout the CVE DB pipeline, ensuring all numbers are auditable and consistent.
 
 ## Data Sources
 

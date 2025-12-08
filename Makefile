@@ -1,11 +1,11 @@
-# CVEDB Makefile
+# CVE DB Makefile
 # Task runner for common build and development operations
 
 .PHONY: help build quick test lint clean serve install
 
 # Default target
 help:
-	@echo "CVEDB Build System"
+	@echo "CVE DB Build System"
 	@echo ""
 	@echo "Usage: make [target]"
 	@echo ""

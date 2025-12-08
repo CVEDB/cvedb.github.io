@@ -1,4 +1,4 @@
-name: Build and Deploy CVEDB
+name: Build and Deploy CVE DB
 
 on:
   # Run on push to main branch
@@ -24,11 +24,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        persist-credentials: true
+        fetch-depth: 0
       
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.13'
         
     - name: Cache Python dependencies
       uses: actions/cache@v3
@@ -51,6 +54,9 @@ jobs:
       run: |
         python build.py --quiet
         
+    - name: Copy CNAME for GitHub Pages
+      run: cp CNAME web/CNAME
+      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
@@ -65,6 +71,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add web/data/*.json
-        git diff --staged --quiet || git commit -m "Auto-update CVE data $(date -u +%Y-%m-%d)"
+        git checkout main
+        git add web/
+        git diff --staged --quiet || git commit -m "Auto-update CVE DATA $(date -u +%Y-%m-%d)"
         git push

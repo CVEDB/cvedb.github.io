@@ -1,10 +1,10 @@
-# CVEDB Architecture
+# CVE DB Architecture
 
-This document describes the high-level architecture of the CVEDB project.
+This document describes the high-level architecture of the CVE DB project.
 
 ## System Overview
 
-CVEDB is a static site generator that processes CVE (Common Vulnerabilities and Exposures) data from multiple sources and produces interactive visualizations.
+CVE DB is a static site generator that processes CVE (Common Vulnerabilities and Exposures) data from multiple sources and produces interactive visualizations.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐

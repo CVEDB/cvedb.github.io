@@ -88,7 +88,7 @@ def main():
         
         # Render CPE page
         html_content = template.render(
-            title="CPE Analysis - CVE.ICU",
+            title="CPE Analysis - CVE DB",
             current_year=datetime.now().year
         )
         

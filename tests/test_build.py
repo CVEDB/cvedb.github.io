@@ -1,5 +1,5 @@
 """
-End-to-end smoke tests for the CVEDB build pipeline.
+End-to-end smoke tests for the CVE DB build pipeline.
 
 These tests verify the build produces valid output without running
 a full build against live data.

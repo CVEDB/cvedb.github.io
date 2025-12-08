@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CVEDB Quick Template Builder
+CVE DB Quick Template Builder
 Fast template-only rebuild for development - skips data processing
 """
 
@@ -34,7 +34,7 @@ class CVEQuickBuilder:
         self.jinja_env.globals['available_years'] = self.available_years
         self.jinja_env.filters['format_number'] = self.format_number
         
-        print(f"⚡ CVEDB Quick Template Builder")
+        print(f"⚡ CVE DB Quick Template Builder")
         print(f"📅 Current Year: {self.current_year}")
         print(f"📂 Templates: {self.templates_dir}")
         print(f"🌐 Web output: {self.web_dir}")
@@ -71,20 +71,20 @@ class CVEQuickBuilder:
         
         # Define pages to generate
         pages = [
-            ('index.html', 'CVEDB - Vulnerability Intelligence Platform'),
-            ('years.html', 'Yearly Analysis - CVEDB'),
-            ('cna-hub.html', 'CNA Intelligence Hub - CVEDB'),
-            ('cna.html', 'CNA Analysis - CVEDB'),
-            ('cpe.html', 'CPE Analysis - CVEDB'),
-            ('cvss.html', 'CVSS Analysis - CVEDB'),
-            ('cwe.html', 'CWE Analysis - CVEDB'),
-            ('calendar.html', 'Calendar View - CVEDB'),
-            ('growth.html', 'Growth Trends - CVEDB'),
-            ('about.html', 'About CVEDB - Vulnerability Intelligence Platform'),
-            ('scoring.html', 'Scoring Hub - CVEDB'),
-            ('epss.html', 'EPSS Analysis - CVEDB'),
-            ('kev.html', 'KEV Dashboard - CVEDB'),
-            ('data-quality.html', 'CNA Name Matching - CVEDB'),
+            ('index.html', 'CVE DB - Vulnerability Intelligence Platform'),
+            ('years.html', 'Yearly Analysis - CVE DB'),
+            ('cna-hub.html', 'CNA Intelligence Hub - CVE DB'),
+            ('cna.html', 'CNA Analysis - CVE DB'),
+            ('cpe.html', 'CPE Analysis - CVE DB'),
+            ('cvss.html', 'CVSS Analysis - CVE DB'),
+            ('cwe.html', 'CWE Analysis - CVE DB'),
+            ('calendar.html', 'Calendar View - CVE DB'),
+            ('growth.html', 'Growth Trends - CVE DB'),
+            ('about.html', 'About CVE DB - Vulnerability Intelligence Platform'),
+            ('scoring.html', 'Scoring Hub - CVE DB'),
+            ('epss.html', 'EPSS Analysis - CVE DB'),
+            ('kev.html', 'KEV Dashboard - CVE DB'),
+            ('data-quality.html', 'CNA Name Matching - CVE DB'),
         ]
         
         for template_name, title in pages:
