@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 """
 CVE Data Download Script
-Downloads and caches CVE data from NVD source for processing
+Downloads and caches CVE DATA from NVD source for processing
 Replaces the wget step from GitHub Actions with proper Python error handling
 """
 
-import os
 import requests
 import json
 import gzip
 from pathlib import Path
 from datetime import datetime, timedelta
 import hashlib
-import time
+import csv
 
 class CVEDataDownloader:
-    """Downloads and manages CVE data from NVD source"""
+    """Downloads and manages CVE DATA from NVD source"""
     
     def __init__(self, cache_dir=None, quiet=False):
         self.quiet = quiet
@@ -24,8 +23,8 @@ class CVEDataDownloader:
         self.cache_dir.mkdir(exist_ok=True)
         
         # Data source configuration
-        self.nvd_url = "https://nvd.handsonhacking.org/nvd.jsonl"
-        self.cache_file = self.cache_dir / "nvd.jsonl"
+        self.nvd_url = "https://nvd.handsonhacking.org/nvd.json"
+        self.cache_file = self.cache_dir / "nvd.json"
         self.cache_info_file = self.cache_dir / "cache_info.json"
         self.cache_duration = timedelta(hours=4)  # Cache for 4 hours to match build schedule
         
@@ -34,7 +33,21 @@ class CVEDataDownloader:
         self.cna_name_map_url = "https://www.cve.org/cve-partner-name-map.json"
         self.cna_list_file = self.cache_dir / "cna_list.json"
         self.cna_name_map_file = self.cache_dir / "cna_name_map.json"
-        
+
+        # EPSS data (Exploit Prediction Scoring System)
+        # Current snapshot feed documented at https://www.first.org/epss/
+        # Note: EPSS moved from cyentia.com to empiricalsecurity.com in late 2025
+        self.epss_url = "https://epss.empiricalsecurity.com/epss_scores-current.csv.gz"
+        self.epss_cache_file = self.cache_dir / "epss_scores-current.csv.gz"
+        self.epss_parsed_file = self.cache_dir / "epss_scores-current.json"
+
+        # CISA Known Exploited Vulnerabilities (KEV) catalog
+        # Official catalog: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+        # JSON feed: a list of objects with a cveID field.
+        self.kev_url = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        self.kev_cache_file = self.cache_dir / "known_exploited_vulnerabilities.json"
+        self.kev_parsed_file = self.cache_dir / "known_exploited_vulnerabilities_parsed.json"
+
         if not self.quiet:
             print(f"🔽 CVE Data Downloader Initialized")
             print(f"📁 Cache directory: {self.cache_dir}")
@@ -65,14 +78,14 @@ class CVEDataDownloader:
             return False
     
     def download_data(self, force=False):
-        """Download CVE data from NVD source"""
+        """Download CVE DATA from NVD source"""
         if not force and self.is_cache_valid():
             if not self.quiet:
                 print("📋 Using cached data")
             return self.cache_file
         
         if not self.quiet:
-            print(f"🔽 Downloading CVE data from {self.nvd_url}")
+            print(f"🔽 Downloading CVE DATA from {self.nvd_url}")
         
         try:
             # Start download with progress tracking
@@ -168,7 +181,7 @@ class CVEDataDownloader:
         return hash_sha256.hexdigest()
     
     def validate_json_format(self, file_path):
-        """Validate that the downloaded file contains valid CVE data (JSON array format)"""
+        """Validate that the downloaded file contains valid CVE DATA (JSON array format)"""
         try:
             print("🔍 Validating JSON format...")
             
@@ -263,8 +276,8 @@ class CVEDataDownloader:
             return None
     
     def ensure_data_available(self, force_download=False):
-        """Main method to ensure CVE data is available and valid"""
-        print("\n🔽 Ensuring CVE data is available...")
+        """Main method to ensure CVE DATA is available and valid"""
+        print("\n🔽 Ensuring CVE DATA is available...")
         print("=" * 50)
         
         try:
@@ -289,7 +302,7 @@ class CVEDataDownloader:
                     print(f"  📈 Years covered: {len(stats['year_counts'])}")
             
             print("\n" + "=" * 50)
-            print("✅ CVE data is ready for processing!")
+            print("✅ CVE DATA is ready for processing!")
             
             return data_file
             
@@ -297,11 +310,208 @@ class CVEDataDownloader:
             print(f"\n❌ Failed to ensure data availability: {e}")
             raise
 
+    # ------------------------------------------------------------------
+    # EPSS data helpers
+    # ------------------------------------------------------------------
+
+    def download_epss_data(self, force: bool = False):
+        """Download and cache the EPSS scores CSV.
+
+        Returns the path to the gzipped CSV file, or None on failure.
+        Uses a similar cache duration to the main NVD data so GitHub
+        Actions runs don't redownload unnecessarily.
+        """
+
+        if self.epss_cache_file.exists() and not force:
+            # Basic age check: reuse if within cache_duration
+            mtime = datetime.fromtimestamp(self.epss_cache_file.stat().st_mtime)
+            if datetime.now() - mtime < self.cache_duration:
+                if not self.quiet:
+                    print("✅ Using cached EPSS data")
+                return self.epss_cache_file
+
+        if not self.quiet:
+            print(f"🔽 Downloading EPSS data from {self.epss_url}")
+
+        try:
+            response = requests.get(self.epss_url, stream=True, timeout=120)
+            response.raise_for_status()
+
+            with open(self.epss_cache_file, "wb") as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
+
+            if not self.quiet:
+                size_mb = self.epss_cache_file.stat().st_size / (1024 * 1024)
+                print(f"✅ EPSS download complete ({size_mb:.2f} MB)")
+
+            return self.epss_cache_file
+
+        except requests.RequestException as e:
+            print(f"⚠️  Warning: EPSS download failed: {e}")
+            if self.epss_cache_file.exists():
+                print("  📝 Using stale EPSS cache as fallback")
+                return self.epss_cache_file
+            return None
+
+    def parse_epss_csv(self):
+        """Parse the cached EPSS CSV into a compact JSON mapping.
+
+        Output format (written to self.epss_parsed_file):
+
+        {
+          "CVE-2024-12345": {"epss_score": 0.1234, "epss_percentile": 0.9876},
+          ...
+        }
+        """
+
+        epss_csv_gz = self.download_epss_data()
+        if not epss_csv_gz or not epss_csv_gz.exists():
+            print("⚠️  Warning: No EPSS CSV available to parse")
+            return None
+
+        if not self.quiet:
+            print("🔍 Parsing EPSS CSV into JSON mapping...")
+
+        mapping = {}
+        try:
+            with gzip.open(epss_csv_gz, mode="rt", encoding="utf-8") as f:
+                # Skip comment lines (start with #)
+                lines = (line for line in f if not line.startswith('#'))
+                reader = csv.DictReader(lines)
+                for row in reader:
+                    cve_id = row.get("cve") or row.get("CVE")
+                    if not cve_id:
+                        continue
+                    try:
+                        score = float(row.get("epss", "0") or 0)
+                    except ValueError:
+                        score = 0.0
+                    try:
+                        percentile = float(row.get("percentile", "0") or 0)
+                    except ValueError:
+                        percentile = 0.0
+                    mapping[cve_id.strip()] = {
+                        "epss_score": score,
+                        "epss_percentile": percentile,
+                    }
+
+            with open(self.epss_parsed_file, "w", encoding="utf-8") as out:
+                json.dump(mapping, out)
+
+            if not self.quiet:
+                print(f"✅ EPSS mapping written to {self.epss_parsed_file.name} ({len(mapping):,} CVEs)")
+
+            return self.epss_parsed_file
+
+        except Exception as e:
+            print(f"⚠️  Warning: Failed to parse EPSS CSV: {e}")
+            return None
+
+    # ------------------------------------------------------------------
+    # CISA KEV helpers
+    # ------------------------------------------------------------------
+
+    def download_kev_data(self, force: bool = False):
+        """Download and cache the CISA Known Exploited Vulnerabilities catalog.
+
+        Returns the path to the JSON file, or None on failure. Best-effort only:
+        if download fails but a stale cache exists, we will reuse it.
+        """
+
+        if self.kev_cache_file.exists() and not force:
+            # Basic age check similar to NVD cache
+            mtime = datetime.fromtimestamp(self.kev_cache_file.stat().st_mtime)
+            if datetime.now() - mtime < self.cache_duration:
+                if not self.quiet:
+                    print("✅ Using cached KEV data")
+                return self.kev_cache_file
+
+        if not self.quiet:
+            print(f"🔽 Downloading KEV data from {self.kev_url}")
+
+        try:
+            response = requests.get(self.kev_url, timeout=60)
+            response.raise_for_status()
+
+            with open(self.kev_cache_file, "w", encoding="utf-8") as f:
+                f.write(response.text)
+
+            if not self.quiet:
+                size_kb = self.kev_cache_file.stat().st_size / 1024
+                print(f"✅ KEV download complete ({size_kb:.1f} KB)")
+
+            return self.kev_cache_file
+
+        except requests.RequestException as e:
+            print(f"⚠️  Warning: KEV download failed: {e}")
+            if self.kev_cache_file.exists():
+                print("  📝 Using stale KEV cache as fallback")
+                return self.kev_cache_file
+            return None
+
+    def parse_kev_json(self):
+        """Parse the KEV JSON into a compact mapping.
+
+        Expected feed shape (subject to CISA changes):
+
+        {
+          "vulnerabilities": [
+            { "cveID": "CVE-2024-12345", ... },
+            ...
+          ]
+        }
+
+        We persist a simplified structure for fast lookup:
+
+        {
+          "CVE-2024-12345": true,
+          ...
+        }
+        """
+
+        kev_json = self.download_kev_data()
+        if not kev_json or not kev_json.exists():
+            print("⚠️  Warning: No KEV JSON available to parse")
+            return None
+
+        if not self.quiet:
+            print("🔍 Parsing KEV JSON into CVE mapping...")
+
+        try:
+            with open(kev_json, "r", encoding="utf-8") as f:
+                raw = json.load(f)
+
+            # CISA’s feed wraps the list in a top-level key in most formats
+            vulnerabilities = raw.get("vulnerabilities")
+            if vulnerabilities is None and isinstance(raw, list):
+                vulnerabilities = raw
+
+            mapping = {}
+            if isinstance(vulnerabilities, list):
+                for entry in vulnerabilities:
+                    cve_id = entry.get("cveID") or entry.get("cveId") or entry.get("cve")
+                    if isinstance(cve_id, str) and cve_id.startswith("CVE-"):
+                        mapping[cve_id.strip()] = True
+
+            with open(self.kev_parsed_file, "w", encoding="utf-8") as out:
+                json.dump(mapping, out)
+
+            if not self.quiet:
+                print(f"✅ KEV mapping written to {self.kev_parsed_file.name} ({len(mapping):,} CVEs)")
+
+            return self.kev_parsed_file
+
+        except Exception as e:
+            print(f"⚠️  Warning: Failed to parse KEV JSON: {e}")
+            return None
+
 def main():
     """Main entry point for standalone execution"""
     import argparse
     
-    parser = argparse.ArgumentParser(description="Download and cache CVE data")
+    parser = argparse.ArgumentParser(description="Download and cache CVE DATA")
     parser.add_argument('--force', action='store_true', help='Force download even if cache is valid')
     parser.add_argument('--stats', action='store_true', help='Show data statistics only')
     parser.add_argument('--cache-dir', help='Custom cache directory')
