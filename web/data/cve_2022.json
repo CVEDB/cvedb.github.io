@@ -425,28 +425,28 @@
       }
     },
     "v3.1": {
-      "total": 24964,
+      "total": 24957,
       "severity_distribution": {
-        "MEDIUM": 10665,
-        "CRITICAL": 3761,
+        "MEDIUM": 10661,
+        "CRITICAL": 3758,
         "HIGH": 9596,
         "LOW": 940,
         "NONE": 2
       },
       "score_distribution": {
-        "5.5": 1689,
-        "6.5": 1664,
-        "9.8": 3005,
-        "7.8": 2390,
-        "7.5": 2598,
+        "5.5": 1688,
+        "6.5": 1662,
+        "9.8": 3002,
+        "7.8": 2389,
+        "7.5": 2599,
         "4.8": 563,
-        "8.8": 1818,
+        "8.8": 1817,
         "7.1": 231,
-        "6.1": 1276,
+        "6.1": 1277,
         "5.4": 1229,
         "4.2": 42,
-        "5.3": 778,
-        "7.3": 222,
+        "5.3": 777,
+        "7.3": 223,
         "8.4": 111,
         "9.3": 110,
         "6.7": 347,
@@ -454,7 +454,7 @@
         "3.5": 303,
         "7.2": 786,
         "4.9": 209,
-        "4.3": 828,
+        "4.3": 827,
         "9.1": 301,
         "8.1": 409,
         "4.5": 15,
@@ -519,17 +519,21 @@
       }
     },
     "v4.0": {
-      "total": 14,
+      "total": 21,
       "severity_distribution": {
-        "MEDIUM": 6,
-        "HIGH": 8
+        "MEDIUM": 9,
+        "HIGH": 10,
+        "CRITICAL": 2
       },
       "score_distribution": {
         "5.1": 3,
-        "8.6": 3,
+        "8.6": 5,
         "8.8": 2,
+        "9.3": 1,
+        "6.9": 3,
+        "5.3": 1,
         "8.7": 1,
-        "6.9": 1,
+        "9.2": 1,
         "6.3": 1,
         "7.1": 2,
         "5.2": 1
@@ -635,15 +639,15 @@
       },
       {
         "name": "Microsoft",
-        "count": 1760
+        "count": 1757
       },
       {
         "name": "Debian",
-        "count": 965
+        "count": 967
       },
       {
         "name": "Fedoraproject",
-        "count": 953
+        "count": 954
       },
       {
         "name": "Apple",
@@ -659,7 +663,7 @@
       },
       {
         "name": "Netapp",
-        "count": 501
+        "count": 502
       },
       {
         "name": "Adobe",
@@ -679,7 +683,7 @@
       },
       {
         "name": "Siemens",
-        "count": 340
+        "count": 341
       },
       {
         "name": "Redhat",
@@ -715,19 +719,19 @@
     "top_cwes": [
       {
         "cwe": "CWE-79",
-        "count": 4336
+        "count": 4337
       },
       {
         "cwe": "CWE-787",
-        "count": 3003
+        "count": 3004
       },
       {
         "cwe": "CWE-89",
-        "count": 2220
+        "count": 2223
       },
       {
         "cwe": "CWE-125",
-        "count": 1175
+        "count": 1177
       },
       {
         "cwe": "CWE-20",
@@ -739,7 +743,7 @@
       },
       {
         "cwe": "CWE-22",
-        "count": 946
+        "count": 947
       },
       {
         "cwe": "CWE-352",
@@ -763,11 +767,11 @@
       },
       {
         "cwe": "CWE-287",
-        "count": 556
+        "count": 555
       },
       {
         "cwe": "CWE-200",
-        "count": 534
+        "count": 538
       },
       {
         "cwe": "CWE-476",
@@ -778,20 +782,20 @@
         "count": 416
       },
       {
+        "cwe": "CWE-269",
+        "count": 376
+      },
+      {
         "cwe": "CWE-863",
         "count": 373
       },
       {
-        "cwe": "CWE-269",
-        "count": 369
-      },
-      {
         "cwe": "CWE-284",
-        "count": 353
+        "count": 355
       },
       {
         "cwe": "CWE-400",
-        "count": 332
+        "count": 333
       }
     ]
   },
@@ -799,34 +803,30 @@
     "vulnerability_status": [
       {
         "status": "Modified",
-        "count": 24870
+        "count": 24833
       },
       {
         "status": "Analyzed",
-        "count": 200
-      },
-      {
-        "status": "Undergoing Analysis",
-        "count": 4
+        "count": 241
       }
     ],
     "cve_tags": [],
     "reference_tags": [
       {
         "tag": "Third Party Advisory",
-        "count": 56119
+        "count": 56169
       },
       {
         "tag": "Vendor Advisory",
-        "count": 30366
+        "count": 30354
       },
       {
         "tag": "Exploit",
-        "count": 22164
+        "count": 22173
       },
       {
         "tag": "Patch",
-        "count": 18172
+        "count": 18178
       },
       {
         "tag": "Issue Tracking",
@@ -834,7 +834,7 @@
       },
       {
         "tag": "Mailing List",
-        "count": 5619
+        "count": 5631
       },
       {
         "tag": "Release Notes",
@@ -846,7 +846,7 @@
       },
       {
         "tag": "Product",
-        "count": 2983
+        "count": 2984
       },
       {
         "tag": "Permissions Required",
@@ -854,19 +854,19 @@
       },
       {
         "tag": "Mitigation",
-        "count": 1778
+        "count": 1777
       },
       {
         "tag": "Broken Link",
-        "count": 1562
+        "count": 1572
       },
       {
         "tag": "US Government Resource",
-        "count": 1207
+        "count": 1333
       },
       {
         "tag": "Not Applicable",
-        "count": 636
+        "count": 638
       },
       {
         "tag": "Technical Description",
@@ -887,7 +887,7 @@
     ]
   },
   "processing_stats": {
-    "processed_at": "2025-07-30T13:02:46.241287",
+    "processed_at": "2025-11-14T13:00:23.100435",
     "data_source": "data/cache/nvd.jsonl"
   }
 }
