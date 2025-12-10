@@ -1,0 +1,39 @@
+{
+  "name": "CVEDB - CVE Analysis Dashboard",
+  "short_name": "CVEDB",
+  "description": "Comprehensive analysis and visualization of Common Vulnerabilities and Exposures (CVE) data",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/static/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["security", "productivity", "utilities"],
+  "orientation": "portrait",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Latest Vulnerabilities",
+      "short_name": "Latest",
+      "description": "View the most recent CVEs",
+      "url": "/latest"
+    },
+    {
+      "name": "Search CVEs",
+      "short_name": "Search",
+      "description": "Search the CVE database",
+      "url": "/search"
+    }
+  ]
+}
