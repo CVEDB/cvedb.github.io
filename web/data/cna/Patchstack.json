@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "Patchstack",
-    "total_cves": 2477,
-    "total_cves_scored": 2477,
+    "total_cves": 2479,
+    "total_cves_scored": 2479,
     "organizationName": "Patchstack",
     "scope": "Vulnerabilities in third-party products discovered by Patchstack and Patchstack Bug Bounty program unless covered by the scope of another CNA.",
     "advisories": [
@@ -41,14 +41,14 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 265,
-  "active_cna_count": 316,
-  "percentile": 16.5,
+  "rank": 266,
+  "active_cna_count": 317,
+  "percentile": 16.4,
   "cna_scoring": [
     {
-      "total_cves": 2477,
-      "total_cves_scored": 2477,
-      "recent_cves_count": 2477,
+      "total_cves": 2479,
+      "total_cves_scored": 2479,
+      "recent_cves_count": 2479,
       "overall_average_score": 72.65,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 14.98,
@@ -58,7 +58,7 @@
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 99.88,
       "percent_software_identification": 0.0,
-      "percent_severity_and_impact": 51.11,
+      "percent_severity_and_impact": 51.15,
       "percent_patchinfo": 0.0,
       "trend_direction": "steady",
       "trend_description": "No significant change",
@@ -2410,6 +2410,19 @@
       "cveId": "CVE-2025-59590",
       "assigningCna": "Patchstack",
       "datePublished": "2025-09-22",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2025-59131",
+      "assigningCna": "Patchstack",
+      "datePublished": "2025-12-30",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -27596,6 +27609,19 @@
         "foundationalCompleteness": 50,
         "rootCauseAnalysis": 15,
         "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2025-62753",
+      "assigningCna": "Patchstack",
+      "datePublished": "2025-12-30",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 0
       }
