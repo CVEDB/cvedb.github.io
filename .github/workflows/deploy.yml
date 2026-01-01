@@ -50,19 +50,29 @@ jobs:
       run: |
         python -m pytest tests/ -v --tb=short
         
+    - name: Cache CVE data
+      id: cache-cve-data
+      uses: actions/cache@v4
+      with:
+        path: data/raw
+        key: cve-raw-data-${{ github.run_id }}
+        restore-keys: |
+          cve-raw-data-
+
     - name: Build site
-      run: |
-        python build.py --quiet
+      run: make build
+      env:
+        CVE_BUILD_QUIET: "1"
         
     - name: Copy CNAME for GitHub Pages
-      run: cp CNAME web/CNAME
+      run: cp CNAME dist/CNAME
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./web
+        publish_dir: ./dist
         publish_branch: gh-pages
         force_orphan: true
         
@@ -72,6 +82,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git checkout main
-        git add web/
+        git add data/
         git diff --staged --quiet || git commit -m "Auto-update CVE data $(date -u +%Y-%m-%d)"
         git push
