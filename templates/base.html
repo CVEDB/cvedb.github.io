@@ -16,12 +16,18 @@
     <link rel="apple-touch-icon" href="static/images/logo.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="static/css/design-system.css">
+    <link rel="stylesheet" href="static/css/modern.css">
+    <link rel="stylesheet" href="static/css/shared.css">
+    <!-- Legacy style.css (optional, keeping for compatibility if needed) -->
+    <!-- <link rel="stylesheet" href="static/css/style.css"> -->
 
     <!-- Meta tags for SEO -->
     <meta name="description"
         content="{% block description %}CVEDB provides comprehensive analysis and visualization of Common Vulnerabilities and Exposures (CVE) data from 1999 to present.{% endblock %}">
-    <meta name="keywords" content="CVE, vulnerabilities, security, analysis, dashboard, cybersecurity, CVE data, vulnerability data, CVE statistics">
+    <meta name="keywords"
+        content="CVE, vulnerabilities, security, analysis, dashboard, cybersecurity, CVE data, vulnerability data, CVE statistics">
     <meta name="author" content="CVEDB">
     <meta name="theme-color" content="#2563eb">
 
@@ -35,11 +41,12 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="CVEDB">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block og_title %}CVEDB - CVE Analysis Dashboard{% endblock %}">
-    <meta name="twitter:description" content="{% block og_description %}Comprehensive CVE analysis and visualization from 1999 to present{% endblock %}">
+    <meta name="twitter:description"
+        content="{% block og_description %}Comprehensive CVE analysis and visualization from 1999 to present{% endblock %}">
     <meta name="twitter:image" content="https://cvedb.github.io/static/images/og-image.jpg">
 
     <!-- PWA Support -->
@@ -52,7 +59,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="static/css/style.css" as="style">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Dark/light mode script -->
     <script>
         // Check for dark mode preference at the OS level
@@ -76,27 +83,40 @@
                 <span class="logo-text">CVEDB</span>
             </a>
 
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-navigation">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="main-navigation">
                 <span class="sr-only">Menu</span>
                 <span class="hamburger"></span>
             </button>
 
             <nav class="nav" id="main-navigation" aria-label="Main navigation">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link {% if request.path == '/index.html' %}active{% endif %}" aria-current="page">Home</a></li>
-                    <li><a href="years.html" class="nav-link {% if request.path == '/years.html' %}active{% endif %}">Yearly Analysis</a></li>
-                    <li><a href="cna.html" class="nav-link {% if request.path == '/cna.html' %}active{% endif %}">CNA</a></li>
-                    <li><a href="cpe.html" class="nav-link {% if request.path == '/cpe.html' %}active{% endif %}">CPE</a></li>
-                    <li><a href="cwe.html" class="nav-link {% if request.path == '/cwe.html' %}active{% endif %}">CWE</a></li>
-                    <li><a href="cvss.html" class="nav-link {% if request.path == '/cvss.html' %}active{% endif %}">CVSS</a></li>
-                    <li><a href="growth.html" class="nav-link {% if request.path == '/growth.html' %}active{% endif %}">Growth</a></li>
-                    <li><a href="calendar.html" class="nav-link {% if request.path == '/calendar.html' %}active{% endif %}">Calendar</a></li>
+                    <li><a href="index.html" class="nav-link {% if request.path == '/index.html' %}active{% endif %}"
+                            aria-current="page">Home</a></li>
+                    <li><a href="years.html"
+                            class="nav-link {% if request.path == '/years.html' %}active{% endif %}">Yearly Analysis</a>
+                    </li>
+                    <li><a href="cna.html"
+                            class="nav-link {% if request.path == '/cna.html' %}active{% endif %}">CNA</a></li>
+                    <li><a href="cpe.html"
+                            class="nav-link {% if request.path == '/cpe.html' %}active{% endif %}">CPE</a></li>
+                    <li><a href="cwe.html"
+                            class="nav-link {% if request.path == '/cwe.html' %}active{% endif %}">CWE</a></li>
+                    <li><a href="cvss.html"
+                            class="nav-link {% if request.path == '/cvss.html' %}active{% endif %}">CVSS</a></li>
+                    <li><a href="growth.html"
+                            class="nav-link {% if request.path == '/growth.html' %}active{% endif %}">Growth</a></li>
+                    <li><a href="calendar.html"
+                            class="nav-link {% if request.path == '/calendar.html' %}active{% endif %}">Calendar</a>
+                    </li>
                 </ul>
-                
+
                 <!-- Theme Toggle -->
                 <div class="theme-toggle">
                     <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle-btn">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
                             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -107,7 +127,9 @@
                             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
@@ -119,26 +141,26 @@
     <!-- Main Content -->
     <main id="main-content" class="container py-8 flex-grow">
         <!-- Page Title -->
-        <header class="mb-8">
+        <header class="page-header-container">
             {% block page_header %}
-            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">{{ self.title() }}</h1>
+            <h1 class="page-title">{{ self.title() }}</h1>
             {% if self.subtitle() %}
-            <p class="text-gray-600 dark:text-gray-300">{% block subtitle %}{% endblock %}</p>
+            <p class="page-subtitle">{% block subtitle %}{% endblock %}</p>
             {% endif %}
             {% endblock %}
         </header>
 
         <!-- Flash Messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <div class="space-y-4 mb-6">
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }} p-4 rounded-lg" role="alert">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
+        {% if messages %}
+        <div class="space-y-4 mb-6">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} p-4 rounded-lg" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
         {% endwith %}
 
         <!-- Page Content -->
@@ -156,41 +178,52 @@
                 <div class="footer-section">
                     <h3 class="footer-heading">Data Sources</h3>
                     <ul class="footer-links">
-                        <li><a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">National Vulnerability Database (NVD)</a></li>
+                        <li><a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">National
+                                Vulnerability Database (NVD)</a></li>
                         <li><a href="https://cve.org/" target="_blank" rel="noopener noreferrer">CVE Program</a></li>
-                        <li>Last updated: <span id="lastUpdated" class="font-medium">{{ last_updated if last_updated else 'Loading...' }}</span></li>
+                        <li>Last updated: <span id="lastUpdated" class="font-medium">{{ last_updated if last_updated
+                                else 'Loading...' }}</span></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3 class="footer-heading">Platform</h3>
                     <ul class="footer-links">
                         <li><a href="about.html">About CVEDB</a></li>
                         <li><a href="data-quality.html">Data Quality</a></li>
-                        <li><a href="https://github.com/cvedbs/cvedb.github.io" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+                        <li><a href="https://github.com/cvedbs/cvedb.github.io" target="_blank"
+                                rel="noopener noreferrer">GitHub Repository</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3 class="footer-heading">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="https://cve.mitre.org/" target="_blank" rel="noopener noreferrer">CVE Details</a></li>
-                        <li><a href="https://nvd.nist.gov/vuln/full-listing" target="_blank" rel="noopener noreferrer">Vulnerability Database</a></li>
-                        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">Known Exploited Vulnerabilities</a></li>
+                        <li><a href="https://cve.mitre.org/" target="_blank" rel="noopener noreferrer">CVE Details</a>
+                        </li>
+                        <li><a href="https://nvd.nist.gov/vuln/full-listing" target="_blank"
+                                rel="noopener noreferrer">Vulnerability Database</a></li>
+                        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank"
+                                rel="noopener noreferrer">Known Exploited Vulnerabilities</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3 class="footer-heading">Connect</h3>
                     <div class="social-links">
-                        <a href="https://github.com/cvedbs" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <a href="https://github.com/cvedbs" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <a href="https://twitter.com/cvedb" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <a href="https://twitter.com/cvedb" target="_blank" rel="noopener noreferrer"
+                            aria-label="Twitter">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                             </svg>
                         </a>
                     </div>
@@ -198,9 +231,10 @@
                         <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Subscribe to our newsletter</p>
                         <form class="newsletter-form" action="#" method="post">
                             <div class="flex">
-                                <input type="email" name="email" placeholder="Your email" required 
+                                <input type="email" name="email" placeholder="Your email" required
                                     class="flex-grow px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white">
-                                <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 text-sm font-medium rounded-r-md transition-colors">
+                                <button type="submit"
+                                    class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 text-sm font-medium rounded-r-md transition-colors">
                                     Subscribe
                                 </button>
                             </div>
@@ -208,7 +242,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; {{ current_year if current_year else '2025' }} CVEDB. All rights reserved.</p>
@@ -219,20 +253,23 @@
                 <div class="footer-links">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
-                    <a href="https://github.com/cvedbs/cvedb.github.io/issues" target="_blank" rel="noopener noreferrer">Report an Issue</a>
+                    <a href="https://github.com/cvedbs/cvedb.github.io/issues" target="_blank"
+                        rel="noopener noreferrer">Report an Issue</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Chart.js Library (UMD version) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha256-6qLXmBtR0AbYSEmWVE0ePoDx26+ZyN1j8r8v3v1f2U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+        integrity="sha256-6qLXmBtR0AbYSEmWVE0ePoDx26+ZyN1j8r8v3v1f2U=" crossorigin="anonymous"></script>
 
     <!-- D3.js for advanced visualizations -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <!-- Alpine.js for interactivity -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" integrity="sha256-Gt8hK0lN4B3Fd0d1tGJZQZJwCKJtHZq4Jf4+5u6kG8=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
+        integrity="sha256-Gt8hK0lN4B3Fd0d1tGJZQZJwCKJtHZq4Jf4+5u6kG8=" crossorigin="anonymous"></script>
 
     <!-- Custom JavaScript -->
     <script>
@@ -273,10 +310,10 @@
         function setupThemeToggle() {
             const themeToggle = document.getElementById('theme-toggle');
             const html = document.documentElement;
-            
+
             // Check for saved user preference, if any, on load
             const savedTheme = localStorage.getItem('theme');
-            
+
             if (savedTheme) {
                 html.classList.toggle('dark', savedTheme === 'dark');
                 updateThemeIcon(savedTheme);
@@ -285,7 +322,7 @@
                 html.classList.add('dark');
                 updateThemeIcon('dark');
             }
-            
+
             // Toggle theme on button click
             if (themeToggle) {
                 themeToggle.addEventListener('click', () => {
@@ -295,11 +332,11 @@
                     updateThemeIcon(theme);
                 });
             }
-            
+
             function updateThemeIcon(theme) {
                 const sunIcon = document.querySelector('.sun-icon');
                 const moonIcon = document.querySelector('.moon-icon');
-                
+
                 if (theme === 'dark') {
                     sunIcon?.classList.add('hidden');
                     moonIcon?.classList.remove('hidden');
@@ -314,7 +351,7 @@
         function setupMobileNav() {
             const navToggle = document.querySelector('.nav-toggle');
             const navMenu = document.querySelector('.nav-menu');
-            
+
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', () => {
                     const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -322,7 +359,7 @@
                     navMenu.classList.toggle('active');
                     document.body.style.overflow = isExpanded ? '' : 'hidden';
                 });
-                
+
                 // Close menu when clicking outside
                 document.addEventListener('click', (e) => {
                     const isClickInside = navToggle.contains(e.target) || navMenu.contains(e.target);
@@ -332,7 +369,7 @@
                         document.body.style.overflow = '';
                     }
                 });
-                
+
                 // Close menu on escape key
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
@@ -350,7 +387,7 @@
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         e.preventDefault();
@@ -358,7 +395,7 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
-                        
+
                         // Update URL without page jump
                         if (history.pushState) {
                             history.pushState(null, null, targetId);
@@ -371,16 +408,16 @@
         }
 
         // Initialize components when DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Initialize components
             loadUniversalTimestamp();
             setupThemeToggle();
             setupMobileNav();
             setupSmoothScrolling();
-            
+
             // Add loading animation to buttons with loading class
             document.querySelectorAll('.btn-loading').forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     this.classList.add('loading');
                     this.disabled = true;
                     this.innerHTML = `
@@ -392,7 +429,7 @@
                     `;
                 });
             });
-            
+
             // Add tooltip functionality
             tippy('[data-tippy-content]', {
                 theme: 'light',
@@ -404,7 +441,7 @@
                 appendTo: document.body
             });
         });
-        
+
         // Configure Chart.js defaults
         if (typeof Chart !== 'undefined') {
             // Global configuration for Chart.js with design system
@@ -441,26 +478,26 @@
                 size: 12,
                 weight: '400'
             };
-            
+
             // Dark mode support
             const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             const textColor = isDarkMode ? 'var(--gray-300)' : 'var(--gray-700)';
             const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)';
-            
+
             Chart.defaults.scales.linear.grid = {
                 color: gridColor,
                 borderColor: 'transparent',
                 drawBorder: false,
                 drawTicks: false
             };
-            
+
             Chart.defaults.scales.category.grid = {
                 color: gridColor,
                 borderColor: 'transparent',
                 drawBorder: false,
                 drawTicks: false
             };
-            
+
             Chart.defaults.scales.linear.ticks = {
                 color: textColor,
                 font: {
@@ -468,7 +505,7 @@
                     size: 12
                 }
             };
-            
+
             Chart.defaults.scales.category.ticks = {
                 color: textColor,
                 font: {
@@ -476,13 +513,13 @@
                     size: 12
                 }
             };
-            
+
             // Watch for system color scheme changes
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
                 const isDark = e.matches;
                 const textColor = isDark ? 'var(--gray-300)' : 'var(--gray-700)';
                 const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)';
-                
+
                 // Update all existing charts
                 Chart.helpers.each(Chart.instances, (chart) => {
                     if (chart.scales) {
@@ -497,7 +534,7 @@
         }
 
         // Add active class to current page navigation link
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('.nav-menu a');
 
@@ -591,7 +628,7 @@
             const additionalColors = [];
             const hueStep = Math.floor(360 / (count - colors.length));
             let hue = 0;
-            
+
             for (let i = 0; i < count - colors.length; i++) {
                 // Rotate around the color wheel with good saturation and lightness for accessibility
                 hue = (hue + hueStep) % 360;
@@ -658,11 +695,11 @@
 
             // If we need more gradients than we have predefined, generate some
             const gradients = [...baseColors];
-            
+
             if (count > baseColors.length) {
                 const additionalNeeded = count - baseColors.length;
                 const hueStep = 360 / additionalNeeded;
-                
+
                 for (let i = 0; i < additionalNeeded; i++) {
                     const hue = Math.floor(i * hueStep) % 360;
                     gradients.push([
@@ -700,13 +737,13 @@
                 currency = 'USD',
                 notation = 'compact'
             } = options;
-            
+
             // Handle non-numeric values
             if (typeof num !== 'number' || isNaN(num)) {
                 console.warn('formatNumber: Input is not a valid number');
                 return num;
             }
-            
+
             // Format options for Intl.NumberFormat
             const formatOptions = {
                 style,
@@ -714,20 +751,20 @@
                 maximumFractionDigits: decimals,
                 useGrouping: true
             };
-            
+
             // Add currency if style is 'currency'
             if (style === 'currency') {
                 formatOptions.currency = currency;
             }
-            
+
             // Use compact notation for large numbers if enabled
             if (compact && (notation === 'compact' || notation === 'scientific')) {
                 formatOptions.notation = notation;
             }
-            
+
             // Create formatter with specified locale and options
             const formatter = new Intl.NumberFormat(locale, formatOptions);
-            
+
             try {
                 return formatter.format(num);
             } catch (error) {
@@ -747,7 +784,7 @@
         function showLoading(containerId, options = {}) {
             const container = containerId ? document.getElementById(containerId) : document.body;
             if (!container) return null;
-            
+
             const {
                 message = 'Loading...',
                 fullPage = false,
@@ -756,24 +793,24 @@
                 progress = false,
                 customClass = ''
             } = options;
-            
+
             // Create loading element
             const loadingId = `loading-${Date.now()}`;
             const loadingElement = document.createElement('div');
             loadingElement.id = loadingId;
             loadingElement.className = `loading-container ${fullPage ? 'full-page' : ''} ${customClass}`;
-            
+
             // Create overlay if enabled
             if (overlay) {
                 const overlayElement = document.createElement('div');
                 overlayElement.className = 'loading-overlay';
                 loadingElement.appendChild(overlayElement);
             }
-            
+
             // Create content wrapper
             const contentElement = document.createElement('div');
             contentElement.className = 'loading-content';
-            
+
             // Add spinner if enabled
             if (spinner) {
                 const spinnerElement = document.createElement('div');
@@ -786,7 +823,7 @@
                 `;
                 contentElement.appendChild(spinnerElement);
             }
-            
+
             // Add message if provided
             if (message) {
                 const messageElement = document.createElement('div');
@@ -794,7 +831,7 @@
                 messageElement.textContent = message;
                 contentElement.appendChild(messageElement);
             }
-            
+
             // Add progress bar if enabled
             if (progress) {
                 const progressWrapper = document.createElement('div');
@@ -804,9 +841,9 @@
                 `;
                 contentElement.appendChild(progressWrapper);
             }
-            
+
             loadingElement.appendChild(contentElement);
-            
+
             // Add to container or body
             if (fullPage) {
                 document.body.appendChild(loadingElement);
@@ -815,7 +852,7 @@
                 container.style.position = 'relative';
                 container.appendChild(loadingElement);
             }
-            
+
             // Return methods to control the loading state
             return {
                 element: document.getElementById(loadingId),
@@ -850,11 +887,11 @@
         function hideLoading(containerId) {
             let container;
             let isFullPage = false;
-            
+
             if (containerId) {
                 container = document.getElementById(containerId);
                 if (!container) return;
-                
+
                 const loadingElement = container.querySelector('.loading-container');
                 if (loadingElement) {
                     loadingElement.style.opacity = '0';
@@ -874,20 +911,20 @@
                         container.remove();
                     }, 300);
                 });
-                
+
                 if (isFullPage) {
                     document.body.style.overflow = '';
                 }
             }
         }
-        
+
         // Add a small delay to ensure smooth page transitions
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 document.documentElement.classList.add('page-loaded');
             }, 100);
         });
-        
+
         // Handle page transitions
         window.addEventListener('beforeunload', () => {
             document.documentElement.classList.add('page-transitioning');
@@ -896,7 +933,7 @@
         // Get current year and available years for dynamic functionality
         const CURRENT_YEAR = new Date().getFullYear();
         const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 1998 }, (_, i) => 1999 + i);
-        
+
         // Export functions to global scope if needed
         window.CVEdb = window.CVEdb || {};
         window.CVEdb.utils = {
