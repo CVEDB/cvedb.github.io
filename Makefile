@@ -32,11 +32,11 @@ install:
 
 # Full build
 build:
-	python build.py
+	python scripts/build.py
 
 # Quick template-only build
 quick:
-	python data/scripts/quick_build.py
+	python scripts/quick_build.py
 
 # Run tests
 test:
@@ -44,19 +44,18 @@ test:
 
 # Run tests with coverage
 test-coverage:
-	python -m pytest tests/ -v --cov=data --cov-report=term-missing
+	python -m pytest tests/ -v --cov=src/cvedb --cov-report=term-missing
 
 # Run linters
 lint:
-	python -m flake8 data/ --max-line-length=120 --ignore=E501,W503
+	python -m flake8 src/cvedb/ --max-line-length=120 --ignore=E501,W503
 
 # Clean build artifacts
 clean:
-	rm -rf web/*.html
-	rm -rf web/data/*.json
+	rm -rf dist/
 	rm -rf __pycache__
-	rm -rf data/__pycache__
-	rm -rf data/scripts/__pycache__
+	rm -rf src/cvedb/__pycache__
+	rm -rf scripts/__pycache__
 	rm -rf tests/__pycache__
 	rm -rf .pytest_cache
 	rm -rf .coverage
@@ -64,26 +63,26 @@ clean:
 # Start local development server
 serve:
 	@echo "Starting local server at http://localhost:8000"
-	cd web && python -m http.server 8000
+	cd dist && python -m http.server 8000
 
 # Individual rebuild targets
 rebuild-cna:
-	python data/scripts/rebuild_cna.py
+	python scripts/rebuild_cna.py
 
 rebuild-cpe:
-	python data/scripts/rebuild_cpe.py
+	python scripts/rebuild_cpe.py
 
 rebuild-cvss:
-	python data/scripts/rebuild_cvss.py
+	python scripts/rebuild_cvss.py
 
 rebuild-cwe:
-	python data/scripts/rebuild_cwe.py
+	python scripts/rebuild_cwe.py
 
 rebuild-growth:
-	python data/scripts/rebuild_growth.py
+	python scripts/rebuild_growth.py
 
 rebuild-quality:
-	python data/scripts/rebuild_data_quality.py
+	python scripts/rebuild_data_quality.py
 
 # Rebuild all analysis files without full build
 rebuild-all: rebuild-cna rebuild-cpe rebuild-cvss rebuild-cwe rebuild-growth rebuild-quality

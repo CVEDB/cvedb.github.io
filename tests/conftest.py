@@ -10,10 +10,11 @@ from pathlib import Path
 
 import pytest
 
-# Add the data directory to the path for imports
+# Add the src directory to the path for imports
 ROOT_DIR = Path(__file__).parent.parent
-DATA_DIR = ROOT_DIR / "data"
-sys.path.insert(0, str(DATA_DIR))
+SRC_DIR = ROOT_DIR / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
 
 
 @pytest.fixture
