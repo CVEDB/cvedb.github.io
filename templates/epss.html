@@ -1,133 +1,155 @@
 {% extends "base.html" %}
 
-{% block title %}EPSS Analysis - CVE.ICU{% endblock %}
+{% block title %}EPSS Analysis - CVEDB{% endblock %}
 
 {% block content %}
 <style>
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-@media (max-width: 992px) {
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2rem;
     }
-}
 
-@media (max-width: 576px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 992px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
-}
 
-.chart-container {
-    position: relative;
-    height: 350px;
-}
+    @media (max-width: 576px) {
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 
-.high-risk-table {
-    max-height: 400px;
-    overflow-y: auto;
-}
+    .chart-container {
+        position: relative;
+        height: 350px;
+    }
 
-.high-risk-table table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-}
+    .high-risk-table {
+        max-height: 400px;
+        overflow-y: auto;
+    }
 
-.high-risk-table thead {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+    .high-risk-table table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
 
-.high-risk-table th {
-    background: var(--color-bg-content, #ffffff);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 0.75rem;
-    font-weight: 600;
-    border-bottom: 2px solid var(--color-border);
-}
+    .high-risk-table thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
 
-.epss-bar {
-    height: 8px;
-    background: var(--color-border);
-    border-radius: 4px;
-    overflow: hidden;
-}
+    .high-risk-table th {
+        background: var(--color-bg-content, #ffffff);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 0.75rem;
+        font-weight: 600;
+        border-bottom: 2px solid var(--color-border);
+    }
 
-.epss-bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width 0.3s;
-}
+    .epss-bar {
+        height: 8px;
+        background: var(--color-border);
+        border-radius: 4px;
+        overflow: hidden;
+    }
 
-.epss-very-high { background: #ef4444; }
-.epss-high { background: #f97316; }
-.epss-medium { background: #eab308; }
-.epss-low { background: #22c55e; }
+    .epss-bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s;
+    }
 
-/* Threshold Guide Styles */
-.threshold-guide {
-    background: var(--color-bg-secondary);
-    border-radius: var(--border-radius-lg);
-    padding: 1.25rem;
-}
+    .epss-very-high {
+        background: #ef4444;
+    }
 
-.threshold-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--color-border);
-}
+    .epss-high {
+        background: #f97316;
+    }
 
-.threshold-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
+    .epss-medium {
+        background: #eab308;
+    }
 
-.threshold-item:first-of-type {
-    padding-top: 0;
-}
+    .epss-low {
+        background: #22c55e;
+    }
 
-.threshold-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
+    /* Threshold Guide Styles */
+    .threshold-guide {
+        background: var(--color-bg-secondary);
+        border-radius: var(--border-radius-lg);
+        padding: 1.25rem;
+    }
 
-.threshold-badge {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--border-radius);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: white;
-    min-width: 50px;
-    text-align: center;
-}
+    .threshold-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--color-border);
+    }
 
-.threshold-badge.critical { background: rgba(13, 110, 253, 1); }
-.threshold-badge.high { background: rgba(33, 150, 243, 0.9); }
-.threshold-badge.elevated { background: rgba(100, 181, 246, 0.9); }
-.threshold-badge.monitor { background: rgba(144, 202, 249, 0.9); }
+    .threshold-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 
-.threshold-label {
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-}
+    .threshold-item:first-of-type {
+        padding-top: 0;
+    }
 
-.threshold-count {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-text-primary);
-}
+    .threshold-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .threshold-badge {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: white;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .threshold-badge.critical {
+        background: rgba(13, 110, 253, 1);
+    }
+
+    .threshold-badge.high {
+        background: rgba(33, 150, 243, 0.9);
+    }
+
+    .threshold-badge.elevated {
+        background: rgba(100, 181, 246, 0.9);
+    }
+
+    .threshold-badge.monitor {
+        background: rgba(144, 202, 249, 0.9);
+    }
+
+    .threshold-label {
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+    }
+
+    .threshold-count {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text-primary);
+    }
 </style>
 
 <!-- Hero Section -->
@@ -242,7 +264,9 @@
                     </tr>
                 </thead>
                 <tbody id="highRiskTable">
-                    <tr><td colspan="4" class="text-center">Loading...</td></tr>
+                    <tr>
+                        <td colspan="4" class="text-center">Loading...</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -256,8 +280,8 @@
     </div>
     <div class="card-body">
         <p>
-            The <strong>Exploit Prediction Scoring System (EPSS)</strong> is a data-driven effort 
-            for estimating the probability that a vulnerability will be exploited in the wild 
+            The <strong>Exploit Prediction Scoring System (EPSS)</strong> is a data-driven effort
+            for estimating the probability that a vulnerability will be exploited in the wild
             within 30 days of public disclosure.
         </p>
         <ul>
@@ -267,7 +291,7 @@
             <li><strong>Source:</strong> <a href="https://www.first.org/epss/" target="_blank">FIRST.org EPSS</a></li>
         </ul>
         <p class="text-muted mb-0">
-            EPSS complements CVSS by providing a probability of exploitation, helping prioritize 
+            EPSS complements CVSS by providing a probability of exploitation, helping prioritize
             which vulnerabilities to patch first based on real-world threat data.
         </p>
     </div>
@@ -275,155 +299,155 @@
 
 <script src="static/js/chart.min.js"></script>
 <script>
-fetch('data/epss_analysis.json')
-    .then(r => r.json())
-    .then(data => {
-        // Update stats cards
-        document.getElementById('totalEpss').textContent = 
-            data.total_cves_with_epss.toLocaleString();
-        document.getElementById('epssGt01').textContent = 
-            data.statistics.gt_0_1.toLocaleString();
-        document.getElementById('epssGt05').textContent = 
-            data.statistics.gt_0_5.toLocaleString();
-        document.getElementById('avgEpss').textContent = 
-            data.statistics.average_score.toFixed(4);
-        
-        // Update threshold counts
-        document.getElementById('gt07Count').textContent = 
-            data.statistics.gt_0_7.toLocaleString();
-        document.getElementById('gt05Count').textContent = 
-            data.statistics.gt_0_5.toLocaleString();
-        document.getElementById('gt03Count').textContent = 
-            data.statistics.gt_0_3.toLocaleString();
-        document.getElementById('gt01Count').textContent = 
-            data.statistics.gt_0_1.toLocaleString();
-        
-        // Score Distribution Chart
-        const bucketLabels = ['< 0.01', '0.01-0.1', '0.1-0.3', '0.3-0.5', '0.5-0.7', '0.7-1.0'];
-        const bucketData = [
-            data.score_buckets.very_low,
-            data.score_buckets.low,
-            data.score_buckets.medium,
-            data.score_buckets.high,
-            data.score_buckets.very_high,
-            data.score_buckets.critical
-        ];
-        
-        new Chart(document.getElementById('scoreDistributionChart'), {
-            type: 'bar',
-            data: {
-                labels: bucketLabels,
-                datasets: [{
-                    label: 'CVE Count',
-                    data: bucketData,
-                    backgroundColor: [
-                        'rgba(187, 222, 251, 0.9)',  // Lightest blue
-                        'rgba(144, 202, 249, 0.9)',
-                        'rgba(100, 181, 246, 0.9)',
-                        'rgba(66, 165, 245, 0.9)',
-                        'rgba(33, 150, 243, 0.9)',
-                        'rgba(13, 110, 253, 0.9)'   // Primary blue (darkest)
-                    ],
-                    borderColor: [
-                        'rgba(144, 202, 249, 1)',
-                        'rgba(100, 181, 246, 1)',
-                        'rgba(66, 165, 245, 1)',
-                        'rgba(33, 150, 243, 1)',
-                        'rgba(25, 118, 210, 1)',
-                        'rgba(13, 110, 253, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
+    fetch('data/epss_analysis.json')
+        .then(r => r.json())
+        .then(data => {
+            // Update stats cards
+            document.getElementById('totalEpss').textContent =
+                data.total_cves_with_epss.toLocaleString();
+            document.getElementById('epssGt01').textContent =
+                data.statistics.gt_0_1.toLocaleString();
+            document.getElementById('epssGt05').textContent =
+                data.statistics.gt_0_5.toLocaleString();
+            document.getElementById('avgEpss').textContent =
+                data.statistics.average_score.toFixed(4);
+
+            // Update threshold counts
+            document.getElementById('gt07Count').textContent =
+                data.statistics.gt_0_7.toLocaleString();
+            document.getElementById('gt05Count').textContent =
+                data.statistics.gt_0_5.toLocaleString();
+            document.getElementById('gt03Count').textContent =
+                data.statistics.gt_0_3.toLocaleString();
+            document.getElementById('gt01Count').textContent =
+                data.statistics.gt_0_1.toLocaleString();
+
+            // Score Distribution Chart
+            const bucketLabels = ['< 0.01', '0.01-0.1', '0.1-0.3', '0.3-0.5', '0.5-0.7', '0.7-1.0'];
+            const bucketData = [
+                data.score_buckets.very_low,
+                data.score_buckets.low,
+                data.score_buckets.medium,
+                data.score_buckets.high,
+                data.score_buckets.very_high,
+                data.score_buckets.critical
+            ];
+
+            new Chart(document.getElementById('scoreDistributionChart'), {
+                type: 'bar',
+                data: {
+                    labels: bucketLabels,
+                    datasets: [{
+                        label: 'CVE Count',
+                        data: bucketData,
+                        backgroundColor: [
+                            'rgba(187, 222, 251, 0.9)',  // Lightest blue
+                            'rgba(144, 202, 249, 0.9)',
+                            'rgba(100, 181, 246, 0.9)',
+                            'rgba(66, 165, 245, 0.9)',
+                            'rgba(33, 150, 243, 0.9)',
+                            'rgba(13, 110, 253, 0.9)'   // Primary blue (darkest)
+                        ],
+                        borderColor: [
+                            'rgba(144, 202, 249, 1)',
+                            'rgba(100, 181, 246, 1)',
+                            'rgba(66, 165, 245, 1)',
+                            'rgba(33, 150, 243, 1)',
+                            'rgba(25, 118, 210, 1)',
+                            'rgba(13, 110, 253, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'EPSS Score Range (0.0 - 1.0)',
-                            font: { size: 12, weight: '600' }
-                        }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
                     },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Number of CVEs',
-                            font: { size: 12, weight: '600' }
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'EPSS Score Range (0.0 - 1.0)',
+                                font: { size: 12, weight: '600' }
+                            }
                         },
-                        ticks: {
-                            callback: v => v.toLocaleString()
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of CVEs',
+                                font: { size: 12, weight: '600' }
+                            },
+                            ticks: {
+                                callback: v => v.toLocaleString()
+                            }
                         }
                     }
                 }
-            }
-        });
-        
-        // Threshold Chart
-        new Chart(document.getElementById('thresholdChart'), {
-            type: 'bar',
-            data: {
-                labels: ['> 0.1', '> 0.3', '> 0.5', '> 0.7', '> 0.9'],
-                datasets: [{
-                    label: 'CVEs Above Threshold',
-                    data: [
-                        data.statistics.gt_0_1,
-                        data.statistics.gt_0_3,
-                        data.statistics.gt_0_5,
-                        data.statistics.gt_0_7,
-                        data.statistics.gt_0_9
-                    ],
-                    backgroundColor: [
-                        'rgba(144, 202, 249, 0.9)',
-                        'rgba(100, 181, 246, 0.9)',
-                        'rgba(66, 165, 245, 0.9)',
-                        'rgba(33, 150, 243, 0.9)',
-                        'rgba(13, 110, 253, 0.9)'
-                    ],
-                    borderColor: [
-                        'rgba(100, 181, 246, 1)',
-                        'rgba(66, 165, 245, 1)',
-                        'rgba(33, 150, 243, 1)',
-                        'rgba(25, 118, 210, 1)',
-                        'rgba(13, 110, 253, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                indexAxis: 'y',
-                plugins: {
-                    legend: { display: false }
+            });
+
+            // Threshold Chart
+            new Chart(document.getElementById('thresholdChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['> 0.1', '> 0.3', '> 0.5', '> 0.7', '> 0.9'],
+                    datasets: [{
+                        label: 'CVEs Above Threshold',
+                        data: [
+                            data.statistics.gt_0_1,
+                            data.statistics.gt_0_3,
+                            data.statistics.gt_0_5,
+                            data.statistics.gt_0_7,
+                            data.statistics.gt_0_9
+                        ],
+                        backgroundColor: [
+                            'rgba(144, 202, 249, 0.9)',
+                            'rgba(100, 181, 246, 0.9)',
+                            'rgba(66, 165, 245, 0.9)',
+                            'rgba(33, 150, 243, 0.9)',
+                            'rgba(13, 110, 253, 0.9)'
+                        ],
+                        borderColor: [
+                            'rgba(100, 181, 246, 1)',
+                            'rgba(66, 165, 245, 1)',
+                            'rgba(33, 150, 243, 1)',
+                            'rgba(25, 118, 210, 1)',
+                            'rgba(13, 110, 253, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: v => v.toLocaleString()
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: v => v.toLocaleString()
+                            }
                         }
                     }
                 }
-            }
-        });
-        
-        // High Risk Table
-        const tbody = document.getElementById('highRiskTable');
-        tbody.innerHTML = data.high_risk_cves.map(cve => {
-            const score = cve.epss_score;
-            let riskClass = 'epss-low';
-            let riskLabel = 'Low';
-            if (score >= 0.7) { riskClass = 'epss-very-high'; riskLabel = 'Critical'; }
-            else if (score >= 0.5) { riskClass = 'epss-high'; riskLabel = 'High'; }
-            else if (score >= 0.3) { riskClass = 'epss-medium'; riskLabel = 'Medium'; }
-            
-            return `
+            });
+
+            // High Risk Table
+            const tbody = document.getElementById('highRiskTable');
+            tbody.innerHTML = data.high_risk_cves.map(cve => {
+                const score = cve.epss_score;
+                let riskClass = 'epss-low';
+                let riskLabel = 'Low';
+                if (score >= 0.7) { riskClass = 'epss-very-high'; riskLabel = 'Critical'; }
+                else if (score >= 0.5) { riskClass = 'epss-high'; riskLabel = 'High'; }
+                else if (score >= 0.3) { riskClass = 'epss-medium'; riskLabel = 'Medium'; }
+
+                return `
                 <tr>
                     <td>
                         <a href="https://nvd.nist.gov/vuln/detail/${cve.cve_id}" target="_blank">
@@ -442,11 +466,11 @@ fetch('data/epss_analysis.json')
                     <td><span class="badge ${riskClass === 'epss-very-high' ? 'bg-danger' : riskClass === 'epss-high' ? 'bg-warning text-dark' : 'bg-info'}">${riskLabel}</span></td>
                 </tr>
             `;
-        }).join('');
-    })
-    .catch(err => {
-        console.error('Failed to load EPSS data:', err);
-    });
+            }).join('');
+        })
+        .catch(err => {
+            console.error('Failed to load EPSS data:', err);
+        });
 </script>
 
 {% endblock %}

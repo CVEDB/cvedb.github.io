@@ -225,6 +225,7 @@
 
     // Global variables
     let yearData = {};
+    let cnaAnalysisData = null;  // CNA data from cna_analysis.json
     let selectedYears = [];
     let selectedCvesTotal = 0;
     let totalDays = 0;
@@ -246,7 +247,10 @@
         debugLog('Starting page initialization...');
 
         try {
-            await loadYearData();
+            await Promise.all([
+                loadYearData(),
+                loadCnaAnalysisData()
+            ]);
 
             // Initialize year selector event listeners
             initializeYearSelector();
@@ -313,40 +317,67 @@
 
     document.addEventListener('DOMContentLoaded', initializePage);
 
-    // Load year data from JSON
+    // Load year data from consolidated JSON (single request instead of 27)
     async function loadYearData() {
         try {
-            debugLog('Loading summary data...');
-            const summaryResponse = await fetch('data/cve_all.json');
-            if (!summaryResponse.ok) {
-                throw new Error(`Failed to load summary data: ${summaryResponse.status}`);
+            debugLog('Loading yearly summary data...');
+            const response = await fetch('data/yearly_summary.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load yearly summary: ${response.status}`);
             }
-            const summaryData = await summaryResponse.json();
-            debugLog('Summary data loaded successfully');
+            const summary = await response.json();
+            debugLog('Yearly summary loaded successfully');
 
-            // Create year data structure from available years (1999-2025)
-            const availableYears = [];
-            for (let year = 1999; year <= 2025; year++) {
-                availableYears.push(year);
-            }
-
-            debugLog(`Loading data for ${availableYears.length} years...`);
-            // Load individual year data
-            for (const year of availableYears) {
-                try {
-                    const response = await fetch(`data/cve_${year}.json`);
-                    if (response.ok) {
-                        const data = await response.json();
-                        yearData[year] = data;
-                    }
-                } catch (error) {
-                    console.warn(`Could not load data for ${year}:`, error);
+            // Extract year data from the consolidated file
+            if (summary.years) {
+                for (const [year, data] of Object.entries(summary.years)) {
+                    yearData[parseInt(year)] = data;
                 }
             }
 
-            console.log('Year data loaded:', Object.keys(yearData).length, 'years');
+            console.log('Year data loaded:', Object.keys(yearData).length, 'years (from single file)');
         } catch (error) {
             console.error('Error loading year data:', error);
+            // Fallback to individual files if summary not available
+            await loadYearDataLegacy();
+        }
+    }
+
+    // Legacy loader for backwards compatibility
+    async function loadYearDataLegacy() {
+        console.log('Falling back to individual year files...');
+        const availableYears = [];
+        for (let year = 1999; year <= 2025; year++) {
+            availableYears.push(year);
+        }
+
+        for (const year of availableYears) {
+            try {
+                const response = await fetch(`data/cve_${year}.json`);
+                if (response.ok) {
+                    const data = await response.json();
+                    yearData[year] = data;
+                }
+            } catch (error) {
+                console.warn(`Could not load data for ${year}:`, error);
+            }
+        }
+        console.log('Legacy year data loaded:', Object.keys(yearData).length, 'years');
+    }
+
+    // Load CNA analysis data from CVE V5 processor
+    async function loadCnaAnalysisData() {
+        try {
+            debugLog('Loading CNA analysis data...');
+            const response = await fetch('data/cna_analysis.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load CNA analysis: ${response.status}`);
+            }
+            cnaAnalysisData = await response.json();
+            debugLog('CNA analysis loaded successfully', { totalCnas: cnaAnalysisData.cna_list?.length });
+        } catch (error) {
+            console.error('Error loading CNA analysis data:', error);
+            cnaAnalysisData = null;
         }
     }
 
@@ -860,17 +891,24 @@
             vendorChart.destroy();
         }
 
-        // Aggregate CNA data from selected years
+        // Use CNA analysis data (from CVE V5) which has proper per-year breakdown
         const cnaData = {};
 
-        selectedYears.forEach(year => {
-            const yearVendorData = yearData[year]?.vendors?.cna_assigners || [];
-            yearVendorData.forEach(cna => {
-                if (cna.name && cna.count) {
-                    cnaData[cna.name] = (cnaData[cna.name] || 0) + cna.count;
+        if (cnaAnalysisData && cnaAnalysisData.cna_list) {
+            // Aggregate CNA counts for selected years from cves_by_year
+            cnaAnalysisData.cna_list.forEach(cna => {
+                if (cna.cves_by_year) {
+                    let totalForSelectedYears = 0;
+                    selectedYears.forEach(year => {
+                        // Keys in JSON are strings, so convert year to string
+                        totalForSelectedYears += cna.cves_by_year[String(year)] || 0;
+                    });
+                    if (totalForSelectedYears > 0) {
+                        cnaData[cna.name] = totalForSelectedYears;
+                    }
                 }
             });
-        });
+        }
 
         // Sort CNAs by count and take top 15
         const sortedCnas = Object.entries(cnaData)

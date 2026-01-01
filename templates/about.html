@@ -154,6 +154,10 @@
                         <ul class="list-unstyled">
                             <li class="mb-2"><strong>Primary:</strong> NIST National Vulnerability Database (NVD)</li>
                             <li class="mb-2"><strong>Secondary:</strong> CVE Project V5 Repository</li>
+                            <li class="mb-2"><strong>Risk Signals:</strong> CISA Known Exploited Vulnerabilities (KEV)
+                                catalog</li>
+                            <li class="mb-2"><strong>Likelihood:</strong> FIRST Exploit Prediction Scoring System (EPSS)
+                            </li>
                             <li class="mb-2"><strong>Coverage:</strong> 287,800+ CVEs across 27 years</li>
                             <li class="mb-0"><strong>Validation:</strong> Multi-source cross-verification</li>
                         </ul>
@@ -221,6 +225,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-2">✓ <strong>{{ cwe_coverage|default('206,053') }} CWE classified</strong>
                             weaknesses</li>
+                        <li class="mb-2">✓ <strong>{{ kev_coverage|default('1,463') }} known exploited CVEs</strong> in
+                            the CISA KEV catalog</li>
                         <li class="mb-2">✓ <strong>{{ total_cnas|default('290') }} active CNAs</strong> with attribution
                             data</li>
                     </ul>
@@ -735,10 +741,10 @@
                             platform welcomes feedback, suggestions, and collaboration opportunities.</p>
                         <ul class="list-unstyled">
                             <li class="mb-2"><strong>GitHub Repository:</strong> <a
-                                    href="https://github.com/cvedbs/cvedb.github.io" target="_blank"
-                                    class="text-decoration-none">cvedbs/cvedb.github.io</a></li>
+                                    href="https://github.com/cvedb/cvedb.github.io" target="_blank"
+                                    class="text-decoration-none">cvedb/cvedb.github.io</a></li>
                             <li class="mb-2"><strong>Issues & Feedback:</strong> <a
-                                    href="https://github.com/cvedbs/cvedb.github.io/issues" target="_blank"
+                                    href="https://github.com/cvedb/cvedb.github.io/issues" target="_blank"
                                     class="text-decoration-none">Report Issues</a></li>
                             <li class="mb-0"><strong>Status:</strong> Operational with 6-hour updates</li>
                         </ul>
@@ -753,16 +759,16 @@
                             improve functionality and expand analytical capabilities.</p>
                         <ul class="list-unstyled">
                             <li class="mb-2"><strong>Pull Requests:</strong> <a
-                                    href="https://github.com/cvedbs/cvedb.github.io/pulls" target="_blank"
+                                    href="https://github.com/cvedb/cvedb.github.io/pulls" target="_blank"
                                     class="text-decoration-none">Submit PRs</a></li>
                             <li class="mb-2"><strong>Discussions:</strong> <a
-                                    href="https://github.com/cvedbs/cvedb.github.io/discussions" target="_blank"
+                                    href="https://github.com/cvedb/cvedb.github.io/discussions" target="_blank"
                                     class="text-decoration-none">Join Discussions</a></li>
                             <li class="mb-2"><strong>Documentation:</strong> <a
-                                    href="https://github.com/cvedbs/cvedb.github.io/blob/main/README.md" target="_blank"
+                                    href="https://github.com/cvedb/cvedb.github.io/blob/main/README.md" target="_blank"
                                     class="text-decoration-none">View README</a></li>
                             <li class="mb-0"><strong>License:</strong> <a
-                                    href="https://github.com/cvedbs/cvedb.github.io/blob/main/LICENSE" target="_blank"
+                                    href="https://github.com/cvedb/cvedb.github.io/blob/main/LICENSE" target="_blank"
                                     class="text-decoration-none">Open Source</a></li>
                         </ul>
                     </div>

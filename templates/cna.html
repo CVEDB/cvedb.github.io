@@ -104,16 +104,15 @@
         </div>
     </div>
 
-    <div class="col-lg-6 mb-4" style="display: none;">
+    <div class="col-lg-6 mb-4">
         <div class="card">
             <div class="card-header py-2">
-                <h3 class="card-title" style="font-size: 1.1rem;">REMOVE_THIS_CARD</h3>
-                <small class="text-muted">This chart has been temporarily removed</small>
+                <h3 class="card-title" style="font-size: 1.1rem;">🎯 Top CNAs by KEV Count</h3>
+                <small class="text-muted">CNAs with most known exploited vulnerabilities</small>
             </div>
             <div class="card-body py-3">
-                <div class="text-center text-muted py-5">
-                    <i class="fas fa-tools mb-2"></i><br>
-                    Chart temporarily unavailable
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="cnaKevChart"></canvas>
                 </div>
             </div>
         </div>
@@ -136,16 +135,15 @@
         </div>
     </div>
 
-    <div class="col-lg-6 mb-4" style="display: none;">
+    <div class="col-lg-6 mb-4">
         <div class="card">
             <div class="card-header py-2">
-                <h3 class="card-title" style="font-size: 1.1rem;">REMOVE_THIS_CARD</h3>
-                <small class="text-muted">This chart has been temporarily removed</small>
+                <h3 class="card-title" style="font-size: 1.1rem;">📈 CNA Growth Leaders</h3>
+                <small class="text-muted">Most active CNAs in the current year</small>
             </div>
             <div class="card-body py-3">
-                <div class="text-center text-muted py-5">
-                    <i class="fas fa-tools mb-2"></i><br>
-                    Chart temporarily unavailable
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="cnaGrowthChart"></canvas>
                 </div>
             </div>
         </div>
@@ -198,22 +196,69 @@
             sort</small>
     </div>
     <div class="card-body py-3">
+        <!-- Filter Controls -->
+        <div class="filter-bar mb-3" id="filterBar">
+            <div class="d-flex flex-wrap gap-2 align-items-center">
+                <div class="filter-group">
+                    <label class="filter-label">Type:</label>
+                    <select id="filterType" class="filter-select" onchange="applyFilters()">
+                        <option value="">All Types</option>
+                        <option value="Vendor">Vendor</option>
+                        <option value="CERT">CERT</option>
+                        <option value="Security Researcher">Security Researcher</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Government">Government</option>
+                        <option value="Program">Program</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Status:</label>
+                    <select id="filterStatus" class="filter-select" onchange="applyFilters()">
+                        <option value="">All</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <input type="checkbox" id="filterKev" onchange="applyFilters()">
+                        Has KEV CVEs
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">
+                        <input type="checkbox" id="filterHighVolume" onchange="applyFilters()">
+                        High Volume (1000+)
+                    </label>
+                </div>
+                <div class="filter-group ms-auto">
+                    <button class="btn btn-sm btn-outline-secondary" onclick="resetFilters()">Reset Filters</button>
+                </div>
+            </div>
+            <div class="filter-summary mt-2" id="filterSummary" style="display: none;">
+                <small class="text-muted"><span id="filteredCount">0</span> CNAs match current filters</small>
+            </div>
+        </div>
+
         <div class="table-responsive">
             <table class="table table-hover" id="cnaTable">
                 <thead>
                     <tr>
                         <th class="sortable" data-sort="rank" style="width: 80px;">Rank <span
                                 class="sort-indicator">▼</span></th>
-                        <th class="sortable" data-sort="name" style="width: 320px;">CNA Name <span
+                        <th class="sortable" data-sort="name" style="width: 280px;">CNA Name <span
                                 class="sort-indicator"></span></th>
-                        <th class="sortable" data-sort="count" style="width: 140px;">CVEs Assigned <span
+                        <th class="sortable" data-sort="count" style="width: 130px;">CVEs Assigned <span
                                 class="sort-indicator"></span></th>
-                        <th class="sortable" data-sort="years_active" style="width: 140px;">Years Active <span
+                        <th class="sortable" data-sort="years_active" style="width: 120px;">Years Active <span
                                 class="sort-indicator"></span></th>
-                        <th class="sortable" data-sort="last_cve_date" style="width: 160px;">Last CVE Date <span
+                        <th class="sortable" data-sort="last_cve_date" style="width: 140px;">Last CVE Date <span
                                 class="sort-indicator"></span></th>
-                        <th class="sortable" data-sort="activity_status" style="width: 120px;">Status <span
+                        <th class="sortable" data-sort="activity_status" style="width: 100px;">Status <span
                                 class="sort-indicator"></span></th>
+                        <th style="width: 80px;">Scorecard</th>
                     </tr>
                 </thead>
                 <tbody id="cnaTableBody">
@@ -333,6 +378,65 @@
         border-top-right-radius: 0.25rem;
         border-bottom-right-radius: 0.25rem;
     }
+
+    .scorecard-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1.1rem;
+        opacity: 0.7;
+        transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    }
+
+    .scorecard-link:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .filter-bar {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--color-surface);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--color-border);
+    }
+
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .filter-label {
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .filter-select {
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        border: 1px solid var(--color-border);
+        background: var(--color-background);
+        color: var(--color-text-primary);
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
+
+    .filter-select:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+
+    .filter-label input[type="checkbox"] {
+        margin-right: 0.25rem;
+        cursor: pointer;
+    }
+
+    .filter-summary {
+        font-size: 0.85rem;
+    }
 </style>
 
 <script>
@@ -374,10 +478,7 @@
             })
             .catch(error => {
                 console.error('Error loading CNA data:', error);
-                const loadingElement = document.getElementById('loadingMessage');
-                if (loadingElement) {
-                    loadingElement.textContent = 'Error loading data';
-                }
+                showErrorState();
             });
     }
 
@@ -394,10 +495,7 @@
             })
             .catch(error => {
                 console.error('Error loading current year CNA data:', error);
-                // Continue with all-time data only
-                if (cnaData) {
-                    initializePage();
-                }
+                showErrorState();
             });
     }
 
@@ -421,15 +519,15 @@
         // For current year, we need to map CNA assigners to their types from the main data
         const typeDistribution = [];
 
-        if (!yearData.cna_assigners || !cnaData.cna_list) {
+        if (!yearData.cna_list || !cnaData.cna_list) {
             return typeDistribution;
         }
 
         const typeCounts = {};
-        const totalCnas = yearData.cna_assigners.length;
+        const totalCnas = yearData.cna_list.length;
 
         // Map current year CNAs to their types from the comprehensive data
-        yearData.cna_assigners.forEach(cna => {
+        yearData.cna_list.forEach(cna => {
             const fullCnaInfo = cnaData.cna_list.find(c => c.name === cna.name);
             if (fullCnaInfo && fullCnaInfo.cna_types) {
                 fullCnaInfo.cna_types.forEach(type => {
@@ -556,17 +654,17 @@
             marketConcentration = ((top5Cves / totalCves) * 100).toFixed(1);
         } else {
             // Current year data
-            if (!currentData.cna_assigners) return;
+            if (!currentData.cna_list) return;
 
-            activeCnas = currentData.cna_assigners.length;
-            highVolumeCnas = currentData.cna_assigners.filter(cna => cna.count >= 1000).length;
-            totalCves = currentData.total_cves || currentData.cna_assigners.reduce((sum, cna) => sum + cna.count, 0);
+            activeCnas = currentData.cna_list.length;
+            highVolumeCnas = currentData.cna_list.filter(cna => cna.count >= 1000).length;
+            totalCves = currentData.total_cves || currentData.cna_list.reduce((sum, cna) => sum + cna.count, 0);
 
             // For current year, years active is always 1
             medianYearsActive = 1;
 
             // Calculate market concentration for current year
-            const sortedCnas = currentData.cna_assigners.sort((a, b) => b.count - a.count);
+            const sortedCnas = currentData.cna_list.slice().sort((a, b) => b.count - a.count);
             const top5Cves = sortedCnas.slice(0, 5).reduce((sum, cna) => sum + cna.count, 0);
             marketConcentration = totalCves > 0 ? ((top5Cves / totalCves) * 100).toFixed(1) : '0.0';
         }
@@ -598,6 +696,8 @@
         // createRecencyChart(); // Temporarily disabled
         createTypeChart();
         createVolumeChart();
+        createKevChart();
+        createGrowthChart();
     }
 
     // Top CNAs horizontal bar chart
@@ -615,10 +715,10 @@
             labels = topCnas.map(cna => cna.name);
             data = topCnas.map(cna => cna.count);
         } else {
-            if (!currentData.cna_assigners) return;
+            if (!currentData.cna_list) return;
             // Sort current year CNAs by count and take top 15
-            topCnas = currentData.cna_assigners
-                .sort((a, b) => b.count - a.count)
+            topCnas = currentData.cna_list
+                .slice().sort((a, b) => b.count - a.count)
                 .slice(0, 15);
             labels = topCnas.map(cna => cna.name);
             data = topCnas.map(cna => cna.count);
@@ -703,9 +803,9 @@
             if (!currentData.cna_list) return;
             cnas = currentData.cna_list;
         } else {
-            if (!currentData.cna_assigners) return;
+            if (!currentData.cna_list) return;
             // Use the actual years_active values from current year data (now includes full history)
-            cnas = currentData.cna_assigners;
+            cnas = currentData.cna_list;
         }
 
         const categories = {
@@ -786,13 +886,13 @@
             }
             cnas = currentData.cna_list;
         } else {
-            console.log('createRecencyChart: current year mode, cna_assigners length:', currentData.cna_assigners ? currentData.cna_assigners.length : 'undefined');
-            if (!currentData.cna_assigners) {
-                console.error('No cna_assigners available for current year mode');
+            console.log('createRecencyChart: current year mode, cna_list length:', currentData.cna_list ? currentData.cna_list.length : 'undefined');
+            if (!currentData.cna_list) {
+                console.error('No cna_list available for current year mode');
                 return;
             }
             // For current year, all CNAs are "Very Active" since they published in current year
-            cnas = currentData.cna_assigners.map(cna => ({
+            cnas = currentData.cna_list.map(cna => ({
                 ...cna,
                 days_since_last_cve: 0 // Current year CNAs are treated as very recent
             }));
@@ -880,16 +980,16 @@
             }
         } else {
             // For current year, calculate type distribution from individual CNA data
-            if (!currentData.cna_assigners || currentData.cna_assigners.length === 0) {
-                console.warn('No CNA assigners data available for current year');
+            if (!currentData.cna_list || currentData.cna_list.length === 0) {
+                console.warn('No CNA data available for current year');
                 return;
             }
 
             // Calculate type distribution from current year CNAs
             const typeCounts = {};
-            const totalCnas = currentData.cna_assigners.length;
+            const totalCnas = currentData.cna_list.length;
 
-            currentData.cna_assigners.forEach(cna => {
+            currentData.cna_list.forEach(cna => {
                 if (cna.cna_types && cna.cna_types.length > 0) {
                     cna.cna_types.forEach(type => {
                         typeCounts[type] = (typeCounts[type] || 0) + 1;
@@ -1034,8 +1134,8 @@
             if (!currentData.cna_list) return;
             cnas = currentData.cna_list;
         } else {
-            if (!currentData.cna_assigners) return;
-            cnas = currentData.cna_assigners;
+            if (!currentData.cna_list) return;
+            cnas = currentData.cna_list;
         }
 
         const categories = {
@@ -1092,6 +1192,170 @@
         });
     }
 
+    // CNA KEV Chart - Top CNAs by Known Exploited Vulnerabilities
+    function createKevChart() {
+        const ctx = document.getElementById('cnaKevChart');
+        if (!ctx) return;
+
+        // Use the CNA analysis data which now has kev_count per CNA
+        fetch('data/cna_analysis.json')
+            .then(r => r.json())
+            .then(data => {
+                const cnaList = data.cna_list || [];
+
+                // Filter CNAs with KEV CVEs and sort by kev_count
+                const cnasWithKev = cnaList
+                    .filter(cna => cna.kev_count > 0)
+                    .sort((a, b) => b.kev_count - a.kev_count);
+
+                if (cnasWithKev.length === 0) {
+                    ctx.parentElement.innerHTML = '<div class="text-center text-muted py-5"><small>No KEV data available</small></div>';
+                    return;
+                }
+
+                const top10 = cnasWithKev.slice(0, 10);
+                const labels = top10.map(cna => {
+                    return cna.name.length > 15 ? cna.name.substring(0, 15) + '...' : cna.name;
+                });
+                const dataValues = top10.map(cna => cna.kev_count);
+
+                // Blue gradient matching site design
+                const colors = ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd',
+                    '#a8c8ec', '#9bc7e1', '#8cbfdc', '#7db7d7', '#6eafd2'];
+
+                charts.kev = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'KEV CVEs',
+                            data: dataValues,
+                            backgroundColor: colors,
+                            borderColor: '#3b82f6',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    title: function (context) {
+                                        const idx = context[0].dataIndex;
+                                        return top10[idx].name;
+                                    },
+                                    label: function (context) {
+                                        const idx = context.dataIndex;
+                                        const cna = top10[idx];
+                                        const kevRate = ((cna.kev_count / cna.count) * 100).toFixed(2);
+                                        return [
+                                            `${context.parsed.x} known exploited CVEs`,
+                                            `${kevRate}% of ${cna.count.toLocaleString()} total CVEs`
+                                        ];
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'KEV CVE Count'
+                                }
+                            },
+                            y: {
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('KEV chart error:', error);
+                ctx.parentElement.innerHTML = '<div class="text-center text-muted py-5"><small>Chart unavailable</small></div>';
+            });
+    }
+
+    // CNA Growth Leaders - Most active CNAs in current year
+    function createGrowthChart() {
+        const ctx = document.getElementById('cnaGrowthChart');
+        if (!ctx) return;
+
+        // Load current year CNA data
+        fetch('data/cna_analysis_current_year.json')
+            .then(r => r.json())
+            .then(data => {
+                const cnaList = data.cna_list || [];
+
+                if (cnaList.length === 0) {
+                    ctx.parentElement.innerHTML = '<div class="text-center text-muted py-5"><small>No current year data available</small></div>';
+                    return;
+                }
+
+                // Sort by count and get top 10
+                const top10 = cnaList.slice(0, 10);
+                const labels = top10.map(cna => cna.name.length > 15 ? cna.name.substring(0, 15) + '...' : cna.name);
+                const dataValues = top10.map(cna => cna.count);
+
+                // Blue gradient matching site design
+                const colors = ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd',
+                    '#a8c8ec', '#9bc7e1', '#8cbfdc', '#7db7d7', '#6eafd2'];
+
+                charts.growth = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'CVEs in ' + new Date().getFullYear(),
+                            data: dataValues,
+                            backgroundColor: colors,
+                            borderColor: '#3b82f6',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    title: function (context) {
+                                        const idx = context[0].dataIndex;
+                                        return top10[idx].name;
+                                    },
+                                    label: function (context) {
+                                        return `${context.parsed.x.toLocaleString()} CVEs in ${new Date().getFullYear()}`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: `CVEs (${new Date().getFullYear()})`
+                                }
+                            },
+                            y: {
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Growth chart error:', error);
+                ctx.parentElement.innerHTML = '<div class="text-center text-muted py-5"><small>Chart unavailable</small></div>';
+            });
+    }
+
     // Generate smart insights
     function generateInsights() {
         const currentData = getCurrentDataSource();
@@ -1102,8 +1366,8 @@
             let totalCount = 0;
             if (currentDataMode === 'all' && currentData.cna_list) {
                 totalCount = currentData.cna_list.length;
-            } else if (currentDataMode === 'current' && currentData.cna_assigners) {
-                totalCount = currentData.cna_assigners.length;
+            } else if (currentDataMode === 'current' && currentData.cna_list) {
+                totalCount = currentData.cna_list.length;
             }
             totalCnasElement.textContent = totalCount.toLocaleString();
         }
@@ -1116,8 +1380,8 @@
         let cnas = [];
         if (currentDataMode === 'all' && currentData.cna_list) {
             cnas = currentData.cna_list;
-        } else if (currentDataMode === 'current' && currentData.cna_assigners) {
-            cnas = currentData.cna_assigners;
+        } else if (currentDataMode === 'current' && currentData.cna_list) {
+            cnas = currentData.cna_list;
         }
 
         if (cnas.length === 0) {
@@ -1182,6 +1446,104 @@
     let itemsPerPage = 25;
     let currentSort = { field: 'last_cve_date', direction: 'desc' };
     let sortedData = [];
+    let unfilteredData = []; // Original data before filters
+
+    // Filter state
+    let activeFilters = {
+        type: '',
+        status: '',
+        hasKev: false,
+        highVolume: false
+    };
+
+    // Apply filters to the CNA data
+    function applyFilters() {
+        activeFilters = {
+            type: document.getElementById('filterType').value,
+            status: document.getElementById('filterStatus').value,
+            hasKev: document.getElementById('filterKev').checked,
+            highVolume: document.getElementById('filterHighVolume').checked
+        };
+
+        // Filter the unfiltered data
+        let filtered = unfilteredData.filter(cna => {
+            // Type filter
+            if (activeFilters.type && (!cna.cna_types || !cna.cna_types.includes(activeFilters.type))) {
+                return false;
+            }
+            // Status filter
+            if (activeFilters.status && cna.activity_status !== activeFilters.status) {
+                return false;
+            }
+            // KEV filter
+            if (activeFilters.hasKev && (!cna.kev_count || cna.kev_count === 0)) {
+                return false;
+            }
+            // High volume filter
+            if (activeFilters.highVolume && cna.count < 1000) {
+                return false;
+            }
+            return true;
+        });
+
+        // Apply current sort to filtered data
+        sortedData = [...filtered].sort((a, b) => {
+            let aVal, bVal;
+
+            // Handle rank specially - use the rank property
+            if (currentSort.field === 'rank') {
+                aVal = a.rank || 999;
+                bVal = b.rank || 999;
+                return currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
+            }
+
+            aVal = a[currentSort.field];
+            bVal = b[currentSort.field];
+
+            if (currentSort.field === 'last_cve_date') {
+                const aDate = new Date(aVal);
+                const bDate = new Date(bVal);
+                return currentSort.direction === 'asc' ? aDate - bDate : bDate - aDate;
+            }
+
+            if (currentSort.field === 'name') {
+                aVal = (aVal || '').toLowerCase();
+                bVal = (bVal || '').toLowerCase();
+            }
+
+            if (typeof aVal === 'string') {
+                return currentSort.direction === 'asc'
+                    ? aVal.localeCompare(bVal)
+                    : bVal.localeCompare(aVal);
+            }
+
+            return currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
+        });
+
+        // Reset to first page when filters change
+        currentPage = 1;
+
+        // Update filter summary
+        const hasActiveFilters = activeFilters.type || activeFilters.status || activeFilters.hasKev || activeFilters.highVolume;
+        const filterSummary = document.getElementById('filterSummary');
+        if (hasActiveFilters) {
+            filterSummary.style.display = 'block';
+            document.getElementById('filteredCount').textContent = sortedData.length;
+        } else {
+            filterSummary.style.display = 'none';
+        }
+
+        renderTable();
+    }
+
+    // Reset all filters
+    function resetFilters() {
+        document.getElementById('filterType').value = '';
+        document.getElementById('filterStatus').value = '';
+        document.getElementById('filterKev').checked = false;
+        document.getElementById('filterHighVolume').checked = false;
+        applyFilters();
+    }
 
     // Populate CNA table with pagination and sorting
     function populateTable() {
@@ -1203,12 +1565,12 @@
             console.log('populateTable: dataToSort length (all-time):', dataToSort.length);
         } else {
             console.log('populateTable: current year mode');
-            if (!currentData.cna_assigners) {
-                console.error('populateTable: No cna_assigners in current year data');
+            if (!currentData.cna_list) {
+                console.error('populateTable: No cna_list in current year data');
                 return;
             }
             // Use real CVE dates from backend data - no hardcoded overrides
-            dataToSort = currentData.cna_assigners.map(cna => ({
+            dataToSort = currentData.cna_list.map(cna => ({
                 ...cna,
                 // Keep the real last_cve_date from backend data
                 activity_status: 'Active' // All current year CNAs are active
@@ -1216,18 +1578,18 @@
             console.log('populateTable: dataToSort length (current year):', dataToSort.length);
         }
 
-        // Initialize sorted data (default sort by rank, ascending)
-        sortedData = [...dataToSort].sort((a, b) => {
-            return (a.rank || 0) - (b.rank || 0); // Ascending order by rank
-        });
+        // Store unfiltered data for filter operations
+        unfilteredData = [...dataToSort];
 
-        // Set initial sort state to match default
+        // Set initial sort state to match default (rank ascending)
         currentSort = {
             field: 'rank',
             direction: 'asc'
         };
 
-        renderTable();
+        // Apply filters (this also handles sorting and rendering)
+        applyFilters();
+
         setupSortingHandlers();
         updateSortIndicators(); // Show correct default sort indicator
     }
@@ -1243,7 +1605,6 @@
             let formattedDate = 'Invalid Date';
             if (cna.last_cve_date) {
                 const lastCveDate = new Date(cna.last_cve_date);
-
                 if (!isNaN(lastCveDate.getTime())) {
                     formattedDate = lastCveDate.toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -1255,27 +1616,21 @@
                     formattedDate = 'Invalid Date';
                 }
             }
-
             const statusColor = cna.activity_status === 'Active' ? '#10b981' : '#ef4444';
             const statusIcon = cna.activity_status === 'Active' ? '✅' : '❌';
-
-            // Calculate rank based on current data mode
-            let originalRank;
-            if (currentDataMode === 'all') {
-                originalRank = cnaData.cna_list.findIndex(original => original.name === cna.name) + 1;
-            } else {
-                // For current year, use position in sorted data + 1
-                originalRank = startIndex + index + 1;
-            }
-
+            // Use rank from JSON data, not recalculated
+            let displayRank = cna.rank || (index + 1);
+            // Generate CNAScorecard link
+            const scorecardUrl = `https://cnascorecard.org/cna/cna-detail.html?shortName=${encodeURIComponent(cna.name)}`;
             return `
             <tr>
-                <td><strong>#${originalRank}</strong></td>
+                <td><strong>#${displayRank}</strong></td>
                 <td>${cna.name}</td>
                 <td>${cna.count.toLocaleString()}</td>
                 <td>${cna.years_active} years</td>
                 <td>${formattedDate}</td>
                 <td><span style="color: ${statusColor}; font-weight: bold;">${statusIcon} ${cna.activity_status}</span></td>
+                <td><a href="${scorecardUrl}" target="_blank" rel="noopener noreferrer" title="View on CNAScorecard" class="scorecard-link">📊</a></td>
             </tr>
         `;
         }).join('');
@@ -1348,17 +1703,14 @@
 
     // Setup pagination event handlers
     function setupPaginationHandlers() {
-        // Remove existing event listeners to prevent duplicates
         const paginationControls = document.getElementById('paginationControls');
-
-        // Use event delegation for better performance and reliability
-        paginationControls.addEventListener('click', (e) => {
+        // Remove all previous listeners by replacing the element
+        const newControls = paginationControls.cloneNode(true);
+        paginationControls.parentNode.replaceChild(newControls, paginationControls);
+        newControls.addEventListener('click', (e) => {
             e.preventDefault();
-
             const target = e.target;
             if (!target.classList.contains('page-link')) return;
-
-            // Handle previous button
             if (target.id === 'prevPage') {
                 if (currentPage > 1) {
                     currentPage--;
@@ -1366,8 +1718,6 @@
                 }
                 return;
             }
-
-            // Handle next button
             if (target.id === 'nextPage') {
                 const totalPages = Math.ceil(sortedData.length / itemsPerPage);
                 if (currentPage < totalPages) {
@@ -1376,8 +1726,6 @@
                 }
                 return;
             }
-
-            // Handle page number clicks
             const page = parseInt(target.getAttribute('data-page'));
             if (page && page !== currentPage) {
                 currentPage = page;
@@ -1408,9 +1756,8 @@
                     currentSort.direction = sortField === 'last_cve_date' ? 'desc' : 'asc';
                 }
 
-                sortData();
-                currentPage = 1; // Reset to first page after sorting
-                renderTable();
+                // Use applyFilters which handles both filtering and sorting
+                applyFilters();
                 updateSortIndicators();
             });
         });
@@ -1465,7 +1812,6 @@
         document.querySelectorAll('.sort-indicator').forEach(indicator => {
             indicator.textContent = '';
         });
-
         const activeHeader = document.querySelector(`[data-sort="${currentSort.field}"] .sort-indicator`);
         if (activeHeader) {
             activeHeader.textContent = currentSort.direction === 'asc' ? '▲' : '▼';
@@ -1533,36 +1879,17 @@
             alert('No data available for export');
             return;
         }
-
         const totalCves = cnaData.cna_list.reduce((sum, cna) => sum + cna.count, 0);
         const activeCnas = cnaData.cna_list.filter(cna => cna.activity_status === 'Active').length;
-
         const exportData = {
             metadata: {
-                exportDate: new Date().toISOString(),
-                dataSource: 'CVEDB CNA Intelligence Dashboard',
+                averageCvesPerCna: Math.round(totalCves / cnaData.cna_list.length),
                 totalCnas: cnaData.cna_list.length,
                 activeCnas: activeCnas,
                 inactiveCnas: cnaData.cna_list.length - activeCnas,
-                totalCves: totalCves,
-                averageCvesPerCna: Math.round(totalCves / cnaData.cna_list.length)
-            },
-            cnaData: cnaData.cna_list.map((cna, index) => ({
-                rank: index + 1,
-                name: cna.name,
-                officialStatus: cna.is_official !== false ? 'Official' : 'Unofficial',
-                cvesAssigned: cna.count,
-                yearsActive: cna.years_active,
-                firstCveYear: cna.first_cve_year,
-                lastCveYear: cna.last_cve_year,
-                lastCveDate: cna.last_cve_date,
-                daysSinceLastCve: cna.days_since_last_cve,
-                activityStatus: cna.activity_status,
-                severityDistribution: cna.severity_distribution,
-                topCweTypes: cna.top_cwe_types
-            }))
+                totalCves: totalCves
+            }
         };
-
         const jsonStr = JSON.stringify(exportData, null, 2);
         downloadFile(jsonStr, 'cna-comprehensive-analysis.json', 'application/json');
     }
@@ -1579,24 +1906,13 @@
         window.URL.revokeObjectURL(url);
     }
 
-    function generatePermalink() {
-        const url = window.location.href;
-        navigator.clipboard.writeText(url).then(() => {
-            alert('Permalink copied to clipboard!');
-        }).catch(() => {
-            alert(`Permalink: ${url}`);
-        });
-    }
-
     // Error state
     function showErrorState() {
         document.getElementById('activeCnas').textContent = 'Error';
         document.getElementById('highVolumeCnas').textContent = 'Error';
         document.getElementById('medianYearsActive').textContent = 'Error';
         document.getElementById('marketConcentration').textContent = 'Error';
-
-        document.getElementById('cnaTableBody').innerHTML =
-            '<tr><td colspan="7" class="text-center text-danger">Error loading CNA data. Please refresh the page.</td></tr>';
+        document.getElementById('cnaTableBody').innerHTML = '<tr><td colspan="7" class="text-center text-danger">Error loading CNA data. Please refresh the page.</td></tr>';
     }
 </script>
 {% endblock %}
