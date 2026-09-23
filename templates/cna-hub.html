@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% set nav = 'cna' %}
+{% block title %}Publishers &mdash; CVEDB{% endblock %}
+{% block description %}Overview of CVE Numbering Authority counts and name matching.{% endblock %}
+
+{% block content %}
+<div class="ph"><h1>Publishers</h1><span class="note">CVE Numbering Authorities</span></div>
+<p class="lede">Two views of the same set of organisations: how many CVEs each has published,
+and how well their names line up with the official registry.</p>
+
+<div class="grid" id="tiles"></div>
+
+<h2>Where to go</h2>
+<div class="cols c2">
+  <a class="panel" href="cna.html" style="display:block">
+    <div class="panel-h">Counts by publisher <span class="side">&rarr;</span></div>
+    <div class="panel-b muted" style="font-size:13.5px">
+      Every authority with its count for this year and all time, how long it has been
+      publishing, and how many of its CVEs are in the KEV catalog. Sortable.
+    </div>
+  </a>
+  <a class="panel" href="data-quality.html" style="display:block">
+    <div class="panel-h">Name matching <span class="side">&rarr;</span></div>
+    <div class="panel-b muted" style="font-size:13.5px">
+      How the publisher names in the CVE record line up with the official CNA registry:
+      exact matches, case differences, and the ones that do not match at all.
+    </div>
+  </a>
+</div>
+
+<h2>Largest publishers</h2>
+<div class="panel"><div class="rows" id="top"></div></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+CVE.page(async () => {
+  const { fmt, chart, el } = CVE;
+  const YR = {{ current_year }};
+  const d = await CVE.json('cna_analysis.json');
+  const list = d.cna_list || [];
+  const total = list.reduce((s, c) => s + c.count, 0);
+
+  el('#tiles').innerHTML = [
+    { lead: 1, lbl: 'Publishers on record', v: fmt.n(d.total_cnas),
+      sub: `<b>${fmt.n(d.active_cnas)}</b> active &middot; <b>${fmt.n(d.inactive_cnas)}</b> inactive` },
+    { lbl: 'CVEs attributed', v: fmt.compact(total), sub: 'across all publishers' },
+    { lbl: 'High-volume publishers', v: fmt.n(d.high_volume_cnas), sub: 'more than 1,000 CVEs' },
+    { lbl: 'Median years active', v: String(d.median_years_active ?? '—'), sub: 'across all publishers' }
+  ].map(t => `<div class="c ${t.lead ? 'lead' : ''}"><div class="lbl">${t.lbl}</div>
+      <div class="v">${t.v}</div><div class="sub">${t.sub}</div></div>`).join('');
+
+  chart.rank('#top', list.slice().sort((a, b) => b.count - a.count).slice(0, 12)
+    .map(c => ({ label: c.name, sub: `since ${c.first_cve_year || '?'}`, value: c.count })),
+    { compact: true, name: 'cve-icu-largest-publishers' });
+});
+</script>
+{% endblock %}
