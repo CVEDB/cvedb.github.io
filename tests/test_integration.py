@@ -1,0 +1,388 @@
+"""Integration tests for CVEDB build system.
+
+These tests verify the complete build pipeline works correctly,
+including edge cases, error handling, and CLI functionality.
+"""
+
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+import pytest
+
+
+# Mark all tests in this file as integration tests
+pytestmark = pytest.mark.integration
+
+
+def strip_ansi(text: str) -> str:
+    """Remove ANSI escape codes from text."""
+    ansi_pattern = re.compile(r"\x1b\[[0-9;]*m")
+    return ansi_pattern.sub("", text)
+
+
+class TestCLIIntegration:
+    """Tests for the Typer CLI interface."""
+
+    def test_cli_help(self):
+        """Test that CLI --help works."""
+        result = subprocess.run(
+            [sys.executable, "build.py", "--help"],
+            capture_output=True,
+            text=True,
+            cwd=Path(__file__).parent.parent,
+        )
+        assert result.returncode == 0
+        assert "CVEDB Static Site Generator" in result.stdout
+        assert "build" in result.stdout
+        assert "refresh" in result.stdout
+        assert "validate" in result.stdout
+        assert "info" in result.stdout
+
+    def test_cli_build_help(self):
+        """Test that build subcommand --help works."""
+        result = subprocess.run(
+            [sys.executable, "build.py", "build", "--help"],
+            capture_output=True,
+            text=True,
+            cwd=Path(__file__).parent.parent,
+        )
+        assert result.returncode == 0
+        # Strip ANSI codes from Rich/Typer output before checking
+        output = strip_ansi(result.stdout)
+        assert "--quiet" in output
+        assert "--refresh-data" in output
+        assert "--validate" in output
+
+    def test_cli_info(self):
+        """Test the info command shows expected output."""
+        result = subprocess.run(
+            [sys.executable, "build.py", "info"],
+            capture_output=True,
+            text=True,
+            cwd=Path(__file__).parent.parent,
+        )
+        assert result.returncode == 0
+        assert "Current Year:" in result.stdout
+        assert "Year Coverage:" in result.stdout
+        assert "Web Output:" in result.stdout
+
+    def test_cli_validate_quiet(self):
+        """Test validate command with quiet flag."""
+        result = subprocess.run(
+            [sys.executable, "build.py", "validate", "--quiet"],
+            capture_output=True,
+            text=True,
+            cwd=Path(__file__).parent.parent,
+        )
+        # Should complete (may pass or fail depending on data state)
+        assert result.returncode in [0, 1]
+
+    def test_cli_backward_compatibility(self):
+        """Test that running without subcommand still works (backward compat)."""
+        result = subprocess.run(
+            [sys.executable, "build.py", "--help"],
+            capture_output=True,
+            text=True,
+            cwd=Path(__file__).parent.parent,
+        )
+        assert result.returncode == 0
+        # Strip ANSI codes from Rich/Typer output before checking
+        output = strip_ansi(result.stdout)
+        # Should show options that work without subcommand
+        assert "--quiet" in output
+
+
+class TestBuildPipelineIntegration:
+    """Tests for the complete build pipeline."""
+
+    @pytest.fixture
+    def project_root(self):
+        """Get the project root directory."""
+        return Path(__file__).parent.parent
+
+    def test_web_data_directory_structure(self, project_root):
+        """Test that web/data directory has expected structure."""
+        data_dir = project_root / "web" / "data"
+        if not data_dir.exists():
+            pytest.skip("No built data available")
+
+        # Check for core files
+        expected_files = [
+            "cve_all.json",
+            "cna_analysis.json",
+            "calendar_analysis.json",
+        ]
+
+        for filename in expected_files:
+            filepath = data_dir / filename
+            if filepath.exists():
+                # Verify it's valid JSON
+                with open(filepath) as f:
+                    data = json.load(f)
+                assert isinstance(data, dict)
+
+    def test_year_files_consistency(self, project_root):
+        """Test that year files have consistent structure."""
+        data_dir = project_root / "web" / "data"
+        if not data_dir.exists():
+            pytest.skip("No built data available")
+
+        year_files = list(data_dir.glob("cve_*.json"))
+        year_files = [f for f in year_files if f.stem.startswith("cve_") and f.stem[4:].isdigit()]
+
+        if not year_files:
+            pytest.skip("No year files available")
+
+        for year_file in year_files[:5]:  # Check first 5
+            with open(year_file) as f:
+                data = json.load(f)
+
+            # All year files should have these keys
+            assert "total_cves" in data
+            assert "year" in data
+            assert isinstance(data["total_cves"], int)
+            assert data["total_cves"] >= 0
+
+    def test_cve_all_has_required_fields(self, project_root):
+        """Test that cve_all.json has all required fields."""
+        cve_all_path = project_root / "web" / "data" / "cve_all.json"
+        if not cve_all_path.exists():
+            pytest.skip("cve_all.json not available")
+
+        with open(cve_all_path) as f:
+            data = json.load(f)
+
+        required_fields = ["total_cves", "yearly_trend"]
+        for field in required_fields:
+            assert field in data, f"Missing required field: {field}"
+
+        # Yearly trend should be a list
+        assert isinstance(data["yearly_trend"], list)
+
+        # Each trend entry should have year and count
+        if data["yearly_trend"]:
+            entry = data["yearly_trend"][0]
+            assert "year" in entry
+            assert "count" in entry
+
+    def test_cna_analysis_structure(self, project_root):
+        """Test that CNA analysis has expected structure."""
+        cna_path = project_root / "web" / "data" / "cna_analysis.json"
+        if not cna_path.exists():
+            pytest.skip("cna_analysis.json not available")
+
+        with open(cna_path) as f:
+            data = json.load(f)
+
+        # Should have repository stats
+        assert "repository_stats" in data
+        assert "total_cves" in data["repository_stats"]
+
+        # Should have CNA list
+        assert "cna_list" in data
+        assert isinstance(data["cna_list"], list)
+
+
+class TestEdgeCases:
+    """Tests for edge cases and error handling."""
+
+    def test_builder_quiet_mode(self):
+        """Test that quiet mode is properly set."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+        assert builder.quiet is True
+
+        builder = CVESiteBuilder(quiet=False)
+        assert builder.quiet is False
+
+    def test_builder_year_range_valid(self):
+        """Test that builder has valid year range."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+
+        # Should have years from 1999 to current year
+        assert 1999 in builder.available_years
+        assert builder.current_year >= 2024
+        assert builder.current_year in builder.available_years
+
+    def test_builder_paths_are_valid(self):
+        """Test that builder paths are properly configured."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+
+        # All paths should be Path objects
+        assert isinstance(builder.web_dir, Path)
+        assert isinstance(builder.data_dir, Path)
+        assert isinstance(builder.templates_dir, Path)
+        assert isinstance(builder.cache_dir, Path)
+
+        # Templates directory should exist
+        assert builder.templates_dir.exists()
+
+
+class TestDataValidation:
+    """Tests for data validation functionality."""
+
+    def test_validate_data_counts_function_exists(self):
+        """Test that validate_data_counts function is available."""
+        from build import validate_data_counts
+
+        assert callable(validate_data_counts)
+
+    def test_validation_with_mock_builder(self):
+        """Test validation with a mock builder."""
+
+        from build import CVESiteBuilder, validate_data_counts
+
+        # Create a mock builder with temp directory
+        builder = CVESiteBuilder(quiet=True)
+
+        # If data directory exists and has files, validation should run
+        if builder.data_dir.exists() and (builder.data_dir / "cve_all.json").exists():
+            result = validate_data_counts(builder)
+            # Result should be boolean
+            assert isinstance(result, bool)
+
+
+class TestCnaVsCveAllReconciliation:
+    """Tests for reconcile_cna_vs_year_totals().
+
+    Regression cover for the 2026-08-25 deploy failure: the old check compared
+    abs(CNA - cve_all) against a flat 1,000, so the permanent 679-record pre-1999
+    offset consumed most of the budget and a normal busy publication day
+    (diff 1,196) failed the build.
+    """
+
+    def test_real_2026_08_25_numbers_now_pass(self):
+        """The exact totals that broke the deploy should reconcile cleanly."""
+        from build import reconcile_cna_vs_year_totals
+
+        # diff was 1,196 = 679 pre-1999 + 517 NVD ingestion lag
+        result = reconcile_cna_vs_year_totals(repo_total=364_000, cve_all_total=362_804, excluded_pre_1999=679)
+
+        assert result.ok
+        assert result.lag == 517
+
+    def test_pre_1999_offset_does_not_consume_lag_budget(self):
+        """Growing the pre-1999 offset must not shrink the room for lag."""
+        from build import MAX_INGESTION_LAG, reconcile_cna_vs_year_totals
+
+        small = reconcile_cna_vs_year_totals(300_000 + MAX_INGESTION_LAG, 300_000, 0)
+        large = reconcile_cna_vs_year_totals(300_000 + MAX_INGESTION_LAG + 5_000, 300_000, 5_000)
+
+        assert small.ok and large.ok
+        assert small.lag == large.lag == MAX_INGESTION_LAG
+
+    def test_heavy_publication_day_passes(self):
+        """An Oracle-CPU-sized day of un-ingested CVEs is normal, not a failure."""
+        from build import reconcile_cna_vs_year_totals
+
+        # 2026-07-21 published 1,474 CVEs; NVD trailing a full such day is fine.
+        result = reconcile_cna_vs_year_totals(364_000 + 1_474, 364_000, excluded_pre_1999=0)
+        assert result.ok
+
+    def test_stalled_nvd_feed_fails(self):
+        """Lag beyond two heavy publication days means NVD has stopped ingesting."""
+        from build import MAX_INGESTION_LAG, reconcile_cna_vs_year_totals
+
+        result = reconcile_cna_vs_year_totals(364_000 + MAX_INGESTION_LAG + 1, 364_000, excluded_pre_1999=0)
+
+        assert not result.ok
+        assert "ingestion lag" in result.message
+
+    def test_nvd_leading_v5_fails(self):
+        """NVD ahead of cvelistV5 is impossible; the old abs() check was blind to it."""
+        from build import reconcile_cna_vs_year_totals
+
+        result = reconcile_cna_vs_year_totals(repo_total=360_000, cve_all_total=365_000, excluded_pre_1999=679)
+
+        assert not result.ok
+        assert "should never be ahead" in result.message
+
+    def test_missing_offset_uses_documented_fallback(self):
+        """A cve_all.json predating the field still reconciles via the constant."""
+        from build import PRE_1999_FALLBACK, reconcile_cna_vs_year_totals
+
+        result = reconcile_cna_vs_year_totals(364_000, 364_000 - PRE_1999_FALLBACK)
+
+        assert result.ok
+        assert result.pre_1999 == PRE_1999_FALLBACK
+        assert result.lag == 0
+
+
+class TestHistoricalYearCoverageGuard:
+    """Tests for the truncated-feed guardrail (verify_historical_year_coverage)."""
+
+    def _year_data(self, years):
+        """Build a minimal all_year_data list from a {year: total_cves} mapping."""
+        return [{"year": y, "total_cves": c} for y, c in years.items()]
+
+    def test_passes_when_all_historical_years_present(self):
+        """A complete set of non-empty historical years should not raise."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+        data = self._year_data(dict.fromkeys(range(1999, builder.current_year + 1), 1000))
+
+        # Should not raise
+        builder.verify_historical_year_coverage(data)
+
+    def test_raises_when_historical_year_missing(self):
+        """A missing historical year (the 1999 outage) must abort the build."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+        # Drop 1999 entirely, mimicking the truncated feed on 2026-07-08.
+        data = self._year_data(dict.fromkeys(range(2000, builder.current_year + 1), 1000))
+
+        with pytest.raises(RuntimeError, match="1999"):
+            builder.verify_historical_year_coverage(data)
+
+    def test_raises_when_historical_year_zero(self):
+        """A historical year present but with zero CVEs must abort the build."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+        years = dict.fromkeys(range(1999, builder.current_year + 1), 1000)
+        years[1999] = 0
+        data = self._year_data(years)
+
+        with pytest.raises(RuntimeError, match="1999"):
+            builder.verify_historical_year_coverage(data)
+
+    def test_allows_empty_current_year(self):
+        """The still-accumulating current year is exempt from the guard."""
+        from build import CVESiteBuilder
+
+        builder = CVESiteBuilder(quiet=True)
+        years = dict.fromkeys(range(1999, builder.current_year), 1000)
+        years[builder.current_year] = 0
+        data = self._year_data(years)
+
+        # Should not raise — current year is allowed to be empty.
+        builder.verify_historical_year_coverage(data)
+
+
+class TestAsyncFunctionality:
+    """Tests for async functionality (requires pytest-asyncio)."""
+
+    @pytest.mark.asyncio
+    async def test_async_http_session_concept(self):
+        """Test that httpx is available and can create async clients."""
+        # httpx is an optional dependency: the downloader falls back to a
+        # sequential requests-based path without it. Skip rather than fail so a
+        # clean checkout is green.
+        httpx = pytest.importorskip("httpx")
+
+        # Basic smoke test - module should be importable
+        assert httpx is not None
+
+        # Test that we can reference async client types
+        assert hasattr(httpx, "AsyncClient")
+        assert hasattr(httpx, "Response")

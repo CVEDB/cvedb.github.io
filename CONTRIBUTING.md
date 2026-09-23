@@ -18,7 +18,7 @@ Be respectful and constructive in all interactions. We're all here to build bett
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/cvedb/cvedb.github.io.git
+git clone https://github.com/CVEDB/cvedb.github.io.git
 cd cvedb.github.io
 
 # Install dependencies
@@ -108,7 +108,7 @@ We especially welcome contributions in:
 
 - Open an issue for discussion
 - Check [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for technical details
-- Review [docs/ROADMAP.md](docs/ROADMAP.md) for project direction
+- Review [docs/COUNTING.md](docs/COUNTING.md) for how CVEs are counted
 
 ---
 

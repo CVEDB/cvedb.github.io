@@ -18,46 +18,128 @@ on:
   # Allow manual triggering
   workflow_dispatch:
 
+env:
+  PYTHON_VERSION: "3.13"
+
 jobs:
-  test:
+  lint:
+    name: Lint & Type Check
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v7
       with:
-        python-version: '3.13'
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
         
-    - name: Cache Python dependencies
-      uses: actions/cache@v3
+    - name: Install linting dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Ruff linter
+      run: ruff check . --output-format=github
+        
+    - name: Run Ruff formatter check
+      run: ruff format --check .
+        
+    - name: Run mypy type checker
+      run: mypy build.py data/*.py
+
+  test:
+    name: Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13"]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v7
       with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-          
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        make install
+        pip install -r requirements.txt
+        pip install pytest pytest-cov pytest-asyncio
         
-    - name: Run tests
-      run: make test
+    - name: Run tests with coverage
+      run: |
+        python -m pytest tests/ -v --tb=short --cov=. --cov-report=xml --cov-report=term-missing
         
-    - name: Lint with flake8
-      run: make lint
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v7
+      if: matrix.python-version == '3.13'
+      with:
+        files: ./coverage.xml
+        fail_ci_if_error: false
+        verbose: true
+
+  build-test:
+    name: Build Test
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Show build system info
+      run: python build.py info
         
     - name: Quick build test
-      run: make quick
+      run: |
+        python data/scripts/quick_build.py
         
     - name: Verify build outputs
       run: |
-        # Check that required files exist in dist/
-        test -f dist/index.html
-        test -f dist/cna.html
-        test -f dist/data-quality.html
-        test -f dist/static/css/style.css
+        # Check that required files exist
+        test -f web/index.html
+        test -f web/cna.html
+        test -f web/data-quality.html
+        test -f web/static/css/style.css
         echo "✅ Build outputs verified"
+        
+    - name: Validate data consistency
+      run: python build.py validate --quiet
+
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+        
+    - name: Install pip-audit
+      run: pip install pip-audit
+      
+    - name: Run security audit
+      run: pip-audit -r requirements.txt

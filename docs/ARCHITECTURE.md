@@ -124,6 +124,7 @@ def analyze(nvd_data, current_year_only=False):
     # Process data
     # Return analysis dict
 
+
 def main():
     """Command-line entry point."""
     # Load cache
@@ -168,7 +169,6 @@ cvedb.github.io/
 │   ├── scripts/            # Utility scripts
 │   └── *_analysis.py       # Analysis modules
 ├── docs/
-│   ├── ROADMAP.md          # Development roadmap
 │   └── ARCHITECTURE.md     # This file
 ├── templates/              # Jinja2 HTML templates
 ├── tests/                  # pytest test suite
@@ -197,7 +197,7 @@ Run with: `pytest tests/ -v`
 
 The `--validate` flag checks data consistency:
 
-- CNA total ≈ cve_all total (within 1000)
+- CNA total ≈ cve_all total (within max(1000, 0.5% of cve_all))
 - Year totals sum correctly
 - No duplicate CVE IDs
 
