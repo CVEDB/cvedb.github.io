@@ -106,7 +106,7 @@ jobs:
     - name: Lint Python code
       run: |
         pip install ruff
-        ruff check scripts/patch.py
+        ruff check .
 
     - name: Smoke test (PR only)
       if: github.event_name == 'pull_request'
