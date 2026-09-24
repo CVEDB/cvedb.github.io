@@ -1,7 +1,7 @@
 # CVEDB Makefile
 # Task runner for common build and development operations
 
-.PHONY: help build quick test lint clean serve install scorecard
+.PHONY: help build quick test lint clean serve install scorecard patch
 
 # Default target
 help:
@@ -18,6 +18,7 @@ help:
 	@echo "  clean     - Clean build artifacts"
 	@echo "  serve     - Start local development server"
 	@echo "  install   - Install Python dependencies"
+	@echo "  patch     - Run patch.py to generate vulnerability data"
 	@echo ""
 	@echo "Data rebuild targets:"
 	@echo "  rebuild-cna    - Rebuild CNA analysis only"
@@ -34,6 +35,10 @@ install:
 # Run CNA Scorecard pipeline (writes web/scorecard/data + badges)
 scorecard:
 	python -m data.cnascorecard_pipeline.pipeline
+
+# Run Patch data aggregator
+patch:
+	python scripts/patch.py
 
 # Full build
 build:
@@ -53,7 +58,7 @@ test-coverage:
 
 # Run linters
 lint:
-	python -m flake8 data/ --max-line-length=120 --ignore=E501,W503
+	python -m ruff check . --output-format=github
 
 # Clean build artifacts
 clean:

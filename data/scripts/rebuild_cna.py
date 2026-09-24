@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from cve_v5_processor import CVEV5Processor
+
 from scripts.utils import print_header, setup_paths
 
 
