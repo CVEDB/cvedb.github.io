@@ -1,0 +1,65 @@
+name: CNA Scorecard Pipeline
+
+# Runs the scorecard pipeline against a fresh snapshot of CVEProject/cvelistV5
+# and commits the regenerated web/scorecard (data + badges) back to main. The
+# deploy workflow (deploy.yml) preserves this committed sub-site into the
+# published site on its next run, so updates land on the next hourly deploy.
+
+on:
+  # Refresh nightly, offset from :00 to dodge the most contended slot.
+  schedule:
+    - cron: '40 2 * * *'
+
+  # Allow manual triggering
+  workflow_dispatch:
+
+# Serialise against the deploy workflow: both push to main, so a race would
+# discard one side's changes.
+concurrency:
+  group: build-and-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run-scorecard:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      with:
+        ref: ${{ github.ref }}
+        persist-credentials: true
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.13'
+        cache: 'pip'
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Checkout CVE data (cvelistV5)
+      uses: actions/checkout@v7
+      with:
+        repository: CVEProject/cvelistV5
+        path: cve_data
+        fetch-depth: 1
+
+    - name: Run scorecard pipeline
+      run: |
+        python -m data.cnascorecard_pipeline.pipeline
+
+    - name: Commit regenerated scorecard data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add web/scorecard/
+        git diff --staged --quiet || git commit -m "Auto-update CNA Scorecard data $(date -u +%Y-%m-%dT%H:%MZ)"
+        git push

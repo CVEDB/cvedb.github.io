@@ -1,7 +1,7 @@
 # CVEDB Makefile
 # Task runner for common build and development operations
 
-.PHONY: help build quick test lint clean serve install
+.PHONY: help build quick test lint clean serve install scorecard
 
 # Default target
 help:
@@ -11,6 +11,7 @@ help:
 	@echo ""
 	@echo "Targets:"
 	@echo "  build     - Full site build (data + templates)"
+	@echo "  scorecard - Run CNA Scorecard pipeline (data + badges)"
 	@echo "  quick     - Quick template-only build (no data regeneration)"
 	@echo "  test      - Run test suite"
 	@echo "  lint      - Run linters (flake8)"
@@ -29,6 +30,10 @@ help:
 # Install dependencies
 install:
 	pip install -r requirements.txt
+
+# Run CNA Scorecard pipeline (writes web/scorecard/data + badges)
+scorecard:
+	python -m data.cnascorecard_pipeline.pipeline
 
 # Full build
 build:
@@ -54,6 +59,7 @@ lint:
 clean:
 	rm -rf web/*.html
 	rm -rf web/data/*.json
+	rm -rf web/scorecard/data web/scorecard/badges
 	rm -rf __pycache__
 	rm -rf data/__pycache__
 	rm -rf data/scripts/__pycache__
