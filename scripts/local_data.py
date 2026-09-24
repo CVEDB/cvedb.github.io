@@ -63,20 +63,25 @@ def main():
 
     # Download EPSS data with retry
     for i in range(1, 4):
-        if os.system('wget https://epss.empiricalsecurity.com/epss_scores-current.csv.gz -O epss_scores-current.csv.gz') == 0:
+        if (
+            os.system(
+                "wget https://epss.empiricalsecurity.com/epss_scores-current.csv.gz -O epss_scores-current.csv.gz"
+            )
+            == 0
+        ):
             break
         elif i == 3:
-            print('Failed to download EPSS data after 3 attempts')
+            print("Failed to download EPSS data after 3 attempts")
             sys.exit(1)
         else:
-            print(f'Attempt {i} failed, retrying...')
+            print(f"Attempt {i} failed, retrying...")
             time.sleep(5)
-    run_command('gzip -f -d epss_scores-current.csv.gz')
+    run_command("gzip -f -d epss_scores-current.csv.gz")
 
     # Download Metasploit data
     run_command(
         "curl -sSf https://raw.githubusercontent.com/rapid7/metasploit-framework/master/db/modules_metadata_base.json | "
-        "jq -r '.[]|{cve:.references[]|select(startswith(\"CVE-\"))}| join(\",\")' > metasploit.txt || touch metasploit.txt"
+        'jq -r \'.[]|{cve:.references[]|select(startswith("CVE-"))}| join(",")\' > metasploit.txt || touch metasploit.txt'
     )
 
     # Download Nuclei data
@@ -87,14 +92,12 @@ def main():
 
     # Download CISA KEV data
     run_command(
-        'wget https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv '
-        '-O known_exploited_vulnerabilities.csv'
+        "wget https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv "
+        "-O known_exploited_vulnerabilities.csv"
     )
 
     # Download NVD data
-    run_command(
-        'wget https://nvd.handsonhacking.org/nvd.jsonl -O nvd.jsonl || touch nvd.jsonl'
-    )
+    run_command("wget https://nvd.handsonhacking.org/nvd.jsonl -O nvd.jsonl || touch nvd.jsonl")
 
 
 if __name__ == "__main__":

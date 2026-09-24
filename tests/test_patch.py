@@ -1,8 +1,6 @@
 """Tests for patch CSV output format and data extraction."""
 
 import json
-import tempfile
-from pathlib import Path
 
 import pandas as pd
 import pytest
@@ -14,15 +12,33 @@ from scripts.patch import (
     normalize_vendor_brand,
 )
 
+
 # The canonical column lists for CSV output. If these change, the test
 # must be updated intentionally — that's the point.
 EXPECTED_COLUMNS_WITH_EPSS = [
-    "CVE", "CVSS Score", "CVSS_Vector", "EPSS", "CWE",
-    "Description", "Published", "Source", "CPE", "Vendor", "Affected Products",
+    "CVE",
+    "CVSS Score",
+    "CVSS_Vector",
+    "EPSS",
+    "CWE",
+    "Description",
+    "Published",
+    "Source",
+    "CPE",
+    "Vendor",
+    "Affected Products",
 ]
 EXPECTED_COLUMNS_WITHOUT_EPSS = [
-    "CVE", "CVSS Score", "CVSS_Vector", "CWE",
-    "Description", "Published", "Source", "CPE", "Vendor", "Affected Products",
+    "CVE",
+    "CVSS Score",
+    "CVSS_Vector",
+    "CWE",
+    "Description",
+    "Published",
+    "Source",
+    "CPE",
+    "Vendor",
+    "Affected Products",
 ]
 
 
@@ -60,21 +76,9 @@ def _make_nvd_entry(
                     }
                 ]
             },
-            "weaknesses": [
-                {"description": [{"lang": "en", "value": cwe_id}]}
-            ],
+            "weaknesses": [{"description": [{"lang": "en", "value": cwe_id}]}],
             "descriptions": [{"lang": "en", "value": description}],
-            "configurations": [
-                {
-                    "nodes": [
-                        {
-                            "cpeMatch": [
-                                {"vulnerable": True, "criteria": cpe}
-                            ]
-                        }
-                    ]
-                }
-            ],
+            "configurations": [{"nodes": [{"cpeMatch": [{"vulnerable": True, "criteria": cpe}]}]}],
         }
     }
 
@@ -96,7 +100,17 @@ class TestExtractEntryData:
     def test_all_expected_fields_present(self):
         entry = _make_nvd_entry()
         result = extract_entry_data(entry)
-        required_keys = {"cve", "cwe", "description", "base_score", "cvss_vector", "cpe", "vendor", "product", "published_date"}
+        required_keys = {
+            "cve",
+            "cwe",
+            "description",
+            "base_score",
+            "cvss_vector",
+            "cpe",
+            "vendor",
+            "product",
+            "published_date",
+        }
         assert required_keys.issubset(result.keys())
 
     def test_cpe_vendor_product_parsed(self):
@@ -179,13 +193,20 @@ class TestCSVOutputFormat:
         monkeypatch.chdir(workspace["tmp_path"])
         args = [
             "patch",
-            "--metasploit", str(workspace["metasploit"]),
-            "--nuclei", str(workspace["nuclei"]),
-            "--cisa", str(workspace["cisa"]),
-            "--epss", str(workspace["epss"]),
-            "--nvd", str(workspace["nvd"]),
-            "--output", str(workspace["output"]),
-            "--epss-threshold", "0.5",
+            "--metasploit",
+            str(workspace["metasploit"]),
+            "--nuclei",
+            str(workspace["nuclei"]),
+            "--cisa",
+            str(workspace["cisa"]),
+            "--epss",
+            str(workspace["epss"]),
+            "--nvd",
+            str(workspace["nvd"]),
+            "--output",
+            str(workspace["output"]),
+            "--epss-threshold",
+            "0.5",
         ]
         monkeypatch.setattr("sys.argv", args)
         main()
@@ -195,19 +216,22 @@ class TestCSVOutputFormat:
     def test_columns_without_epss(self, workspace, monkeypatch):
         """CSV output must contain exactly these columns (no EPSS data)."""
         # Write an empty EPSS file (header only)
-        workspace["epss"].write_text(
-            "#model_version:v2024.01.01,score_date:2024-01-15\n"
-            "cve,epss,percentile\n"
-        )
+        workspace["epss"].write_text("#model_version:v2024.01.01,score_date:2024-01-15\ncve,epss,percentile\n")
         monkeypatch.chdir(workspace["tmp_path"])
         args = [
             "patch",
-            "--metasploit", str(workspace["metasploit"]),
-            "--nuclei", str(workspace["nuclei"]),
-            "--cisa", str(workspace["cisa"]),
-            "--epss", str(workspace["epss"]),
-            "--nvd", str(workspace["nvd"]),
-            "--output", str(workspace["output"]),
+            "--metasploit",
+            str(workspace["metasploit"]),
+            "--nuclei",
+            str(workspace["nuclei"]),
+            "--cisa",
+            str(workspace["cisa"]),
+            "--epss",
+            str(workspace["epss"]),
+            "--nvd",
+            str(workspace["nvd"]),
+            "--output",
+            str(workspace["output"]),
         ]
         monkeypatch.setattr("sys.argv", args)
         main()
@@ -219,13 +243,20 @@ class TestCSVOutputFormat:
         monkeypatch.chdir(workspace["tmp_path"])
         args = [
             "patch",
-            "--metasploit", str(workspace["metasploit"]),
-            "--nuclei", str(workspace["nuclei"]),
-            "--cisa", str(workspace["cisa"]),
-            "--epss", str(workspace["epss"]),
-            "--nvd", str(workspace["nvd"]),
-            "--output", str(workspace["output"]),
-            "--epss-threshold", "0.5",
+            "--metasploit",
+            str(workspace["metasploit"]),
+            "--nuclei",
+            str(workspace["nuclei"]),
+            "--cisa",
+            str(workspace["cisa"]),
+            "--epss",
+            str(workspace["epss"]),
+            "--nvd",
+            str(workspace["nvd"]),
+            "--output",
+            str(workspace["output"]),
+            "--epss-threshold",
+            "0.5",
         ]
         monkeypatch.setattr("sys.argv", args)
         main()
@@ -245,25 +276,26 @@ class TestCSVOutputFormat:
         workspace["nvd"].write_text(json.dumps(entries))
         workspace["metasploit"].write_text("CVE-2024-9999\n")
         workspace["nuclei"].write_text("")
-        workspace["cisa"].write_text(
-            "cveID,vendorProject,product,cwes\n"
-            "CVE-2024-9999,Axis,A1001 Firmware,CWE-79\n"
-        )
+        workspace["cisa"].write_text("cveID,vendorProject,product,cwes\nCVE-2024-9999,Axis,A1001 Firmware,CWE-79\n")
         workspace["epss"].write_text(
-            "#model_version:v2024.01.01,score_date:2024-01-15\n"
-            "cve,epss,percentile\n"
-            "CVE-2024-9999,0.97,0.99\n"
+            "#model_version:v2024.01.01,score_date:2024-01-15\ncve,epss,percentile\nCVE-2024-9999,0.97,0.99\n"
         )
 
         monkeypatch.chdir(workspace["tmp_path"])
         args = [
             "patch",
-            "--metasploit", str(workspace["metasploit"]),
-            "--nuclei", str(workspace["nuclei"]),
-            "--cisa", str(workspace["cisa"]),
-            "--epss", str(workspace["epss"]),
-            "--nvd", str(workspace["nvd"]),
-            "--output", str(workspace["output"]),
+            "--metasploit",
+            str(workspace["metasploit"]),
+            "--nuclei",
+            str(workspace["nuclei"]),
+            "--cisa",
+            str(workspace["cisa"]),
+            "--epss",
+            str(workspace["epss"]),
+            "--nvd",
+            str(workspace["nvd"]),
+            "--output",
+            str(workspace["output"]),
         ]
         monkeypatch.setattr("sys.argv", args)
         main()
