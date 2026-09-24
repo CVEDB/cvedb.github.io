@@ -58,7 +58,7 @@ test-coverage:
 
 # Run linters
 lint:
-	python -m flake8 data/ --max-line-length=120 --ignore=E501,W503
+	python -m ruff check . --output-format=github
 
 # Clean build artifacts
 clean:
