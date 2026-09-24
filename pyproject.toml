@@ -120,9 +120,10 @@ unfixable = []
 "tests/**/*.py" = ["S101", "ARG", "PLR2004"]
 # Scripts may have unused imports for side effects
 "data/scripts/**/*.py" = ["F401"]
+  "scripts/**/*.py" = ["F401"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["data"]
+known-first-party = ["data", "scripts"]
 force-single-line = false
 lines-after-imports = 2
 
