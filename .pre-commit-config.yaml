@@ -25,9 +25,10 @@ repos:
       - id: check-yaml
         args: [--unsafe]  # Allow custom tags in YAML
       - id: check-json
-        exclude: ^(web/data/|data/cache/)
+        exclude: ^(web/data/|web/scorecard/data/|data/cache/)
       - id: check-added-large-files
         args: ['--maxkb=1000']
+        exclude: ^(web/data/|web/scorecard/data/|web/scorecard/badges/|data/cache/)
       - id: check-merge-conflict
       - id: detect-private-key
       - id: check-case-conflict

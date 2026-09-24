@@ -1,0 +1,101 @@
+{
+  "cna_info": {
+    "cna": "forcepoint",
+    "total_cves": 3,
+    "total_cves_scored": 3,
+    "organizationName": "Forcepoint",
+    "scope": "Forcepoint products only.",
+    "advisories": [
+      {
+        "label": "Advisories",
+        "url": "https://support.forcepoint.com/s/knowledge-base#t=All&sort=relevancy&f:@sfrecordtypename=[Security%20Advisory]"
+      }
+    ],
+    "email": [
+      {
+        "label": "Email",
+        "emailAddr": "psirt@forcepoint.com"
+      }
+    ],
+    "officialCnaID": "CNA-2017-0033",
+    "cnaTypes": [
+      "Vendor"
+    ],
+    "country": "USA",
+    "disclosurePolicy": [
+      {
+        "label": "Policy",
+        "language": "",
+        "url": "https://www.forcepoint.com/company/innovation/product-security-report-issue"
+      }
+    ],
+    "rootCnaInfo": {}
+  },
+  "trend_direction": "steady",
+  "trend_description": "No significant change",
+  "rank": 88,
+  "active_cna_count": 345,
+  "percentile": 74.8,
+  "cna_scoring": [
+    {
+      "total_cves": 3,
+      "total_cves_scored": 3,
+      "recent_cves_count": 3,
+      "overall_average_score": 83.33,
+      "average_foundational_completeness": 50.0,
+      "average_root_cause_analysis": 15.0,
+      "average_software_identification": 3.33,
+      "average_severity_context": 15.0,
+      "average_patchinfo": 0.0,
+      "percent_foundational_completeness": 100.0,
+      "percent_root_cause_analysis": 100.0,
+      "percent_software_identification": 33.33,
+      "percent_severity_and_impact": 100.0,
+      "percent_patchinfo": 0.0,
+      "trend_direction": "steady",
+      "trend_description": "No significant change",
+      "monthly_trends": []
+    }
+  ],
+  "recent_cves": [
+    {
+      "cveId": "CVE-2026-12974",
+      "assigningCna": "forcepoint",
+      "datePublished": "2026-09-23",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-11970",
+      "assigningCna": "forcepoint",
+      "datePublished": "2026-08-13",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2025-12694",
+      "assigningCna": "forcepoint",
+      "datePublished": "2026-06-04",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    }
+  ]
+}
