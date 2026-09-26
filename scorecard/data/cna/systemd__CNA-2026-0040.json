@@ -1,0 +1,102 @@
+{
+  "cna_info": {
+    "cna": "systemd",
+    "total_cves": 3,
+    "total_cves_scored": 3,
+    "organizationName": "The systemd project",
+    "scope": "All components from the systemd project, including systemd, udev, systemd-journald, systemd-resolved, systemd-boot, systemd-stub, mkosi, and other components maintained on <a href='https://github.com/systemd' target='_blank'>https://github.com/systemd</a>.",
+    "advisories": [
+      {
+        "label": "Advisories",
+        "url": "https://github.com/systemd/systemd/security/advisories?state=published"
+      }
+    ],
+    "email": [
+      {
+        "label": "Email",
+        "emailAddr": "systemd-security@redhat.com"
+      }
+    ],
+    "officialCnaID": "CNA-2026-0040",
+    "cnaTypes": [
+      "Vendor",
+      "Open Source"
+    ],
+    "country": "Germany",
+    "disclosurePolicy": [
+      {
+        "label": "Policy",
+        "language": "",
+        "url": "https://github.com/systemd/systemd/security/policy"
+      }
+    ],
+    "rootCnaInfo": {}
+  },
+  "trend_direction": "steady",
+  "trend_description": "No significant change",
+  "rank": 291,
+  "active_cna_count": 341,
+  "percentile": 15.0,
+  "cna_scoring": [
+    {
+      "total_cves": 3,
+      "total_cves_scored": 3,
+      "recent_cves_count": 3,
+      "overall_average_score": 75.0,
+      "average_foundational_completeness": 50.0,
+      "average_root_cause_analysis": 10.0,
+      "average_software_identification": 0.0,
+      "average_severity_context": 15.0,
+      "average_patchinfo": 0.0,
+      "percent_foundational_completeness": 100.0,
+      "percent_root_cause_analysis": 66.67,
+      "percent_software_identification": 0.0,
+      "percent_severity_and_impact": 100.0,
+      "percent_patchinfo": 0.0,
+      "trend_direction": "steady",
+      "trend_description": "No significant change",
+      "monthly_trends": []
+    }
+  ],
+  "recent_cves": [
+    {
+      "cveId": "CVE-2026-16742",
+      "assigningCna": "systemd",
+      "datePublished": "2026-08-10",
+      "totalCveScore": 65,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 0,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-15060",
+      "assigningCna": "systemd",
+      "datePublished": "2026-08-10",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-15059",
+      "assigningCna": "systemd",
+      "datePublished": "2026-08-10",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    }
+  ]
+}
