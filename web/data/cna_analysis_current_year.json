@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T01:05:33.367780",
+  "generated_at": "2026-09-28T07:12:07.943295",
   "source": "CVE V5 List (Authoritative)",
   "year": 2026,
   "total_cnas": 378,
@@ -172,10 +172,10 @@
     {
       "name": "VulDB",
       "assigner_org_id": "1af790b2-7ee1-4545-860a-a788eba489b5",
-      "count": 5204,
+      "count": 5228,
       "rank": 4,
       "first_cve_date": "2026-01-01T09:02:10.684Z",
-      "last_cve_date": "2026-09-28T00:30:09.114Z",
+      "last_cve_date": "2026-09-28T06:30:09.664Z",
       "years_active": 5,
       "first_cve_year": 2022,
       "last_cve_year": 2026,
@@ -185,17 +185,17 @@
         "Security Researcher"
       ],
       "severity_distribution": {
-        "Medium": 3084,
-        "Critical": 721,
-        "High": 1305,
+        "Medium": 3097,
+        "Critical": 726,
+        "High": 1311,
         "Low": 94
       },
       "top_cwe_types": {
-        "CWE-74": 1431,
-        "CWE-89": 1048,
-        "CWE-119": 827,
-        "CWE-77": 619,
-        "CWE-94": 544
+        "CWE-74": 1434,
+        "CWE-89": 1051,
+        "CWE-119": 829,
+        "CWE-77": 623,
+        "CWE-94": 545
       },
       "kev_count": 0,
       "epss_high_count": 0,
@@ -203,23 +203,23 @@
       "top_cwes": [
         [
           "CWE-74",
-          1431
+          1434
         ],
         [
           "CWE-89",
-          1048
+          1051
         ],
         [
           "CWE-119",
-          827
+          829
         ],
         [
           "CWE-77",
-          619
+          623
         ],
         [
           "CWE-94",
-          544
+          545
         ]
       ]
     },
@@ -550,10 +550,10 @@
     {
       "name": "WPScan",
       "assigner_org_id": "1bfdd5d7-9bf6-4a53-96ea-42e2716d7a81",
-      "count": 1412,
+      "count": 1420,
       "rank": 11,
       "first_cve_date": "2026-01-01T06:00:03.091Z",
-      "last_cve_date": "2026-09-27T06:00:23.019Z",
+      "last_cve_date": "2026-09-28T06:19:22.475Z",
       "years_active": 6,
       "first_cve_year": 2021,
       "last_cve_year": 2026,
@@ -563,17 +563,17 @@
         "Vendor"
       ],
       "severity_distribution": {
-        "High": 377,
-        "Low": 138,
-        "Medium": 767,
+        "High": 380,
+        "Low": 139,
+        "Medium": 787,
         "Critical": 111
       },
       "top_cwe_types": {
         "CWE-79": 251,
-        "CWE-862": 177,
+        "CWE-862": 179,
         "CWE-200": 158,
         "CWE-639": 153,
-        "CWE-89": 89
+        "CWE-89": 91
       },
       "kev_count": 2,
       "epss_high_count": 0,
@@ -585,7 +585,7 @@
         ],
         [
           "CWE-862",
-          177
+          179
         ],
         [
           "CWE-200",
@@ -597,7 +597,7 @@
         ],
         [
           "CWE-89",
-          89
+          91
         ]
       ]
     },
@@ -6509,10 +6509,64 @@
       ]
     },
     {
+      "name": "Google",
+      "assigner_org_id": "14ed7db2-1595-443d-9d34-6215bf890778",
+      "count": 38,
+      "rank": 122,
+      "first_cve_date": "2026-01-15T14:09:53.603Z",
+      "last_cve_date": "2026-09-28T04:02:14.738Z",
+      "years_active": 7,
+      "first_cve_year": 2020,
+      "last_cve_year": 2026,
+      "is_official": true,
+      "activity_status": "Active",
+      "cna_types": [
+        "Vendor"
+      ],
+      "severity_distribution": {
+        "Low": 1,
+        "Medium": 9,
+        "High": 20,
+        "Critical": 8
+      },
+      "top_cwe_types": {
+        "CWE-863": 6,
+        "CWE-674": 3,
+        "CWE-22": 3,
+        "CWE-287": 3,
+        "CWE-918": 2
+      },
+      "kev_count": 0,
+      "epss_high_count": 0,
+      "epss_elevated_count": 0,
+      "top_cwes": [
+        [
+          "CWE-863",
+          6
+        ],
+        [
+          "CWE-674",
+          3
+        ],
+        [
+          "CWE-22",
+          3
+        ],
+        [
+          "CWE-287",
+          3
+        ],
+        [
+          "CWE-918",
+          2
+        ]
+      ]
+    },
+    {
       "name": "runZero",
       "assigner_org_id": "44488dab-36db-4358-99f9-bc116477f914",
       "count": 38,
-      "rank": 122,
+      "rank": 123,
       "first_cve_date": "2026-04-07T14:10:08.773Z",
       "last_cve_date": "2026-09-15T13:57:28.846Z",
       "years_active": 1,
@@ -6558,60 +6612,6 @@
         ],
         [
           "CWE-321",
-          2
-        ]
-      ]
-    },
-    {
-      "name": "Google",
-      "assigner_org_id": "14ed7db2-1595-443d-9d34-6215bf890778",
-      "count": 37,
-      "rank": 123,
-      "first_cve_date": "2026-01-15T14:09:53.603Z",
-      "last_cve_date": "2026-09-25T14:47:47.410Z",
-      "years_active": 7,
-      "first_cve_year": 2020,
-      "last_cve_year": 2026,
-      "is_official": true,
-      "activity_status": "Active",
-      "cna_types": [
-        "Vendor"
-      ],
-      "severity_distribution": {
-        "Low": 1,
-        "Medium": 8,
-        "High": 20,
-        "Critical": 8
-      },
-      "top_cwe_types": {
-        "CWE-863": 6,
-        "CWE-674": 3,
-        "CWE-22": 3,
-        "CWE-287": 3,
-        "CWE-918": 2
-      },
-      "kev_count": 0,
-      "epss_high_count": 0,
-      "epss_elevated_count": 0,
-      "top_cwes": [
-        [
-          "CWE-863",
-          6
-        ],
-        [
-          "CWE-674",
-          3
-        ],
-        [
-          "CWE-22",
-          3
-        ],
-        [
-          "CWE-287",
-          3
-        ],
-        [
-          "CWE-918",
           2
         ]
       ]
