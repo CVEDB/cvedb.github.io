@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "fedora",
-    "total_cves": 30,
-    "total_cves_scored": 30,
+    "total_cves": 31,
+    "total_cves_scored": 31,
     "organizationName": "Fedora Project",
     "scope": "Vulnerabilities in open source projects affecting the Fedora Project, that are not covered by a more specific CNA. CVEs can be assigned to vulnerabilities affecting end-of-life or unsupported releases by the Fedora Project.",
     "advisories": [
@@ -29,25 +29,25 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 89,
-  "active_cna_count": 345,
-  "percentile": 74.5,
+  "rank": 91,
+  "active_cna_count": 349,
+  "percentile": 74.2,
   "cna_scoring": [
     {
-      "total_cves": 30,
-      "total_cves_scored": 30,
-      "recent_cves_count": 30,
-      "overall_average_score": 83.33,
+      "total_cves": 31,
+      "total_cves_scored": 31,
+      "recent_cves_count": 31,
+      "overall_average_score": 83.23,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
-      "average_software_identification": 2.67,
+      "average_software_identification": 2.58,
       "average_severity_context": 15.0,
-      "average_patchinfo": 0.67,
+      "average_patchinfo": 0.65,
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 100.0,
-      "percent_software_identification": 26.67,
+      "percent_software_identification": 25.81,
       "percent_severity_and_impact": 100.0,
-      "percent_patchinfo": 6.67,
+      "percent_patchinfo": 6.45,
       "trend_direction": "steady",
       "trend_description": "No significant change",
       "monthly_trends": []
@@ -107,9 +107,48 @@
       }
     },
     {
+      "cveId": "CVE-2026-19624",
+      "assigningCna": "fedora",
+      "datePublished": "2026-09-14",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-19816",
+      "assigningCna": "fedora",
+      "datePublished": "2026-09-14",
+      "totalCveScore": 100,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
+        "patchinfo": 10
+      }
+    },
+    {
       "cveId": "CVE-2026-97222",
       "assigningCna": "fedora",
       "datePublished": "2026-09-25",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-103431",
+      "assigningCna": "fedora",
+      "datePublished": "2026-10-01",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -182,32 +221,6 @@
         "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 0
-      }
-    },
-    {
-      "cveId": "CVE-2026-19624",
-      "assigningCna": "fedora",
-      "datePublished": "2026-09-14",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-19816",
-      "assigningCna": "fedora",
-      "datePublished": "2026-09-14",
-      "totalCveScore": 100,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 10,
-        "patchinfo": 10
       }
     },
     {

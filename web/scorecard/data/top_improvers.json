@@ -57,6 +57,34 @@
       "analysis_days": 20
     },
     {
+      "cna_name": "VulDB",
+      "total_improvement": 120.54794520547946,
+      "category_improvements": {
+        "root_cause_analysis": {
+          "first_period": 100.0,
+          "last_period": 99.5433789954338,
+          "improvement": -0.4566210045662018
+        },
+        "severity_and_impact": {
+          "first_period": 100.0,
+          "last_period": 100.0,
+          "improvement": 0.0
+        },
+        "software_identification": {
+          "first_period": 0.0,
+          "last_period": 100.0,
+          "improvement": 100.0
+        },
+        "patch_information": {
+          "first_period": 0.0,
+          "last_period": 21.004566210045663,
+          "improvement": 21.004566210045663
+        }
+      },
+      "total_cves_analyzed": 11187,
+      "analysis_days": 520
+    },
+    {
       "cna_name": "suse",
       "total_improvement": 120.09803921568627,
       "category_improvements": {
@@ -111,34 +139,6 @@
       },
       "total_cves_analyzed": 593,
       "analysis_days": 150
-    },
-    {
-      "cna_name": "VulDB",
-      "total_improvement": 116.59192825112106,
-      "category_improvements": {
-        "root_cause_analysis": {
-          "first_period": 100.0,
-          "last_period": 99.55156950672645,
-          "improvement": -0.44843049327354834
-        },
-        "severity_and_impact": {
-          "first_period": 100.0,
-          "last_period": 100.0,
-          "improvement": 0.0
-        },
-        "software_identification": {
-          "first_period": 0.0,
-          "last_period": 100.0,
-          "improvement": 100.0
-        },
-        "patch_information": {
-          "first_period": 0.0,
-          "last_period": 17.040358744394617,
-          "improvement": 17.040358744394617
-        }
-      },
-      "total_cves_analyzed": 11158,
-      "analysis_days": 519
     },
     {
       "cna_name": "Sonatype",
@@ -281,7 +281,7 @@
       "analysis_days": 27
     }
   ],
-  "generated_at": "2026-09-30T09:03:55.842321",
+  "generated_at": "2026-10-01T09:28:36.365183",
   "analysis_criteria": {
     "minimum_cves": 5,
     "top_n_count": 10
