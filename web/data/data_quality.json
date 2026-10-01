@@ -1,14 +1,14 @@
 {
   "stats": {
-    "total_cnas_in_analysis": 474,
+    "total_cnas_in_analysis": 475,
     "official_cna_registry_count": 554,
-    "exact_matches": 430,
+    "exact_matches": 431,
     "case_mismatches": 1,
     "org_name_matches": 6,
     "normalized_matches": 6,
     "partial_matches": 4,
     "unmatched": 27,
-    "exact_match_cves": 378036,
+    "exact_match_cves": 378181,
     "case_mismatch_cves": 178,
     "org_name_match_cves": 790,
     "normalized_match_cves": 1601,
@@ -42,7 +42,7 @@
     },
     {
       "cna_name": "Patchstack",
-      "cve_count": 18201,
+      "cve_count": 18222,
       "kev_count": 0,
       "epss_high_count": 12,
       "official_short_name": "Patchstack",
@@ -64,7 +64,7 @@
     },
     {
       "cna_name": "VulDB",
-      "cve_count": 16984,
+      "cve_count": 16985,
       "kev_count": 4,
       "epss_high_count": 32,
       "official_short_name": "VulDB",
@@ -86,12 +86,23 @@
     },
     {
       "cna_name": "redhat",
-      "cve_count": 11734,
+      "cve_count": 11737,
       "kev_count": 33,
       "epss_high_count": 187,
       "official_short_name": "redhat",
       "official_org_name": "Red Hat, Inc.",
       "official_id": "CNA-2005-0006",
+      "match_type": "exact_short",
+      "confidence": "high"
+    },
+    {
+      "cna_name": "Wordfence",
+      "cve_count": 11324,
+      "kev_count": 0,
+      "epss_high_count": 54,
+      "official_short_name": "Wordfence",
+      "official_org_name": "Wordfence",
+      "official_id": "CNA-2021-0022",
       "match_type": "exact_short",
       "confidence": "high"
     },
@@ -107,19 +118,8 @@
       "confidence": "high"
     },
     {
-      "cna_name": "Wordfence",
-      "cve_count": 11301,
-      "kev_count": 0,
-      "epss_high_count": 54,
-      "official_short_name": "Wordfence",
-      "official_org_name": "Wordfence",
-      "official_id": "CNA-2021-0022",
-      "match_type": "exact_short",
-      "confidence": "high"
-    },
-    {
       "cna_name": "VulnCheck",
-      "cve_count": 7924,
+      "cve_count": 7974,
       "kev_count": 19,
       "epss_high_count": 31,
       "official_short_name": "VulnCheck",
@@ -273,7 +273,7 @@
     },
     {
       "cna_name": "apache",
-      "cve_count": 2660,
+      "cve_count": 2668,
       "kev_count": 35,
       "epss_high_count": 180,
       "official_short_name": "apache",
@@ -416,7 +416,7 @@
     },
     {
       "cna_name": "INCIBE",
-      "cve_count": 1140,
+      "cve_count": 1144,
       "kev_count": 0,
       "epss_high_count": 1,
       "official_short_name": "INCIBE",
@@ -537,7 +537,7 @@
     },
     {
       "cna_name": "CERTVDE",
-      "cve_count": 729,
+      "cve_count": 730,
       "kev_count": 0,
       "epss_high_count": 8,
       "official_short_name": "CERTVDE",
