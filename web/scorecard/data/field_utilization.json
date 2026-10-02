@@ -8,6 +8,14 @@
     "cna_scorecard_category": null
   },
   {
+    "field": "containers.adp",
+    "percent": 100.0,
+    "unique_cnas": 353,
+    "importance": "Low",
+    "description": "Authorized Data Publisher container",
+    "cna_scorecard_category": null
+  },
+  {
     "field": "containers.cna.affected",
     "percent": 100.0,
     "unique_cnas": 353,
@@ -53,14 +61,6 @@
     "unique_cnas": 351,
     "importance": "Medium",
     "description": "Vendor information in affected products",
-    "cna_scorecard_category": null
-  },
-  {
-    "field": "containers.adp",
-    "percent": 99.4,
-    "unique_cnas": 351,
-    "importance": "Low",
-    "description": "Authorized Data Publisher container",
     "cna_scorecard_category": null
   },
   {
@@ -169,8 +169,8 @@
   },
   {
     "field": "references.advisory",
-    "percent": 48.4,
-    "unique_cnas": 171,
+    "percent": 48.7,
+    "unique_cnas": 172,
     "importance": "Medium",
     "description": "Advisory references",
     "cna_scorecard_category": null
@@ -185,24 +185,24 @@
   },
   {
     "field": "affected.modules",
-    "percent": 24.1,
-    "unique_cnas": 85,
+    "percent": 24.4,
+    "unique_cnas": 86,
     "importance": "Medium",
     "description": "Affected modules or components",
     "cna_scorecard_category": null
   },
   {
     "field": "affected.repo",
-    "percent": 23.2,
-    "unique_cnas": 82,
+    "percent": 23.5,
+    "unique_cnas": 83,
     "importance": "Medium",
     "description": "Source code repository URL",
     "cna_scorecard_category": null
   },
   {
     "field": "references.patch",
-    "percent": 22.1,
-    "unique_cnas": 78,
+    "percent": 22.4,
+    "unique_cnas": 79,
     "importance": "High",
     "description": "Patch references",
     "cna_scorecard_category": "patchinfo"
@@ -217,8 +217,8 @@
   },
   {
     "field": "containers.cna.tags",
-    "percent": 11.0,
-    "unique_cnas": 39,
+    "percent": 11.3,
+    "unique_cnas": 40,
     "importance": "Low",
     "description": "CNA-provided tags",
     "cna_scorecard_category": null
@@ -233,16 +233,16 @@
   },
   {
     "field": "affected.programFiles",
-    "percent": 9.9,
-    "unique_cnas": 35,
+    "percent": 10.2,
+    "unique_cnas": 36,
     "importance": "Medium",
     "description": "Affected program files",
     "cna_scorecard_category": null
   },
   {
     "field": "containers.cna.configurations",
-    "percent": 8.8,
-    "unique_cnas": 31,
+    "percent": 9.1,
+    "unique_cnas": 32,
     "importance": "Medium",
     "description": "Configuration requirements",
     "cna_scorecard_category": null
@@ -257,8 +257,8 @@
   },
   {
     "field": "affected.programRoutines",
-    "percent": 4.5,
-    "unique_cnas": 16,
+    "percent": 4.8,
+    "unique_cnas": 17,
     "importance": "Medium",
     "description": "Affected functions or methods",
     "cna_scorecard_category": null
