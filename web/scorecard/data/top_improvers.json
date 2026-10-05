@@ -57,6 +57,34 @@
       "analysis_days": 20
     },
     {
+      "cna_name": "VulDB",
+      "total_improvement": 121.25,
+      "category_improvements": {
+        "root_cause_analysis": {
+          "first_period": 100.0,
+          "last_period": 100.0,
+          "improvement": 0.0
+        },
+        "severity_and_impact": {
+          "first_period": 100.0,
+          "last_period": 100.0,
+          "improvement": 0.0
+        },
+        "software_identification": {
+          "first_period": 0.0,
+          "last_period": 100.0,
+          "improvement": 100.0
+        },
+        "patch_information": {
+          "first_period": 0.0,
+          "last_period": 21.25,
+          "improvement": 21.25
+        }
+      },
+      "total_cves_analyzed": 11272,
+      "analysis_days": 524
+    },
+    {
       "cna_name": "suse",
       "total_improvement": 120.09803921568627,
       "category_improvements": {
@@ -83,34 +111,6 @@
       },
       "total_cves_analyzed": 144,
       "analysis_days": 49
-    },
-    {
-      "cna_name": "VulDB",
-      "total_improvement": 118.3673469387755,
-      "category_improvements": {
-        "root_cause_analysis": {
-          "first_period": 100.0,
-          "last_period": 99.48979591836734,
-          "improvement": -0.510204081632665
-        },
-        "severity_and_impact": {
-          "first_period": 100.0,
-          "last_period": 100.0,
-          "improvement": 0.0
-        },
-        "software_identification": {
-          "first_period": 0.0,
-          "last_period": 100.0,
-          "improvement": 100.0
-        },
-        "patch_information": {
-          "first_period": 0.0,
-          "last_period": 18.877551020408163,
-          "improvement": 18.877551020408163
-        }
-      },
-      "total_cves_analyzed": 11214,
-      "analysis_days": 523
     },
     {
       "cna_name": "ibm",
@@ -221,8 +221,8 @@
           "improvement": 100.0
         }
       },
-      "total_cves_analyzed": 165,
-      "analysis_days": 67
+      "total_cves_analyzed": 167,
+      "analysis_days": 68
     },
     {
       "cna_name": "ASUS",
@@ -281,7 +281,7 @@
       "analysis_days": 78
     }
   ],
-  "generated_at": "2026-10-04T08:48:18.598922",
+  "generated_at": "2026-10-05T09:38:24.658699",
   "analysis_criteria": {
     "minimum_cves": 5,
     "top_n_count": 10
