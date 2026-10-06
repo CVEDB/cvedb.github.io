@@ -57,34 +57,6 @@
       "analysis_days": 20
     },
     {
-      "cna_name": "VulDB",
-      "total_improvement": 121.25,
-      "category_improvements": {
-        "root_cause_analysis": {
-          "first_period": 100.0,
-          "last_period": 100.0,
-          "improvement": 0.0
-        },
-        "severity_and_impact": {
-          "first_period": 100.0,
-          "last_period": 100.0,
-          "improvement": 0.0
-        },
-        "software_identification": {
-          "first_period": 0.0,
-          "last_period": 100.0,
-          "improvement": 100.0
-        },
-        "patch_information": {
-          "first_period": 0.0,
-          "last_period": 21.25,
-          "improvement": 21.25
-        }
-      },
-      "total_cves_analyzed": 11272,
-      "analysis_days": 524
-    },
-    {
       "cna_name": "suse",
       "total_improvement": 120.09803921568627,
       "category_improvements": {
@@ -111,6 +83,34 @@
       },
       "total_cves_analyzed": 144,
       "analysis_days": 49
+    },
+    {
+      "cna_name": "VulDB",
+      "total_improvement": 117.51412429378531,
+      "category_improvements": {
+        "root_cause_analysis": {
+          "first_period": 100.0,
+          "last_period": 99.43502824858757,
+          "improvement": -0.5649717514124291
+        },
+        "severity_and_impact": {
+          "first_period": 100.0,
+          "last_period": 100.0,
+          "improvement": 0.0
+        },
+        "software_identification": {
+          "first_period": 0.0,
+          "last_period": 100.0,
+          "improvement": 100.0
+        },
+        "patch_information": {
+          "first_period": 0.0,
+          "last_period": 18.07909604519774,
+          "improvement": 18.07909604519774
+        }
+      },
+      "total_cves_analyzed": 11319,
+      "analysis_days": 525
     },
     {
       "cna_name": "ibm",
@@ -281,7 +281,7 @@
       "analysis_days": 78
     }
   ],
-  "generated_at": "2026-10-05T09:38:24.658699",
+  "generated_at": "2026-10-06T09:27:30.918930",
   "analysis_criteria": {
     "minimum_cves": 5,
     "top_n_count": 10
