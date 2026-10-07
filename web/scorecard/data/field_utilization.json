@@ -8,6 +8,14 @@
     "cna_scorecard_category": null
   },
   {
+    "field": "containers.adp",
+    "percent": 100.0,
+    "unique_cnas": 354,
+    "importance": "Low",
+    "description": "Authorized Data Publisher container",
+    "cna_scorecard_category": null
+  },
+  {
     "field": "containers.cna.affected",
     "percent": 100.0,
     "unique_cnas": 354,
@@ -37,14 +45,6 @@
     "unique_cnas": 354,
     "importance": "Medium",
     "description": "At least one English description",
-    "cna_scorecard_category": null
-  },
-  {
-    "field": "containers.adp",
-    "percent": 99.7,
-    "unique_cnas": 353,
-    "importance": "Low",
-    "description": "Authorized Data Publisher container",
     "cna_scorecard_category": null
   },
   {
@@ -160,19 +160,19 @@
     "cna_scorecard_category": "severityAndImpactContext"
   },
   {
+    "field": "references.advisory",
+    "percent": 49.7,
+    "unique_cnas": 176,
+    "importance": "Medium",
+    "description": "Advisory references",
+    "cna_scorecard_category": null
+  },
+  {
     "field": "containers.cna.datePublic",
     "percent": 49.2,
     "unique_cnas": 174,
     "importance": "Low",
     "description": "Date the vulnerability was disclosed publicly",
-    "cna_scorecard_category": null
-  },
-  {
-    "field": "references.advisory",
-    "percent": 48.9,
-    "unique_cnas": 173,
-    "importance": "Medium",
-    "description": "Advisory references",
     "cna_scorecard_category": null
   },
   {
@@ -185,8 +185,8 @@
   },
   {
     "field": "affected.modules",
-    "percent": 24.6,
-    "unique_cnas": 87,
+    "percent": 24.9,
+    "unique_cnas": 88,
     "importance": "Medium",
     "description": "Affected modules or components",
     "cna_scorecard_category": null
@@ -201,8 +201,8 @@
   },
   {
     "field": "references.patch",
-    "percent": 22.9,
-    "unique_cnas": 81,
+    "percent": 23.4,
+    "unique_cnas": 83,
     "importance": "High",
     "description": "Patch references",
     "cna_scorecard_category": "patchinfo"
@@ -257,8 +257,8 @@
   },
   {
     "field": "affected.programRoutines",
-    "percent": 5.1,
-    "unique_cnas": 18,
+    "percent": 5.4,
+    "unique_cnas": 19,
     "importance": "Medium",
     "description": "Affected functions or methods",
     "cna_scorecard_category": null
