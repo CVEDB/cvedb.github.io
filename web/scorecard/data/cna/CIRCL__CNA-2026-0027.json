@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "CIRCL",
-    "total_cves": 231,
-    "total_cves_scored": 231,
+    "total_cves": 235,
+    "total_cves_scored": 235,
     "organizationName": "Computer Incident Response Center Luxembourg (CIRCL)",
     "scope": "Vulnerability assignment related to vulnerability coordination in Luxembourg, which may include reports on software, products, hardware, or services submitted to CIRCL in its role as the national authority for vulnerability coordination in Luxembourg and within the CSIRTs network.",
     "advisories": [
@@ -33,25 +33,25 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 19,
+  "rank": 16,
   "active_cna_count": 348,
-  "percentile": 94.8,
+  "percentile": 95.7,
   "cna_scoring": [
     {
-      "total_cves": 231,
-      "total_cves_scored": 231,
-      "recent_cves_count": 231,
-      "overall_average_score": 90.39,
+      "total_cves": 235,
+      "total_cves_scored": 235,
+      "recent_cves_count": 235,
+      "overall_average_score": 90.55,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
-      "average_software_identification": 0.95,
+      "average_software_identification": 1.11,
       "average_severity_context": 15.0,
-      "average_patchinfo": 9.44,
+      "average_patchinfo": 9.45,
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 100.0,
-      "percent_software_identification": 9.52,
+      "percent_software_identification": 11.06,
       "percent_severity_and_impact": 100.0,
-      "percent_patchinfo": 94.37,
+      "percent_patchinfo": 94.47,
       "trend_direction": "steady",
       "trend_description": "No significant change",
       "monthly_trends": []
@@ -2252,6 +2252,58 @@
         "rootCauseAnalysis": 15,
         "severityAndImpactContext": 15,
         "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-107175",
+      "assigningCna": "CIRCL",
+      "datePublished": "2026-10-07",
+      "totalCveScore": 100,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-107276",
+      "assigningCna": "CIRCL",
+      "datePublished": "2026-10-07",
+      "totalCveScore": 100,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-107180",
+      "assigningCna": "CIRCL",
+      "datePublished": "2026-10-07",
+      "totalCveScore": 100,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-107278",
+      "assigningCna": "CIRCL",
+      "datePublished": "2026-10-07",
+      "totalCveScore": 100,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
         "patchinfo": 10
       }
     },
