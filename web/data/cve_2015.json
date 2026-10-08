@@ -512,11 +512,11 @@
       }
     },
     "v3.1": {
-      "total": 96,
+      "total": 98,
       "severity_distribution": {
         "MEDIUM": 12,
-        "HIGH": 54,
-        "CRITICAL": 28,
+        "HIGH": 55,
+        "CRITICAL": 29,
         "LOW": 2
       },
       "score_distribution": {
@@ -526,7 +526,7 @@
         "9.8": 25,
         "7.8": 13,
         "6.5": 1,
-        "7.5": 18,
+        "7.5": 19,
         "3.7": 2,
         "7.3": 2,
         "9.1": 1,
@@ -537,7 +537,7 @@
         "6.4": 1,
         "7.0": 2,
         "8.2": 1,
-        "10.0": 2,
+        "10.0": 3,
         "6.1": 1,
         "5.3": 3,
         "7.4": 2,
@@ -552,7 +552,7 @@
     }
   },
   "kev": {
-    "kev_count": 45
+    "kev_count": 47
   },
   "vendors": {
     "cna_assigners": [],
@@ -679,7 +679,7 @@
       },
       {
         "cwe": "CWE-284",
-        "count": 144
+        "count": 145
       },
       {
         "cwe": "CWE-17",
@@ -727,11 +727,15 @@
     "vulnerability_status": [
       {
         "status": "Modified",
-        "count": 6448
+        "count": 6447
       },
       {
         "status": "Analyzed",
         "count": 46
+      },
+      {
+        "status": "Undergoing Analysis",
+        "count": 1
       }
     ],
     "cve_tags": [],
@@ -807,7 +811,7 @@
     ]
   },
   "processing_stats": {
-    "processed_at": "2026-10-08T16:42:53.739070",
+    "processed_at": "2026-10-08T22:17:56.512093",
     "data_source": "data/cache/nvd.json"
   }
 }
