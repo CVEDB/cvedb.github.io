@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T20:31:27.937937",
+  "generated_at": "2026-10-11T23:56:06.422700",
   "source": "CVE V5 List (Authoritative)",
   "year": 2026,
   "total_cnas": 387,
@@ -172,10 +172,10 @@
     {
       "name": "VulDB",
       "assigner_org_id": "1af790b2-7ee1-4545-860a-a788eba489b5",
-      "count": 5540,
+      "count": 5548,
       "rank": 4,
       "first_cve_date": "2026-01-01T09:02:10.684Z",
-      "last_cve_date": "2026-10-11T18:59:38.491Z",
+      "last_cve_date": "2026-10-11T23:45:20.227Z",
       "years_active": 5,
       "first_cve_year": 2022,
       "last_cve_year": 2026,
@@ -185,14 +185,14 @@
         "Security Researcher"
       ],
       "severity_distribution": {
-        "Medium": 3275,
+        "Medium": 3283,
         "Critical": 760,
         "High": 1408,
         "Low": 97
       },
       "top_cwe_types": {
-        "CWE-74": 1532,
-        "CWE-89": 1133,
+        "CWE-74": 1537,
+        "CWE-89": 1138,
         "CWE-119": 855,
         "CWE-77": 649,
         "CWE-94": 569
@@ -203,11 +203,11 @@
       "top_cwes": [
         [
           "CWE-74",
-          1532
+          1537
         ],
         [
           "CWE-89",
-          1133
+          1138
         ],
         [
           "CWE-119",
@@ -5118,10 +5118,63 @@
       ]
     },
     {
+      "name": "samsung.tv_appliance",
+      "assigner_org_id": "ca193ba2-0cff-4e34-b04e-1ea07103c6fe",
+      "count": 64,
+      "rank": 96,
+      "first_cve_date": "2026-02-02T04:49:13.086Z",
+      "last_cve_date": "2026-10-11T21:31:24.126Z",
+      "years_active": 4,
+      "first_cve_year": 2023,
+      "last_cve_year": 2026,
+      "is_official": true,
+      "activity_status": "Active",
+      "cna_types": [
+        "Vendor"
+      ],
+      "severity_distribution": {
+        "Medium": 52,
+        "High": 10,
+        "Critical": 2
+      },
+      "top_cwe_types": {
+        "CWE-190": 13,
+        "CWE-787": 7,
+        "CWE-125": 6,
+        "CWE-674": 5,
+        "CWE-122": 4
+      },
+      "kev_count": 0,
+      "epss_high_count": 0,
+      "epss_elevated_count": 0,
+      "top_cwes": [
+        [
+          "CWE-190",
+          13
+        ],
+        [
+          "CWE-787",
+          7
+        ],
+        [
+          "CWE-125",
+          6
+        ],
+        [
+          "CWE-674",
+          5
+        ],
+        [
+          "CWE-122",
+          4
+        ]
+      ]
+    },
+    {
       "name": "openssl",
       "assigner_org_id": "3a12439a-ef3a-4c79-92e6-6081a721f1e5",
       "count": 63,
-      "rank": 96,
+      "rank": 97,
       "first_cve_date": "2026-01-27T15:59:41.681Z",
       "last_cve_date": "2026-09-29T15:32:25.758Z",
       "years_active": 10,
@@ -5168,59 +5221,6 @@
         [
           "CWE-754",
           4
-        ]
-      ]
-    },
-    {
-      "name": "samsung.tv_appliance",
-      "assigner_org_id": "ca193ba2-0cff-4e34-b04e-1ea07103c6fe",
-      "count": 63,
-      "rank": 97,
-      "first_cve_date": "2026-02-02T04:49:13.086Z",
-      "last_cve_date": "2026-09-15T21:34:04.487Z",
-      "years_active": 4,
-      "first_cve_year": 2023,
-      "last_cve_year": 2026,
-      "is_official": true,
-      "activity_status": "Active",
-      "cna_types": [
-        "Vendor"
-      ],
-      "severity_distribution": {
-        "Medium": 51,
-        "High": 10,
-        "Critical": 2
-      },
-      "top_cwe_types": {
-        "CWE-190": 13,
-        "CWE-787": 7,
-        "CWE-125": 6,
-        "CWE-674": 5,
-        "CWE-1284": 3
-      },
-      "kev_count": 0,
-      "epss_high_count": 0,
-      "epss_elevated_count": 0,
-      "top_cwes": [
-        [
-          "CWE-190",
-          13
-        ],
-        [
-          "CWE-787",
-          7
-        ],
-        [
-          "CWE-125",
-          6
-        ],
-        [
-          "CWE-674",
-          5
-        ],
-        [
-          "CWE-1284",
-          3
         ]
       ]
     },
