@@ -37,24 +37,24 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 98,
-  "active_cna_count": 355,
-  "percentile": 72.7,
+  "rank": 95,
+  "active_cna_count": 353,
+  "percentile": 73.4,
   "cna_scoring": [
     {
       "total_cves": 38,
       "total_cves_scored": 38,
       "recent_cves_count": 38,
-      "overall_average_score": 81.84,
+      "overall_average_score": 82.63,
       "average_foundational_completeness": 50.0,
-      "average_root_cause_analysis": 14.61,
+      "average_root_cause_analysis": 15.0,
       "average_software_identification": 1.32,
-      "average_severity_context": 14.61,
+      "average_severity_context": 15.0,
       "average_patchinfo": 1.32,
       "percent_foundational_completeness": 100.0,
-      "percent_root_cause_analysis": 97.37,
+      "percent_root_cause_analysis": 100.0,
       "percent_software_identification": 13.16,
-      "percent_severity_and_impact": 97.37,
+      "percent_severity_and_impact": 100.0,
       "percent_patchinfo": 13.16,
       "trend_direction": "steady",
       "trend_description": "No significant change",
@@ -62,19 +62,6 @@
     }
   ],
   "recent_cves": [
-    {
-      "cveId": "CVE-2026-11946",
-      "assigningCna": "ENISA",
-      "datePublished": "2026-07-02",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
     {
       "cveId": "CVE-2026-33590",
       "assigningCna": "ENISA",
@@ -203,6 +190,19 @@
         "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-11946",
+      "assigningCna": "ENISA",
+      "datePublished": "2026-07-02",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
       }
     },
     {
@@ -337,19 +337,6 @@
     },
     {
       "cveId": "CVE-2026-0857",
-      "assigningCna": "ENISA",
-      "datePublished": "2026-05-20",
-      "totalCveScore": 80,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 0
-      }
-    },
-    {
-      "cveId": "CVE-2026-22314",
       "assigningCna": "ENISA",
       "datePublished": "2026-05-20",
       "totalCveScore": 80,
@@ -521,11 +508,24 @@
       "cveId": "CVE-2026-89309",
       "assigningCna": "ENISA",
       "datePublished": "2026-10-13",
-      "totalCveScore": 50,
+      "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 0,
-        "severityAndImpactContext": 0,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-89310",
+      "assigningCna": "ENISA",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 0
       }
