@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "rapid7",
-    "total_cves": 58,
-    "total_cves_scored": 58,
+    "total_cves": 61,
+    "total_cves_scored": 61,
     "organizationName": "Rapid7, Inc.",
     "scope": "All Rapid7 products, and vulnerabilities discovered by Rapid7 that are not in another CNA’s scope.",
     "advisories": [
@@ -35,25 +35,25 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 99,
+  "rank": 97,
   "active_cna_count": 353,
-  "percentile": 72.2,
+  "percentile": 72.8,
   "cna_scoring": [
     {
-      "total_cves": 58,
-      "total_cves_scored": 58,
-      "recent_cves_count": 58,
-      "overall_average_score": 82.07,
+      "total_cves": 61,
+      "total_cves_scored": 61,
+      "recent_cves_count": 61,
+      "overall_average_score": 81.97,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
-      "average_software_identification": 1.03,
+      "average_software_identification": 0.98,
       "average_severity_context": 15.0,
-      "average_patchinfo": 1.03,
+      "average_patchinfo": 0.98,
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 100.0,
-      "percent_software_identification": 10.34,
+      "percent_software_identification": 9.84,
       "percent_severity_and_impact": 100.0,
-      "percent_patchinfo": 10.34,
+      "percent_patchinfo": 9.84,
       "trend_direction": "steady",
       "trend_description": "No significant change",
       "monthly_trends": []
@@ -269,19 +269,6 @@
       }
     },
     {
-      "cveId": "CVE-2026-17535",
-      "assigningCna": "rapid7",
-      "datePublished": "2026-08-11",
-      "totalCveScore": 80,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 0
-      }
-    },
-    {
       "cveId": "CVE-2026-16895",
       "assigningCna": "rapid7",
       "datePublished": "2026-08-27",
@@ -337,6 +324,19 @@
       "cveId": "CVE-2026-6482",
       "assigningCna": "rapid7",
       "datePublished": "2026-04-17",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-17535",
+      "assigningCna": "rapid7",
+      "datePublished": "2026-08-11",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -646,6 +646,19 @@
       }
     },
     {
+      "cveId": "CVE-2026-108065",
+      "assigningCna": "rapid7",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
       "cveId": "CVE-2026-87690",
       "assigningCna": "rapid7",
       "datePublished": "2026-10-12",
@@ -698,9 +711,35 @@
       }
     },
     {
+      "cveId": "CVE-2026-93637",
+      "assigningCna": "rapid7",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
       "cveId": "CVE-2026-93641",
       "assigningCna": "rapid7",
       "datePublished": "2026-09-25",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-93635",
+      "assigningCna": "rapid7",
+      "datePublished": "2026-10-14",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
