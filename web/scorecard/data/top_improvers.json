@@ -29,6 +29,34 @@
       "analysis_days": 12
     },
     {
+      "cna_name": "VulDB",
+      "total_improvement": 125.11210762331838,
+      "category_improvements": {
+        "root_cause_analysis": {
+          "first_period": 100.0,
+          "last_period": 98.65470852017937,
+          "improvement": -1.3452914798206308
+        },
+        "severity_and_impact": {
+          "first_period": 100.0,
+          "last_period": 100.0,
+          "improvement": 0.0
+        },
+        "software_identification": {
+          "first_period": 0.0,
+          "last_period": 100.0,
+          "improvement": 100.0
+        },
+        "patch_information": {
+          "first_period": 0.0,
+          "last_period": 26.45739910313901,
+          "improvement": 26.45739910313901
+        }
+      },
+      "total_cves_analyzed": 11547,
+      "analysis_days": 532
+    },
+    {
       "cna_name": "suse",
       "total_improvement": 123.88591800356507,
       "category_improvements": {
@@ -55,34 +83,6 @@
       },
       "total_cves_analyzed": 147,
       "analysis_days": 50
-    },
-    {
-      "cna_name": "VulDB",
-      "total_improvement": 122.86995515695067,
-      "category_improvements": {
-        "root_cause_analysis": {
-          "first_period": 100.0,
-          "last_period": 98.65470852017937,
-          "improvement": -1.3452914798206308
-        },
-        "severity_and_impact": {
-          "first_period": 100.0,
-          "last_period": 100.0,
-          "improvement": 0.0
-        },
-        "software_identification": {
-          "first_period": 0.0,
-          "last_period": 100.0,
-          "improvement": 100.0
-        },
-        "patch_information": {
-          "first_period": 0.0,
-          "last_period": 24.215246636771298,
-          "improvement": 24.215246636771298
-        }
-      },
-      "total_cves_analyzed": 11547,
-      "analysis_days": 532
     },
     {
       "cna_name": "glibc",
@@ -142,12 +142,12 @@
     },
     {
       "cna_name": "ibm",
-      "total_improvement": 114.38959050899349,
+      "total_improvement": 114.40422322775265,
       "category_improvements": {
         "root_cause_analysis": {
           "first_period": 100.0,
-          "last_period": 99.0049751243781,
-          "improvement": -0.995024875621894
+          "last_period": 99.01960784313727,
+          "improvement": -0.9803921568627345
         },
         "severity_and_impact": {
           "first_period": 100.0,
@@ -165,8 +165,8 @@
           "improvement": 84.61538461538461
         }
       },
-      "total_cves_analyzed": 1721,
-      "analysis_days": 192
+      "total_cves_analyzed": 1730,
+      "analysis_days": 193
     },
     {
       "cna_name": "Sonatype",
@@ -277,11 +277,11 @@
           "improvement": 2.083333333333343
         }
       },
-      "total_cves_analyzed": 199,
-      "analysis_days": 107
+      "total_cves_analyzed": 203,
+      "analysis_days": 108
     }
   ],
-  "generated_at": "2026-10-16T07:34:25.458736",
+  "generated_at": "2026-10-17T07:15:16.650839",
   "analysis_criteria": {
     "minimum_cves": 5,
     "top_n_count": 10
