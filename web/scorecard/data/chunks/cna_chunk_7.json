@@ -5,18 +5,19 @@
   "count": 3,
   "items": [
     {
-      "shortName": "apple",
-      "detailFile": "apple__CNA-2009-0002.json",
-      "organizationName": "Apple Inc.",
+      "shortName": "debian",
+      "detailFile": "debian__CNA-2005-0003.json",
+      "organizationName": "Debian GNU/Linux",
       "cnaType": "Vendor",
       "cnaTypes": [
-        "Vendor"
+        "Vendor",
+        "Open Source"
       ],
       "rank": 349,
       "active_cna_count": 353,
       "percentile": 1.4,
-      "total_cves": 663,
-      "recent_cves": 663,
+      "total_cves": 2,
+      "recent_cves": 2,
       "is_active": true,
       "scores": {
         "overall_average_score": 50.0,
@@ -31,20 +32,65 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "Apple issues only.",
+      "scope": "Debian issues only.",
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://support.apple.com/en-us/HT201222"
+          "url": "https://www.debian.org/security/#DSAS"
         }
       ],
-      "officialCnaID": "CNA-2009-0002",
+      "officialCnaID": "CNA-2005-0003",
       "country": "USA",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://support.apple.com/en-us/HT201220"
+          "url": "https://www.debian.org/security/disclosure-policy"
+        }
+      ]
+    },
+    {
+      "shortName": "mozilla",
+      "detailFile": "mozilla__CNA-2012-0002.json",
+      "organizationName": "Mozilla Corporation",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source"
+      ],
+      "rank": 349,
+      "active_cna_count": 353,
+      "percentile": 1.4,
+      "total_cves": 512,
+      "recent_cves": 512,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 50.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 0.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 0.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Mozilla issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.mozilla.org/en-US/security/advisories/"
+        }
+      ],
+      "officialCnaID": "CNA-2012-0002",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/bugs/"
         }
       ]
     },
@@ -89,51 +135,6 @@
           "label": "Policy",
           "language": "",
           "url": "https://jenkins.io/security/"
-        }
-      ]
-    },
-    {
-      "shortName": "mozilla",
-      "detailFile": "mozilla__CNA-2012-0002.json",
-      "organizationName": "Mozilla Corporation",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Open Source"
-      ],
-      "rank": 349,
-      "active_cna_count": 353,
-      "percentile": 1.4,
-      "total_cves": 553,
-      "recent_cves": 553,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 50.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 0.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 0.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Mozilla issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.mozilla.org/en-US/security/advisories/"
-        }
-      ],
-      "officialCnaID": "CNA-2012-0002",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/bugs/"
         }
       ]
     }

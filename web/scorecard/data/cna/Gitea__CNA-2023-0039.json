@@ -34,9 +34,9 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 309,
+  "rank": 310,
   "active_cna_count": 353,
-  "percentile": 12.7,
+  "percentile": 12.5,
   "cna_scoring": [
     {
       "total_cves": 165,
@@ -60,7 +60,33 @@
   ],
   "recent_cves": [
     {
-      "cveId": "CVE-2026-23603",
+      "cveId": "CVE-2026-71301",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 60,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 0,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-71184",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-42931",
       "assigningCna": "Gitea",
       "datePublished": "2026-08-13",
       "totalCveScore": 65,
@@ -73,9 +99,22 @@
       }
     },
     {
-      "cveId": "CVE-2026-73278",
+      "cveId": "CVE-2026-22874",
       "assigningCna": "Gitea",
-      "datePublished": "2026-10-06",
+      "datePublished": "2026-07-03",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-22547",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-07-03",
       "totalCveScore": 75,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -86,131 +125,14 @@
       }
     },
     {
-      "cveId": "CVE-2026-73804",
+      "cveId": "CVE-2026-22555",
       "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
+      "datePublished": "2026-07-03",
+      "totalCveScore": 90,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
         "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73135",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73814",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73800",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73126",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73802",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 65,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 0
-      }
-    },
-    {
-      "cveId": "CVE-2026-73130",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73539",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73273",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-73535",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
+        "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 10
       }
@@ -424,33 +346,7 @@
       }
     },
     {
-      "cveId": "CVE-2026-71301",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 60,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 0,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-71184",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-10-14",
-      "totalCveScore": 75,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 0,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-42931",
+      "cveId": "CVE-2026-23603",
       "assigningCna": "Gitea",
       "datePublished": "2026-08-13",
       "totalCveScore": 65,
@@ -463,22 +359,9 @@
       }
     },
     {
-      "cveId": "CVE-2026-22874",
+      "cveId": "CVE-2026-73278",
       "assigningCna": "Gitea",
-      "datePublished": "2026-07-03",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-22547",
-      "assigningCna": "Gitea",
-      "datePublished": "2026-07-03",
+      "datePublished": "2026-10-06",
       "totalCveScore": 75,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -489,14 +372,131 @@
       }
     },
     {
-      "cveId": "CVE-2026-22555",
+      "cveId": "CVE-2026-73804",
       "assigningCna": "Gitea",
-      "datePublished": "2026-07-03",
-      "totalCveScore": 90,
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
         "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73135",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73814",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73800",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73126",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73802",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 65,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-73130",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73539",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73273",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-73535",
+      "assigningCna": "Gitea",
+      "datePublished": "2026-10-14",
+      "totalCveScore": 75,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 0,
         "softwareIdentification": 0,
         "patchinfo": 10
       }

@@ -34,9 +34,9 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 12,
+  "rank": 13,
   "active_cna_count": 353,
-  "percentile": 96.9,
+  "percentile": 96.6,
   "cna_scoring": [
     {
       "total_cves": 13,
@@ -60,6 +60,19 @@
   ],
   "recent_cves": [
     {
+      "cveId": "CVE-2026-87858",
+      "assigningCna": "Temporal",
+      "datePublished": "2026-09-21",
+      "totalCveScore": 100,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 10,
+        "patchinfo": 10
+      }
+    },
+    {
       "cveId": "CVE-2026-16652",
       "assigningCna": "Temporal",
       "datePublished": "2026-09-21",
@@ -74,19 +87,6 @@
     },
     {
       "cveId": "CVE-2026-16651",
-      "assigningCna": "Temporal",
-      "datePublished": "2026-09-21",
-      "totalCveScore": 100,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 10,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-87858",
       "assigningCna": "Temporal",
       "datePublished": "2026-09-21",
       "totalCveScore": 100,

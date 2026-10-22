@@ -65,8 +65,8 @@
   },
   {
     "field": "containers.cna.problemTypes",
-    "percent": 96.1,
-    "unique_cnas": 344,
+    "percent": 96.4,
+    "unique_cnas": 345,
     "importance": "High",
     "description": "Problem type information (CWE, etc.)",
     "cna_scorecard_category": null
@@ -80,20 +80,20 @@
     "cna_scorecard_category": null
   },
   {
+    "field": "problemTypes.cwe",
+    "percent": 95.3,
+    "unique_cnas": 341,
+    "importance": "High",
+    "description": "Common Weakness Enumeration identifiers",
+    "cna_scorecard_category": "rootCauseAnalysis"
+  },
+  {
     "field": "containers.cna.metrics",
     "percent": 95.0,
     "unique_cnas": 340,
     "importance": "High",
     "description": "Impact metrics (CVSS scores)",
     "cna_scorecard_category": null
-  },
-  {
-    "field": "problemTypes.cwe",
-    "percent": 95.0,
-    "unique_cnas": 340,
-    "importance": "High",
-    "description": "Common Weakness Enumeration identifiers",
-    "cna_scorecard_category": "rootCauseAnalysis"
   },
   {
     "field": "metrics.other",
@@ -129,16 +129,16 @@
   },
   {
     "field": "containers.cna.credits",
-    "percent": 69.3,
-    "unique_cnas": 248,
+    "percent": 69.6,
+    "unique_cnas": 249,
     "importance": "Medium",
     "description": "Credit information",
     "cna_scorecard_category": null
   },
   {
     "field": "metrics.cvssV4_0",
-    "percent": 65.4,
-    "unique_cnas": 234,
+    "percent": 65.6,
+    "unique_cnas": 235,
     "importance": "High",
     "description": "CVSS v4.0 metrics",
     "cna_scorecard_category": "severityAndImpactContext"
@@ -153,16 +153,16 @@
   },
   {
     "field": "metrics.cvssV3_1",
-    "percent": 55.9,
-    "unique_cnas": 200,
+    "percent": 55.6,
+    "unique_cnas": 199,
     "importance": "High",
     "description": "CVSS v3.1 metrics",
     "cna_scorecard_category": "severityAndImpactContext"
   },
   {
     "field": "references.advisory",
-    "percent": 51.4,
-    "unique_cnas": 184,
+    "percent": 51.7,
+    "unique_cnas": 185,
     "importance": "Medium",
     "description": "Advisory references",
     "cna_scorecard_category": null
@@ -177,8 +177,8 @@
   },
   {
     "field": "containers.cna.solutions",
-    "percent": 36.0,
-    "unique_cnas": 129,
+    "percent": 36.3,
+    "unique_cnas": 130,
     "importance": "Medium",
     "description": "Solutions and remediations",
     "cna_scorecard_category": null
@@ -193,24 +193,24 @@
   },
   {
     "field": "references.patch",
-    "percent": 24.0,
-    "unique_cnas": 86,
+    "percent": 24.3,
+    "unique_cnas": 87,
     "importance": "High",
     "description": "Patch references",
     "cna_scorecard_category": "patchinfo"
   },
   {
     "field": "affected.repo",
-    "percent": 23.2,
-    "unique_cnas": 83,
+    "percent": 23.5,
+    "unique_cnas": 84,
     "importance": "Medium",
     "description": "Source code repository URL",
     "cna_scorecard_category": null
   },
   {
     "field": "containers.cna.workarounds",
-    "percent": 21.2,
-    "unique_cnas": 76,
+    "percent": 21.8,
+    "unique_cnas": 78,
     "importance": "Medium",
     "description": "Workaround information",
     "cna_scorecard_category": null
