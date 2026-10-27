@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "GandC",
-    "total_cves": 1,
-    "total_cves_scored": 1,
+    "total_cves": 2,
+    "total_cves_scored": 2,
     "organizationName": "Glyph & Cog, LLC",
     "scope": "Xpdf open source project, including the xpdf viewer and associated command line tools.",
     "advisories": [
@@ -34,14 +34,14 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 115,
-  "active_cna_count": 356,
-  "percentile": 68.0,
+  "rank": 116,
+  "active_cna_count": 358,
+  "percentile": 67.9,
   "cna_scoring": [
     {
-      "total_cves": 1,
-      "total_cves_scored": 1,
-      "recent_cves_count": 1,
+      "total_cves": 2,
+      "total_cves_scored": 2,
+      "recent_cves_count": 2,
       "overall_average_score": 80.0,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
@@ -63,6 +63,19 @@
       "cveId": "CVE-2026-85458",
       "assigningCna": "GandC",
       "datePublished": "2026-09-03",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-116671",
+      "assigningCna": "GandC",
+      "datePublished": "2026-10-26",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
