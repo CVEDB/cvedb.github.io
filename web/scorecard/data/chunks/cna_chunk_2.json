@@ -50,9 +50,9 @@
       ]
     },
     {
-      "shortName": "rapid7",
-      "detailFile": "rapid7__CNA-2016-0024.json",
-      "organizationName": "Rapid7, Inc.",
+      "shortName": "Google",
+      "detailFile": "Google__CNA-2020-0005.json",
+      "organizationName": "Google LLC",
       "cnaType": "Vendor",
       "cnaTypes": [
         "Vendor",
@@ -62,6 +62,56 @@
       "rank": 102,
       "active_cna_count": 358,
       "percentile": 71.8,
+      "total_cves": 40,
+      "recent_cves": 40,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 81.75,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 17.5
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "<strong>Root Scope:</strong> Alphabet organizations.<br/><strong>CNA Scope:</strong> Google products, including open source software published and maintained by Google, and vulnerabilities in third-party software discovered by Google that are not in another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Cloud Advisories",
+          "url": "https://cloud.google.com/support/bulletins"
+        },
+        {
+          "label": "Advisories",
+          "url": "https://github.com/google/security-research"
+        }
+      ],
+      "officialCnaID": "CNA-2020-0005",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.google.ch/about/appsecurity/"
+        }
+      ]
+    },
+    {
+      "shortName": "rapid7",
+      "detailFile": "rapid7__CNA-2016-0024.json",
+      "organizationName": "Rapid7, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source",
+        "Researcher"
+      ],
+      "rank": 103,
+      "active_cna_count": 358,
+      "percentile": 71.5,
       "total_cves": 81,
       "recent_cves": 81,
       "is_active": true,
@@ -92,56 +142,6 @@
           "label": "Policy",
           "language": "",
           "url": "https://www.rapid7.com/security/disclosure/"
-        }
-      ]
-    },
-    {
-      "shortName": "Google",
-      "detailFile": "Google__CNA-2020-0005.json",
-      "organizationName": "Google LLC",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Open Source",
-        "Researcher"
-      ],
-      "rank": 103,
-      "active_cna_count": 358,
-      "percentile": 71.5,
-      "total_cves": 39,
-      "recent_cves": 39,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 81.54,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 15.38
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "<strong>Root Scope:</strong> Alphabet organizations.<br/><strong>CNA Scope:</strong> Google products, including open source software published and maintained by Google, and vulnerabilities in third-party software discovered by Google that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Cloud Advisories",
-          "url": "https://cloud.google.com/support/bulletins"
-        },
-        {
-          "label": "Advisories",
-          "url": "https://github.com/google/security-research"
-        }
-      ],
-      "officialCnaID": "CNA-2020-0005",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.google.ch/about/appsecurity/"
         }
       ]
     },
@@ -426,16 +426,16 @@
       "rank": 110,
       "active_cna_count": 358,
       "percentile": 69.6,
-      "total_cves": 46,
-      "recent_cves": 46,
+      "total_cves": 47,
+      "recent_cves": 47,
       "is_active": true,
       "scores": {
-        "overall_average_score": 80.22,
+        "overall_average_score": 80.21,
         "foundational_completeness": 100.0,
         "root_cause_analysis": 100.0,
         "software_identification": 0.0,
         "severity_and_impact": 100.0,
-        "patchinfo": 2.17
+        "patchinfo": 2.13
       },
       "trend": {
         "direction": "steady",
@@ -471,9 +471,9 @@
       "cnaTypes": [
         "Researcher"
       ],
-      "rank": 111,
+      "rank": 110,
       "active_cna_count": 358,
-      "percentile": 69.3,
+      "percentile": 69.6,
       "total_cves": 189,
       "recent_cves": 189,
       "is_active": true,
@@ -617,8 +617,8 @@
       "rank": 114,
       "active_cna_count": 358,
       "percentile": 68.4,
-      "total_cves": 119,
-      "recent_cves": 119,
+      "total_cves": 121,
+      "recent_cves": 121,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.08,
@@ -626,7 +626,7 @@
         "root_cause_analysis": 100.0,
         "software_identification": 0.0,
         "severity_and_impact": 100.0,
-        "patchinfo": 0.84
+        "patchinfo": 0.83
       },
       "trend": {
         "direction": "steady",
@@ -665,14 +665,14 @@
       "rank": 115,
       "active_cna_count": 358,
       "percentile": 68.2,
-      "total_cves": 3077,
-      "recent_cves": 3077,
+      "total_cves": 3074,
+      "recent_cves": 3074,
       "is_active": true,
       "scores": {
-        "overall_average_score": 80.02,
+        "overall_average_score": 80.01,
         "foundational_completeness": 100.0,
         "root_cause_analysis": 100.0,
-        "software_identification": 0.19,
+        "software_identification": 0.16,
         "severity_and_impact": 99.97,
         "patchinfo": 0.03
       },
@@ -703,18 +703,20 @@
       ]
     },
     {
-      "shortName": "PaperCut",
-      "detailFile": "PaperCut__CNA-2023-0066.json",
-      "organizationName": "PaperCut Software Pty Ltd",
+      "shortName": "GitHub_M",
+      "detailFile": "GitHub_M__CNA-2019-0009.json",
+      "organizationName": "GitHub, Inc.",
       "cnaType": "Vendor",
       "cnaTypes": [
-        "Vendor"
+        "Vendor",
+        "Open Source",
+        "Researcher"
       ],
       "rank": 116,
       "active_cna_count": 358,
       "percentile": 67.9,
-      "total_cves": 12,
-      "recent_cves": 12,
+      "total_cves": 7847,
+      "recent_cves": 7847,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.0,
@@ -729,27 +731,71 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "PaperCut MF, PaperCut NG, PaperCut Hive, PaperCut Pocket, PaperCut Mobility Print, QRdoc, PaperCut Views, PaperCut Multiverse, <a href='https://www.papercut.com' target='_blank'>https://www.papercut.com</a>, and all other PaperCut products and services.",
+      "scope": "CVEs requested by code owners using the GitHub Security Advisories feature and vulnerabilities affecting open source projects discovered by security researchers at GitHub or Microsoft not covered by another CNA’s scope.",
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://www.papercut.com/kb/Main/CommonSecurityQuestions"
+          "url": "https://github.com/advisories"
         }
       ],
-      "officialCnaID": "CNA-2023-0066",
-      "country": "Australia",
+      "officialCnaID": "CNA-2019-0009",
+      "country": "USA",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://www.papercut.com/contact/security/vulnerability-disclosure-policy/"
+          "url": "https://help.github.com/en/articles/about-maintainer-security-advisories"
         }
       ]
     },
     {
-      "shortName": "jpcert",
-      "detailFile": "jpcert__CNA-2010-0001.json",
-      "organizationName": "JPCERT/CC",
+      "shortName": "Netskope",
+      "detailFile": "Netskope__CNA-2022-0007.json",
+      "organizationName": "Netskope",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 7,
+      "recent_cves": 7,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All Netskope products and services.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.netskope.com/company/security-compliance-and-assurance/security-advisories-and-disclosures"
+        }
+      ],
+      "officialCnaID": "CNA-2022-0007",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.netskope.com/vulnerability-disclosure-policy"
+        }
+      ]
+    },
+    {
+      "shortName": "icscert",
+      "detailFile": "icscert__CNA-2012-0001.json",
+      "organizationName": "Cybersecurity and Infrastructure Security Agency (CISA) Industrial Control Systems (ICS)",
       "cnaType": "CERT",
       "cnaTypes": [
         "CERT"
@@ -757,8 +803,8 @@
       "rank": 116,
       "active_cna_count": 358,
       "percentile": 67.9,
-      "total_cves": 185,
-      "recent_cves": 185,
+      "total_cves": 355,
+      "recent_cves": 355,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.0,
@@ -773,508 +819,24 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "<strong>Root Scope:</strong> Japan organizations.<br/><strong>CNA Scope:</strong> Vulnerability assignment related to its vulnerability coordination role.",
+      "scope": "Vulnerabilities that are (1) reported to or observed by CISA, (2) affect industrial control systems or medical devices, and (3) are not covered by another CNA’s scope.",
       "advisories": [
         {
-          "label": "Advisories",
-          "url": "https://jvn.jp/"
-        }
-      ],
-      "officialCnaID": "CNA-2010-0001",
-      "country": "Japan",
-      "disclosurePolicy": [
+          "label": "ICS Advisories",
+          "url": "https://cisa.gov/icsa"
+        },
         {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.jpcert.or.jp/english/vh/2018/20180330-vulpolicy.pdf#search='disclosure"
-        }
-      ]
-    },
-    {
-      "shortName": "hsi",
-      "detailFile": "hsi__CNA-2026-0053.json",
-      "organizationName": "Haverford Systems, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Researcher"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 1,
-      "recent_cves": 1,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All products for Haverford Systems brands, PTZOptics and HuddleCamHD (supported products and end-of-life/end-of-service products), as well as vulnerabilities in third-party software discovered by Haverford Systems that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://ptzoptics.com/known-vulnerabilities-and-fixes/"
+          "label": "ICS Medical Advisories",
+          "url": "https://cisa.gov/icsma"
         }
       ],
-      "officialCnaID": "CNA-2026-0053",
+      "officialCnaID": "CNA-2012-0001",
       "country": "USA",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://psirt.havsys.com/disclosure-policy.pdf"
-        }
-      ]
-    },
-    {
-      "shortName": "runZero",
-      "detailFile": "runZero__CNA-2025-0062.json",
-      "organizationName": "runZero, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Researcher",
-        "Hosted Service",
-        "Open Source"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 31,
-      "recent_cves": 31,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Vulnerabilities in runZero products, as well as vulnerabilities discovered by, or reported to, runZero that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.runzero.com/advisories"
-        }
-      ],
-      "officialCnaID": "CNA-2025-0062",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.runzero.com/legal/disclosure/"
-        }
-      ]
-    },
-    {
-      "shortName": "Vestel",
-      "detailFile": "Vestel__CNA-2026-0010.json",
-      "organizationName": "Vestel Electronics Industry & Trade Co.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 1,
-      "recent_cves": 1,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Vestel-owned brands and products only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://vestelinternational.com/security-advisories"
-        }
-      ],
-      "officialCnaID": "CNA-2026-0010",
-      "country": "Türkiye",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://vestelinternational.com/en/vulnerability-disclose-policy"
-        }
-      ]
-    },
-    {
-      "shortName": "IQSIGHT",
-      "detailFile": "IQSIGHT__CNA-2026-0039.json",
-      "organizationName": "IQSIGHT B.V.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 1,
-      "recent_cves": 1,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All IQSIGHT (formerly Bosch Building Technology - Video Systems) products including end-of-life products.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.iqsight.com/en/support/product-security/vulnerability-report/"
-        }
-      ],
-      "officialCnaID": "CNA-2026-0039",
-      "country": "Netherlands",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.iqsight.com/en/support/product-security/"
-        }
-      ]
-    },
-    {
-      "shortName": "SICK_AG",
-      "detailFile": "SICK_AG__CNA-2019-0016.json",
-      "organizationName": "SICK AG",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 3,
-      "recent_cves": 3,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "SICK AG issues and issues in EHS products (when related to the Endress+Hauser SICK (EHS) joint venture).",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://sick.com/psirt#advisories"
-        }
-      ],
-      "officialCnaID": "CNA-2019-0016",
-      "country": "Germany",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://sick.com/psirt"
-        }
-      ]
-    },
-    {
-      "shortName": "Snow",
-      "detailFile": "Snow__CNA-2021-0036.json",
-      "organizationName": "Snow Software",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 19,
-      "recent_cves": 19,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All Snow Software products.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://community.snowsoftware.com/s/group/0F91r000000QUhPCAW/news-updates"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0036",
-      "country": "Sweden",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "English",
-          "url": "https://www.snowsoftware.com/seo/snow-responsible-disclosure-policy"
-        }
-      ]
-    },
-    {
-      "shortName": "Medtronic",
-      "detailFile": "Medtronic__CNA-2022-0005.json",
-      "organizationName": "Medtronic",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 2,
-      "recent_cves": 2,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All products of Medtronic or a Medtronic company including supported products and end-of-life/end-of-service products, as well as vulnerabilities in third-party software discovered in Medtronic products that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://global.medtronic.com/xg-en/product-security/security-bulletins.html"
-        }
-      ],
-      "officialCnaID": "CNA-2022-0005",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://global.medtronic.com/xg-en/product-security/coordinated-disclosure-process.html"
-        }
-      ]
-    },
-    {
-      "shortName": "Arista",
-      "detailFile": "Arista__CNA-2021-0008.json",
-      "organizationName": "Arista Networks, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 85,
-      "recent_cves": 85,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All Arista products only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.arista.com/en/support/advisories-notices"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0008",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.arista.com/en/support/advisories-notices"
-        }
-      ]
-    },
-    {
-      "shortName": "Pentraze",
-      "detailFile": "Pentraze__CNA-2024-0002.json",
-      "organizationName": "Pentraze Cybersecurity",
-      "cnaType": "Researcher",
-      "cnaTypes": [
-        "Researcher"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 1,
-      "recent_cves": 1,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Vulnerabilities in third-party software discovered by Pentraze Cybersecurity that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://pentraze.com/vulnerability-reports/"
-        }
-      ],
-      "officialCnaID": "CNA-2024-0002",
-      "country": "Dominican Republic",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://pentraze.com/vulnerability-disclosure-policy/"
-        }
-      ]
-    },
-    {
-      "shortName": "Zscaler",
-      "detailFile": "Zscaler__CNA-2020-0009.json",
-      "organizationName": "Zscaler, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 10,
-      "recent_cves": 10,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Zscaler issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://trust.zscaler.com/security-advisories"
-        }
-      ],
-      "officialCnaID": "CNA-2020-0009",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.zscaler.com/company/vulnerability-disclosure-program"
-        }
-      ]
-    },
-    {
-      "shortName": "GitHub_P",
-      "detailFile": "GitHub_P__CNA-2020-0007.json",
-      "organizationName": "GitHub, Inc. (Products Only)",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 23,
-      "recent_cves": 23,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "GitHub Enterprise Server issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://enterprise.github.com/releases"
-        }
-      ],
-      "officialCnaID": "CNA-2020-0007",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://bounty.github.com/#rules"
+          "url": "https://www.cisa.gov/coordinated-vulnerability-disclosure-process"
         }
       ]
     },
@@ -1323,9 +885,230 @@
       ]
     },
     {
-      "shortName": "krcert",
-      "detailFile": "krcert__CNA-2016-0021.json",
-      "organizationName": "KrCERT/CC",
+      "shortName": "Zoom",
+      "detailFile": "Zoom__CNA-2021-0016.json",
+      "organizationName": "Zoom Communications, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 18,
+      "recent_cves": 18,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Zoom and Keybase issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://zoom.us/trust/security/security-bulletin"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0016",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://zoom.us/docs/en-us/trust/vulnerability-disclosure.html"
+        }
+      ]
+    },
+    {
+      "shortName": "Nintendo",
+      "detailFile": "Nintendo__CNA-2026-0005.json",
+      "organizationName": "Nintendo Co., Ltd.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 1,
+      "recent_cves": 1,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "System vulnerabilities regarding the Nintendo Switch 2, Nintendo Switch, Nintendo Switch Lite, and vulnerabilities regarding Nintendo Switch 2 and Nintendo Switch applications for which Nintendo is the publisher worldwide.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.nintendo.com/jp/security-advisories/en/"
+        }
+      ],
+      "officialCnaID": "CNA-2026-0005",
+      "country": "Japan",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.nintendo.com/jp/security-advisories/en/"
+        }
+      ]
+    },
+    {
+      "shortName": "SNOW",
+      "detailFile": "SNOW__CNA-2026-0021.json",
+      "organizationName": "Snowflake",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 19,
+      "recent_cves": 19,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Snowflake products, including those of its subsidiaries, and vulnerabilities in third-party software that are discovered by, or reported to, Snowflake that are not within another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.snowflake.com/en/why-snowflake/snowflake-security-hub/security-bulletins/"
+        }
+      ],
+      "officialCnaID": "CNA-2026-0021",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://hackerone.com/snowflake?type=team"
+        }
+      ]
+    },
+    {
+      "shortName": "qualcomm",
+      "detailFile": "qualcomm__CNA-2017-0007.json",
+      "organizationName": "Qualcomm, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 89,
+      "recent_cves": 89,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Qualcomm and Snapdragon issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.qualcomm.com/company/product-security/bulletins"
+        }
+      ],
+      "officialCnaID": "CNA-2017-0007",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.qualcomm.com/news/onq/2019/01/16/inside-qualcomm-technologies-vulnerability-rewards-program"
+        }
+      ]
+    },
+    {
+      "shortName": "Vaadin",
+      "detailFile": "Vaadin__CNA-2021-0015.json",
+      "organizationName": "Vaadin Ltd.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 7,
+      "recent_cves": 7,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All Vaadin products and supported open source projects hosted at <a href='https://github.com/vaadin' target='_blank'>https://github.com/vaadin</a>.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://vaadin.com/security"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0015",
+      "country": "Finland",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://vaadin.com/security"
+        }
+      ]
+    },
+    {
+      "shortName": "INCD",
+      "detailFile": "INCD__CNA-2021-0030.json",
+      "organizationName": "Israel National Cyber Directorate (INCD)",
       "cnaType": "CERT",
       "cnaTypes": [
         "CERT"
@@ -1333,8 +1116,8 @@
       "rank": 116,
       "active_cna_count": 358,
       "percentile": 67.9,
-      "total_cves": 6,
-      "recent_cves": 6,
+      "total_cves": 17,
+      "recent_cves": 17,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.0,
@@ -1353,23 +1136,23 @@
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://www.krcert.or.kr/kr/bbs/list.do?menuNo=205023&bbsId=B0000302"
+          "url": "https://www.gov.il/en/departments/faq/cve_advisories"
         }
       ],
-      "officialCnaID": "CNA-2016-0021",
-      "country": "South Korea",
+      "officialCnaID": "CNA-2021-0030",
+      "country": "Israel",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://knvd.krcert.or.kr/processingProcedures.do"
+          "url": "https://www.gov.il/en/departments/general/cve_policy"
         }
       ]
     },
     {
-      "shortName": "watchdog",
-      "detailFile": "watchdog__CNA-2024-0054.json",
-      "organizationName": "WatchDogDevelopment.com, LLC",
+      "shortName": "Okta",
+      "detailFile": "Okta__CNA-2021-0049.json",
+      "organizationName": "Okta",
       "cnaType": "Vendor",
       "cnaTypes": [
         "Vendor"
@@ -1377,8 +1160,8 @@
       "rank": 116,
       "active_cna_count": 358,
       "percentile": 67.9,
-      "total_cves": 3,
-      "recent_cves": 3,
+      "total_cves": 31,
+      "recent_cves": 31,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.0,
@@ -1393,72 +1176,27 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "All WatchDog products.",
+      "scope": "Okta issues only.",
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://watchdog.com/vulnerability-disclosure-policy/"
+          "url": "https://trust.okta.com/security-advisories"
         }
       ],
-      "officialCnaID": "CNA-2024-0054",
+      "officialCnaID": "CNA-2021-0049",
       "country": "USA",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://watchdog.com/vulnerability-disclosure-policy/"
+          "url": "https://www.okta.com/vulnerability-reporting-policy/"
         }
       ]
     },
     {
-      "shortName": "BlackDuck",
-      "detailFile": "BlackDuck__CNA-2021-0013.json",
-      "organizationName": "Black Duck Software, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Researcher"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 4,
-      "recent_cves": 4,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All Black Duck (formerly Synopsys Software Integrity Group) products, as well as vulnerabilities in third-party software discovered by Black Duck that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.blackduck.com/blog/category.cyrc.html#1"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0013",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.blackduck.com/company/legal/vulnerability-disclosure-policy.html"
-        }
-      ]
-    },
-    {
-      "shortName": "BombadilSystems",
-      "detailFile": "BombadilSystems__CNA-2026-0014.json",
-      "organizationName": "Bombadil Systems LLC",
+      "shortName": "Securifera",
+      "detailFile": "Securifera__CNA-2023-0017.json",
+      "organizationName": "Securifera, Inc.",
       "cnaType": "Researcher",
       "cnaTypes": [
         "Researcher"
@@ -1466,8 +1204,8 @@
       "rank": 116,
       "active_cna_count": 358,
       "percentile": 67.9,
-      "total_cves": 2,
-      "recent_cves": 2,
+      "total_cves": 7,
+      "recent_cves": 7,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.0,
@@ -1482,64 +1220,20 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "Vulnerabilities in third-party software discovered by Bombadil Systems that are not in another CNA’s scope.",
+      "scope": "Vulnerabilities in vendor products discovered by Securifera, or related parties, while performing vulnerability research or security assessments.",
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://bombadil.systems/advisories.html"
+          "url": "https://www.securifera.com/advisories/"
         }
       ],
-      "officialCnaID": "CNA-2026-0014",
+      "officialCnaID": "CNA-2023-0017",
       "country": "USA",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://bombadil.systems/disclosure.html"
-        }
-      ]
-    },
-    {
-      "shortName": "PandoraFMS",
-      "detailFile": "PandoraFMS__CNA-2021-0055.json",
-      "organizationName": "Pandora FMS",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 13,
-      "recent_cves": 13,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Pandora FMS, Pandora ITSM, and Pandora RC issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://pandorafms.com/common-vulnerabilities-and-exposures/"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0055",
-      "country": "Spain",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://pandorafms.com/en/security/vulnerability-disclosure-policy/"
+          "url": "https://www.securifera.com/advisories/"
         }
       ]
     },
@@ -1592,569 +1286,13 @@
       ]
     },
     {
-      "shortName": "Document_Fdn.",
-      "detailFile": "Document_Fdn.__CNA-2019-0002.json",
-      "organizationName": "Document Foundation, The",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Open Source"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 21,
-      "recent_cves": 21,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Projects within The Document Foundation only, e.g., LibreOffice, LibreOffice Online; The Document Foundation discourages reporting denial of service bugs as security issues.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.libreoffice.org/security-info/"
-        }
-      ],
-      "officialCnaID": "CNA-2019-0002",
-      "country": "Germany",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.libreoffice.org/security/"
-        }
-      ]
-    },
-    {
-      "shortName": "HiddenLayer",
-      "detailFile": "HiddenLayer__CNA-2023-0084.json",
-      "organizationName": "HiddenLayer, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Hosted Service",
-        "Researcher"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 16,
-      "recent_cves": 16,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All HiddenLayer systems, services, and products, as well as vulnerabilities in third-party software discovered by HiddenLayer that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://hiddenlayer.com/research/"
-        }
-      ],
-      "officialCnaID": "CNA-2023-0084",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://hiddenlayer.com/vulnerability-disclosure-policy/"
-        }
-      ]
-    },
-    {
-      "shortName": "ConcreteCMS",
-      "detailFile": "ConcreteCMS__CNA-2024-0001.json",
-      "organizationName": "Concrete CMS",
-      "cnaType": "Open Source",
-      "cnaTypes": [
-        "Open Source"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 111,
-      "recent_cves": 111,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Concrete CMS Core versions 8.5 and above.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.concretecms.org/about/project-news/security"
-        },
-        {
-          "label": "Disclosed CVEs",
-          "url": "https://docs.google.com/spreadsheets/d/1lduRBavCZYnKPyPRUhaUNGP2Fza-5SE6MJoAcMSvqSQ/edit#gid=0"
-        }
-      ],
-      "officialCnaID": "CNA-2024-0001",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.concretecms.org/security"
-        },
-        {
-          "label": "HackerOne Policy",
-          "language": "",
-          "url": "https://hackerone.com/concretecms?type=team"
-        }
-      ]
-    },
-    {
-      "shortName": "OpenHarmony",
-      "detailFile": "OpenHarmony__CNA-2022-0026.json",
-      "organizationName": "OpenHarmony",
-      "cnaType": "Open Source",
-      "cnaTypes": [
-        "Open Source"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 10,
-      "recent_cves": 10,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "openHarmony issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "language": "English",
-          "url": "https://gitee.com/openharmony/security/tree/master/en/security-disclosure"
-        }
-      ],
-      "officialCnaID": "CNA-2022-0026",
-      "country": "China",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "English",
-          "url": "https://gitee.com/openharmony/security/tree/master/en/security-process"
-        }
-      ]
-    },
-    {
-      "shortName": "ESET",
-      "detailFile": "ESET__CNA-2021-0029.json",
-      "organizationName": "ESET, spol. s r.o.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 6,
-      "recent_cves": 6,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All ESET products only and vulnerabilities discovered by ESET that are not covered by another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "ESET PSIRT Advisories",
-          "url": "https://support-feed.eset.com/advisories/"
-        },
-        {
-          "label": "ESET Research Advisories",
-          "url": "https://github.com/eset/vulnerability-disclosures"
-        },
-        {
-          "label": "WeLiveSecurity Advisories",
-          "url": "https://welivesecurity.com/"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0029",
-      "country": "Slovak Republic",
-      "disclosurePolicy": [
-        {
-          "label": "Inbound Reports Policy",
-          "language": "",
-          "url": "https://www.eset.com/int/security-vulnerability-reporting/"
-        },
-        {
-          "label": "Outbound Reports Policy",
-          "language": "",
-          "url": "https://www.eset.com/int/research/vulnerability-disclosure-policy/"
-        }
-      ]
-    },
-    {
-      "shortName": "HYPR",
-      "detailFile": "HYPR__CNA-2022-0013.json",
-      "organizationName": "HYPR Corp",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 2,
-      "recent_cves": 2,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All HYPR products only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.hypr.com/security-advisories/"
-        }
-      ],
-      "officialCnaID": "CNA-2022-0013",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.hypr.com/security"
-        }
-      ]
-    },
-    {
-      "shortName": "NX",
-      "detailFile": "NX__CNA-2023-0071.json",
-      "organizationName": "Network Optix",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Open Source"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 2,
-      "recent_cves": 2,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All Network Optix products, including <a href='https://www.networkoptix.com/nx-witness' target='_blank'>https://www.networkoptix.com/nx-witness</a> and <a href='https://www.networkoptix.com/powered-by-nx' target='_blank'>https://www.networkoptix.com/powered-by-nx</a>.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.networkoptix.com/blog"
-        }
-      ],
-      "officialCnaID": "CNA-2023-0071",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.networkoptix.com/vulnerability-disclosure-program"
-        }
-      ]
-    },
-    {
-      "shortName": "ExtremeNetworks",
-      "detailFile": "ExtremeNetworks__CNA-2025-0026.json",
-      "organizationName": "Extreme Networks, Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 3,
-      "recent_cves": 3,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Vulnerabilities discovered in Extreme Networks, Inc.’s products and services.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://extreme-networks.my.site.com/ExtrSearch#q=cve&t=Knowledge&sort=relevancy&f:@sfrecordtypename=[Security_Advisory]"
-        }
-      ],
-      "officialCnaID": "CNA-2025-0026",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.extremenetworks.com/support/psirt"
-        }
-      ]
-    },
-    {
-      "shortName": "Caliptra",
-      "detailFile": "Caliptra__CNA-2023-0065.json",
-      "organizationName": "Caliptra Project",
-      "cnaType": "Open Source",
-      "cnaTypes": [
-        "Open Source"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 5,
-      "recent_cves": 5,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Caliptra Project components and vulnerabilities that are not in another CNA’s scope.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://github.com/chipsalliance/Caliptra/security/advisories"
-        }
-      ],
-      "officialCnaID": "CNA-2023-0065",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://github.com/chipsalliance/Caliptra/security/policy"
-        }
-      ]
-    },
-    {
-      "shortName": "SolarWinds",
-      "detailFile": "SolarWinds__CNA-2021-0027.json",
-      "organizationName": "SolarWinds",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 27,
-      "recent_cves": 27,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "SolarWinds products only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.solarwinds.com/trust-center/security-advisories"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0027",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.solarwinds.com/information-security/vulnerability-disclosure-policy"
-        }
-      ]
-    },
-    {
-      "shortName": "Eaton",
-      "detailFile": "Eaton__CNA-2019-0014.json",
-      "organizationName": "Eaton",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 3,
-      "recent_cves": 3,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Eaton issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.eaton.com/us/en-us/company/news-insights/cybersecurity/security-notifications.html"
-        }
-      ],
-      "officialCnaID": "CNA-2019-0014",
-      "country": "Ireland",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.eaton.com/us/en-us/company/news-insights/cybersecurity/vulnerabilitydisclosure.html"
-        }
-      ]
-    },
-    {
-      "shortName": "Wordfence",
-      "detailFile": "Wordfence__CNA-2021-0022.json",
-      "organizationName": "Wordfence",
+      "shortName": "BlackDuck",
+      "detailFile": "BlackDuck__CNA-2021-0013.json",
+      "organizationName": "Black Duck Software, Inc.",
       "cnaType": "Vendor",
       "cnaTypes": [
         "Vendor",
         "Researcher"
-      ],
-      "rank": 116,
-      "active_cna_count": 358,
-      "percentile": 67.9,
-      "total_cves": 2255,
-      "recent_cves": 2255,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 80.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 100.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 100.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "WordPress Plugins, Themes, and Core Vulnerabilities discovered by, or reported to, the Wordfence/Defiant team.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.wordfence.com/blog/category/vulnerabilities/"
-        }
-      ],
-      "officialCnaID": "CNA-2021-0022",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.wordfence.com/security/"
-        }
-      ]
-    },
-    {
-      "shortName": "BCNY",
-      "detailFile": "BCNY__CNA-2025-0054.json",
-      "organizationName": "The Browser Company of New York",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor",
-        "Bug Bounty Provider"
       ],
       "rank": 116,
       "active_cna_count": 358,
@@ -2175,41 +1313,37 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "The Browser Company of New York branded products and technologies only.",
+      "scope": "All Black Duck (formerly Synopsys Software Integrity Group) products, as well as vulnerabilities in third-party software discovered by Black Duck that are not in another CNA’s scope.",
       "advisories": [
         {
-          "label": "Arc Security Bulletins",
-          "url": "https://arc.net/security/bulletins"
-        },
-        {
-          "label": "Dia Security Bulletins",
-          "url": "https://diabrowser.com/security/bulletins"
+          "label": "Advisories",
+          "url": "https://www.blackduck.com/blog/category.cyrc.html#1"
         }
       ],
-      "officialCnaID": "CNA-2025-0054",
+      "officialCnaID": "CNA-2021-0013",
       "country": "USA",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://www.thebrowser.company/security/cve-policy"
+          "url": "https://www.blackduck.com/company/legal/vulnerability-disclosure-policy.html"
         }
       ]
     },
     {
-      "shortName": "airbus",
-      "detailFile": "airbus__CNA-2017-0026.json",
-      "organizationName": "Airbus",
-      "cnaType": "Vendor",
+      "shortName": "zdi",
+      "detailFile": "zdi__CNA-2017-0018.json",
+      "organizationName": "Zero Day Initiative",
+      "cnaType": "Bug Bounty Provider",
       "cnaTypes": [
-        "Vendor",
+        "Bug Bounty Provider",
         "Researcher"
       ],
       "rank": 116,
       "active_cna_count": 358,
       "percentile": 67.9,
-      "total_cves": 14,
-      "recent_cves": 14,
+      "total_cves": 121,
+      "recent_cves": 121,
       "is_active": true,
       "scores": {
         "overall_average_score": 80.0,
@@ -2224,20 +1358,828 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "All Airbus products (supported products and end-of-life/end-of-service products), as well as vulnerabilities in third-party software discovered by Airbus that are not in another CNA’s scope.",
+      "scope": "Products and projects covered by its bug bounty programs that are not in another CNA’s scope.",
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://airbus-seclab.github.io/"
+          "url": "https://www.zerodayinitiative.com/advisories/published/"
         }
       ],
-      "officialCnaID": "CNA-2017-0026",
+      "officialCnaID": "CNA-2017-0018",
+      "country": "Japan",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.zerodayinitiative.com/advisories/disclosure_policy/"
+        }
+      ]
+    },
+    {
+      "shortName": "OpenVPN",
+      "detailFile": "OpenVPN__CNA-2020-0017.json",
+      "organizationName": "OpenVPN Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 28,
+      "recent_cves": 28,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All products and projects in which OpenVPN is directly involved commercially and for OpenVPN community projects, including Private Tunnel.",
+      "advisories": [
+        {
+          "label": "Business VPN Advisories",
+          "url": "https://openvpn.net/security-advisories/"
+        },
+        {
+          "label": "Community Advisories",
+          "url": "https://community.openvpn.net/openvpn/wiki/SecurityAnnouncements"
+        }
+      ],
+      "officialCnaID": "CNA-2020-0017",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://openvpn.net/vulnerability-disclosure-policy/"
+        }
+      ]
+    },
+    {
+      "shortName": "PandoraFMS",
+      "detailFile": "PandoraFMS__CNA-2021-0055.json",
+      "organizationName": "Pandora FMS",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 13,
+      "recent_cves": 13,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Pandora FMS, Pandora ITSM, and Pandora RC issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://pandorafms.com/common-vulnerabilities-and-exposures/"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0055",
+      "country": "Spain",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://pandorafms.com/en/security/vulnerability-disclosure-policy/"
+        }
+      ]
+    },
+    {
+      "shortName": "BT",
+      "detailFile": "BT__CNA-2024-0015.json",
+      "organizationName": "BeyondTrust Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 7,
+      "recent_cves": 7,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All BeyondTrust products, including <a href='https://www.beyondtrust.com/products/password-safe' target='_blank'>PasswordSafe</a>, <a href='https://www.beyondtrust.com/products/privileged-remote-access' target='_blank'>Privileged Remote Access</a>, <a href='https://www.beyondtrust.com/products/remote-support' target='_blank'>Remote Support</a>, <a href='https://www.beyondtrust.com/products/privilege-management-for-windows-and-mac' target='_blank'>Privilege Management for Windows/Mac</a>, <a href='https://www.beyondtrust.com/products/privilege-management-for-unix-and-linux' target='_blank'>Privilege Management for Unix/Linux</a>, <a href='https://www.beyondtrust.com/products/identity-security-insights' target='_blank'>Identity Security Insights</a>, <a href='https://www.beyondtrust.com/products/active-directory-bridge' target='_blank'>Active Directory (AD) Bridge</a>, and <a href='https://www.beyondtrust.com/products/total-pasm' target='_blank'>Total PASM</a>.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.beyondtrust.com/trust-center/security-advisories"
+        }
+      ],
+      "officialCnaID": "CNA-2024-0015",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.beyondtrust.com/disclosure"
+        }
+      ]
+    },
+    {
+      "shortName": "runZero",
+      "detailFile": "runZero__CNA-2025-0062.json",
+      "organizationName": "runZero, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Researcher",
+        "Hosted Service",
+        "Open Source"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 31,
+      "recent_cves": 31,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Vulnerabilities in runZero products, as well as vulnerabilities discovered by, or reported to, runZero that are not in another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.runzero.com/advisories"
+        }
+      ],
+      "officialCnaID": "CNA-2025-0062",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.runzero.com/legal/disclosure/"
+        }
+      ]
+    },
+    {
+      "shortName": "HashiCorp",
+      "detailFile": "HashiCorp__CNA-2022-0037.json",
+      "organizationName": "HashiCorp Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 46,
+      "recent_cves": 46,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All HashiCorp products and projects unless covered by another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "language": "",
+          "url": "https://discuss.hashicorp.com/c/security/52"
+        }
+      ],
+      "officialCnaID": "CNA-2022-0037",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.hashicorp.com/security"
+        }
+      ]
+    },
+    {
+      "shortName": "synology",
+      "detailFile": "synology__CNA-2017-0012.json",
+      "organizationName": "Synology Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 33,
+      "recent_cves": 33,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Synology issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.synology.com/en-global/security/advisory"
+        }
+      ],
+      "officialCnaID": "CNA-2017-0012",
+      "country": "Taiwan",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.synology.com/en-us/security/bounty_program"
+        }
+      ]
+    },
+    {
+      "shortName": "NEC",
+      "detailFile": "NEC__CNA-2021-0012.json",
+      "organizationName": "NEC Corporation",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 4,
+      "recent_cves": 4,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "NEC issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://jpn.nec.com/security-info/index.html"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0012",
+      "country": "Japan",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://jpn.nec.com/security-info/policy_en.html"
+        }
+      ]
+    },
+    {
+      "shortName": "FERMAX",
+      "detailFile": "FERMAX__CNA-2025-0063.json",
+      "organizationName": "Fermax Technologies SLU",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 4,
+      "recent_cves": 4,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Vulnerabilities discovered in the services and applications of the MeetMe and DuoxMe products that are not covered by another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.fermax.com/security-advisories"
+        }
+      ],
+      "officialCnaID": "CNA-2025-0063",
+      "country": "Spain",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.fermax.com/legal/en/vulnerability-management-policy"
+        }
+      ]
+    },
+    {
+      "shortName": "TianoCore",
+      "detailFile": "TianoCore__CNA-2020-0031.json",
+      "organizationName": "TianoCore.org",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 1,
+      "recent_cves": 1,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Software vulnerabilities related to the TianoCore Open Source.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://tianocore-docs.github.io/SecurityAdvisory/draft/"
+        }
+      ],
+      "officialCnaID": "CNA-2020-0031",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://github.com/tianocore/tianocore.github.io/wiki/Reporting-Security-Issues"
+        }
+      ]
+    },
+    {
+      "shortName": "Mattermost",
+      "detailFile": "Mattermost__CNA-2020-0028.json",
+      "organizationName": "Mattermost, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Researcher"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 129,
+      "recent_cves": 129,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All Mattermost issues, and vulnerabilities discovered by Mattermost that are not in another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://mattermost.com/security-updates/"
+        }
+      ],
+      "officialCnaID": "CNA-2020-0028",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://mattermost.com/security-vulnerability-report/"
+        }
+      ]
+    },
+    {
+      "shortName": "Secomea",
+      "detailFile": "Secomea__CNA-2020-0037.json",
+      "organizationName": "Secomea A/S",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 2,
+      "recent_cves": 2,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Supported Secomea products only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.secomea.com/cybersecurity-advisory/"
+        }
+      ],
+      "officialCnaID": "CNA-2020-0037",
+      "country": "Denmark",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.secomea.com/cybersecurity-advisory/"
+        }
+      ]
+    },
+    {
+      "shortName": "elastic",
+      "detailFile": "elastic__CNA-2017-0011.json",
+      "organizationName": "Elastic",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 154,
+      "recent_cves": 154,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Elasticsearch, Kibana, Beats, Logstash, X-Pack, and Elastic Cloud Enterprise products only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.elastic.co/community/security"
+        }
+      ],
+      "officialCnaID": "CNA-2017-0011",
       "country": "Netherlands",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://www.airbus.com/en/airbus-contact-us#:~:text=Vulnerability%20disclosure%20guidelines"
+          "url": "https://www.elastic.co/community/security"
+        }
+      ]
+    },
+    {
+      "shortName": "Zabbix",
+      "detailFile": "Zabbix__CNA-2020-0022.json",
+      "organizationName": "Zabbix",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 20,
+      "recent_cves": 20,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Zabbix products and Zabbix projects listed on <a href='https://git.zabbix.com/' target='_blank'>https://git.zabbix.com/</a> only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://support.zabbix.com/projects/ZBX/issues/"
+        }
+      ],
+      "officialCnaID": "CNA-2020-0022",
+      "country": "Latvia",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.zabbix.com/zabbix_security_policy"
+        }
+      ]
+    },
+    {
+      "shortName": "MON-CSIRT",
+      "detailFile": "MON-CSIRT__CNA-2024-0059.json",
+      "organizationName": "Monash University - Cyber Security Incident Response Team",
+      "cnaType": "CERT",
+      "cnaTypes": [
+        "CERT",
+        "Open Source",
+        "Researcher"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 2,
+      "recent_cves": 2,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Vulnerabilities in any Monash University developed products, or vulnerabilities identified in third-party vendor products used by Monash University, unless covered by the scope of another CNA.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.monash.edu/cybersecurity/about/mon-csirt"
+        }
+      ],
+      "officialCnaID": "CNA-2024-0059",
+      "country": "Australia",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.monash.edu/cybersecurity/about/mon-csirt"
+        }
+      ]
+    },
+    {
+      "shortName": "Delinea",
+      "detailFile": "Delinea__CNA-2024-0086.json",
+      "organizationName": "Delinea, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Hosted Service",
+        "Researcher"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 4,
+      "recent_cves": 4,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Vulnerabilities in Delinea products or services listed on <a href='https://www.delinea.com' target='_blank'>delinea.com</a>, or vulnerabilities in third-party products or services discovered by or reported to Delinea, unless covered by the scope of another CNA.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://trust.delinea.com/"
+        }
+      ],
+      "officialCnaID": "CNA-2024-0086",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://trust.delinea.com/?itemUid=56583ca0-6561-4cf3-a150-8c0c45d214cf"
+        }
+      ]
+    },
+    {
+      "shortName": "GandC",
+      "detailFile": "GandC__CNA-2023-0015.json",
+      "organizationName": "Glyph & Cog, LLC",
+      "cnaType": "Open Source",
+      "cnaTypes": [
+        "Open Source",
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 2,
+      "recent_cves": 2,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Xpdf open source project, including the xpdf viewer and associated command line tools.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.xpdfreader.com/security-fixes.html"
+        }
+      ],
+      "officialCnaID": "CNA-2023-0015",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.xpdfreader.com/disclosure.html"
+        }
+      ]
+    },
+    {
+      "shortName": "Panasonic_Holdings_Corporation",
+      "detailFile": "Panasonic_Holdings_Corporation__CNA-2021-0057.json",
+      "organizationName": "Panasonic Holdings Corporation",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 1,
+      "recent_cves": 1,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All products and services developed and/or sold by Panasonic Group companies.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.panasonic.com/global/corporate/product-security/sec/psirt/advisories.html"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0057",
+      "country": "Japan",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.panasonic.com/global/corporate/product-security/sec/psirt/policy.html"
+        }
+      ]
+    },
+    {
+      "shortName": "Arista",
+      "detailFile": "Arista__CNA-2021-0008.json",
+      "organizationName": "Arista Networks, Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 85,
+      "recent_cves": 85,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All Arista products only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.arista.com/en/support/advisories-notices"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0008",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.arista.com/en/support/advisories-notices"
         }
       ]
     },
@@ -2282,6 +2224,51 @@
           "label": "Policy",
           "language": "",
           "url": "https://hackerone.com/acronis"
+        }
+      ]
+    },
+    {
+      "shortName": "JetBrains",
+      "detailFile": "JetBrains__CNA-2022-0004.json",
+      "organizationName": "JetBrains s.r.o.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source"
+      ],
+      "rank": 116,
+      "active_cna_count": 358,
+      "percentile": 67.9,
+      "total_cves": 156,
+      "recent_cves": 156,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 80.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 100.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 100.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "JetBrains products only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.jetbrains.com/privacy-security/issues-fixed/"
+        }
+      ],
+      "officialCnaID": "CNA-2022-0004",
+      "country": "Czech Republic",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.jetbrains.com/legal/docs/terms/coordinated-disclosure/"
         }
       ]
     }
