@@ -1,9 +1,100 @@
 {
   "chunkIndex": 7,
   "startIndex": 350,
-  "endIndex": 359,
-  "count": 9,
+  "endIndex": 361,
+  "count": 11,
   "items": [
+    {
+      "shortName": "DEVOLUTIONS",
+      "detailFile": "DEVOLUTIONS__CNA-2021-0031.json",
+      "organizationName": "Devolutions Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source"
+      ],
+      "rank": 351,
+      "active_cna_count": 361,
+      "percentile": 3.0,
+      "total_cves": 67,
+      "recent_cves": 67,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 63.88,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 92.54,
+        "software_identification": 0.0,
+        "severity_and_impact": 0.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All Devolutions products only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://devolutions.net/security/advisories/"
+        }
+      ],
+      "officialCnaID": "CNA-2021-0031",
+      "country": "Canada",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://devolutions.net/security"
+        }
+      ]
+    },
+    {
+      "shortName": "Chrome",
+      "detailFile": "Chrome__CNA-2011-0003.json",
+      "organizationName": "Chrome",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor",
+        "Open Source",
+        "Researcher"
+      ],
+      "rank": 352,
+      "active_cna_count": 361,
+      "percentile": 2.8,
+      "total_cves": 3417,
+      "recent_cves": 3417,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 62.25,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 81.65,
+        "software_identification": 0.0,
+        "severity_and_impact": 0.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Chrome issues and projects that are not in another CNA’s scope.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://chromereleases.googleblog.com/"
+        }
+      ],
+      "officialCnaID": "CNA-2011-0003",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.google.com/about/appsecurity/"
+        }
+      ]
+    },
     {
       "shortName": "mitre",
       "detailFile": "mitre__CNA-1999-0001.json",
@@ -12,19 +103,19 @@
       "cnaTypes": [
         "Unknown"
       ],
-      "rank": 351,
-      "active_cna_count": 359,
+      "rank": 353,
+      "active_cna_count": 361,
       "percentile": 2.5,
-      "total_cves": 2250,
-      "recent_cves": 2250,
+      "total_cves": 2290,
+      "recent_cves": 2290,
       "is_active": true,
       "scores": {
-        "overall_average_score": 59.42,
+        "overall_average_score": 59.24,
         "foundational_completeness": 100.0,
-        "root_cause_analysis": 23.56,
-        "software_identification": 16.89,
-        "severity_and_impact": 26.71,
-        "patchinfo": 1.91
+        "root_cause_analysis": 23.1,
+        "software_identification": 16.55,
+        "severity_and_impact": 26.2,
+        "patchinfo": 1.88
       },
       "trend": {
         "direction": "steady",
@@ -57,8 +148,8 @@
         "Vendor",
         "Open Source"
       ],
-      "rank": 352,
-      "active_cna_count": 359,
+      "rank": 354,
+      "active_cna_count": 361,
       "percentile": 2.2,
       "total_cves": 46,
       "recent_cves": 46,
@@ -103,8 +194,8 @@
         "Open Source",
         "Researcher"
       ],
-      "rank": 353,
-      "active_cna_count": 359,
+      "rank": 355,
+      "active_cna_count": 361,
       "percentile": 1.9,
       "total_cves": 198,
       "recent_cves": 198,
@@ -147,8 +238,8 @@
       "cnaTypes": [
         "Vendor"
       ],
-      "rank": 354,
-      "active_cna_count": 359,
+      "rank": 356,
+      "active_cna_count": 361,
       "percentile": 1.7,
       "total_cves": 144,
       "recent_cves": 144,
@@ -192,6 +283,50 @@
       ]
     },
     {
+      "shortName": "Nokia",
+      "detailFile": "Nokia__CNA-2023-0055.json",
+      "organizationName": "Nokia",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 357,
+      "active_cna_count": 361,
+      "percentile": 1.4,
+      "total_cves": 10,
+      "recent_cves": 10,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 50.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 0.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 0.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "All vulnerabilities in Nokia products.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://www.nokia.com/about-us/security-and-privacy/product-security-advisory/"
+        }
+      ],
+      "officialCnaID": "CNA-2023-0055",
+      "country": "Finland",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://www.nokia.com/notices/responsible-disclosure/"
+        }
+      ]
+    },
+    {
       "shortName": "mozilla",
       "detailFile": "mozilla__CNA-2012-0002.json",
       "organizationName": "Mozilla Corporation",
@@ -200,8 +335,8 @@
         "Vendor",
         "Open Source"
       ],
-      "rank": 355,
-      "active_cna_count": 359,
+      "rank": 357,
+      "active_cna_count": 361,
       "percentile": 1.4,
       "total_cves": 683,
       "recent_cves": 683,
@@ -245,8 +380,8 @@
         "Vendor",
         "Open Source"
       ],
-      "rank": 355,
-      "active_cna_count": 359,
+      "rank": 357,
+      "active_cna_count": 361,
       "percentile": 1.4,
       "total_cves": 2,
       "recent_cves": 2,
@@ -282,50 +417,6 @@
       ]
     },
     {
-      "shortName": "Nokia",
-      "detailFile": "Nokia__CNA-2023-0055.json",
-      "organizationName": "Nokia",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 355,
-      "active_cna_count": 359,
-      "percentile": 1.4,
-      "total_cves": 10,
-      "recent_cves": 10,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 50.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 0.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 0.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "All vulnerabilities in Nokia products.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://www.nokia.com/about-us/security-and-privacy/product-security-advisory/"
-        }
-      ],
-      "officialCnaID": "CNA-2023-0055",
-      "country": "Finland",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://www.nokia.com/notices/responsible-disclosure/"
-        }
-      ]
-    },
-    {
       "shortName": "apple",
       "detailFile": "apple__CNA-2009-0002.json",
       "organizationName": "Apple Inc.",
@@ -333,11 +424,11 @@
       "cnaTypes": [
         "Vendor"
       ],
-      "rank": 355,
-      "active_cna_count": 359,
+      "rank": 357,
+      "active_cna_count": 361,
       "percentile": 1.4,
-      "total_cves": 989,
-      "recent_cves": 989,
+      "total_cves": 991,
+      "recent_cves": 991,
       "is_active": true,
       "scores": {
         "overall_average_score": 50.0,
@@ -377,11 +468,11 @@
       "cnaTypes": [
         "Open Source"
       ],
-      "rank": 355,
-      "active_cna_count": 359,
+      "rank": 357,
+      "active_cna_count": 361,
       "percentile": 1.4,
-      "total_cves": 147,
-      "recent_cves": 147,
+      "total_cves": 140,
+      "recent_cves": 140,
       "is_active": true,
       "scores": {
         "overall_average_score": 50.0,
