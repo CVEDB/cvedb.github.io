@@ -5,9 +5,9 @@
   "count": 13,
   "items": [
     {
-      "shortName": "Infoblox",
-      "detailFile": "Infoblox__CNA-2026-0070.json",
-      "organizationName": "Infoblox Inc.",
+      "shortName": "naver",
+      "detailFile": "naver__CNA-2018-0007.json",
+      "organizationName": "Naver Corporation",
       "cnaType": "Vendor",
       "cnaTypes": [
         "Vendor"
@@ -21,9 +21,9 @@
       "scores": {
         "overall_average_score": 65.0,
         "foundational_completeness": 100.0,
-        "root_cause_analysis": 0.0,
+        "root_cause_analysis": 100.0,
         "software_identification": 0.0,
-        "severity_and_impact": 100.0,
+        "severity_and_impact": 0.0,
         "patchinfo": 0.0
       },
       "trend": {
@@ -31,20 +31,20 @@
         "description": "No significant change",
         "monthly_data": []
       },
-      "scope": "All Infoblox products found at <a href='https://www.infoblox.com/products/' target='_blank'>https://www.infoblox.com/products/</a>.",
+      "scope": "Naver products only, except Line products.",
       "advisories": [
         {
           "label": "Advisories",
-          "url": "https://support.infoblox.com/s/article/2899"
+          "url": "https://cve.naver.com/"
         }
       ],
-      "officialCnaID": "CNA-2026-0070",
-      "country": "USA",
+      "officialCnaID": "CNA-2018-0007",
+      "country": "South Korea",
       "disclosurePolicy": [
         {
           "label": "Policy",
           "language": "",
-          "url": "https://www.infoblox.com/company/legal/vulnerability-responsible-disclosure-policy/"
+          "url": "https://cve.naver.com/"
         }
       ]
     },
@@ -195,16 +195,16 @@
       "rank": 355,
       "active_cna_count": 363,
       "percentile": 2.5,
-      "total_cves": 2300,
-      "recent_cves": 2300,
+      "total_cves": 2273,
+      "recent_cves": 2273,
       "is_active": true,
       "scores": {
-        "overall_average_score": 59.22,
+        "overall_average_score": 59.24,
         "foundational_completeness": 100.0,
-        "root_cause_analysis": 23.04,
-        "software_identification": 16.52,
-        "severity_and_impact": 26.13,
-        "patchinfo": 1.87
+        "root_cause_analysis": 23.1,
+        "software_identification": 16.5,
+        "severity_and_impact": 26.22,
+        "patchinfo": 1.89
       },
       "trend": {
         "direction": "steady",
@@ -372,50 +372,6 @@
       ]
     },
     {
-      "shortName": "apple",
-      "detailFile": "apple__CNA-2009-0002.json",
-      "organizationName": "Apple Inc.",
-      "cnaType": "Vendor",
-      "cnaTypes": [
-        "Vendor"
-      ],
-      "rank": 359,
-      "active_cna_count": 363,
-      "percentile": 1.4,
-      "total_cves": 991,
-      "recent_cves": 991,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 50.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 0.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 0.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Apple issues only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://support.apple.com/en-us/HT201222"
-        }
-      ],
-      "officialCnaID": "CNA-2009-0002",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://support.apple.com/en-us/HT201220"
-        }
-      ]
-    },
-    {
       "shortName": "debian",
       "detailFile": "debian__CNA-2005-0003.json",
       "organizationName": "Debian GNU/Linux",
@@ -461,6 +417,94 @@
       ]
     },
     {
+      "shortName": "jenkins",
+      "detailFile": "jenkins__CNA-2018-0015.json",
+      "organizationName": "Jenkins Project",
+      "cnaType": "Open Source",
+      "cnaTypes": [
+        "Open Source"
+      ],
+      "rank": 359,
+      "active_cna_count": 363,
+      "percentile": 1.4,
+      "total_cves": 140,
+      "recent_cves": 140,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 50.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 0.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 0.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Jenkins and Jenkins plugins distributed by the Jenkins Project (listed on <a href='https://plugins.jenkins.io/' target='_blank'>plugins.jenkins.io</a>) only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://jenkins.io/security/advisories/"
+        }
+      ],
+      "officialCnaID": "CNA-2018-0015",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://jenkins.io/security/"
+        }
+      ]
+    },
+    {
+      "shortName": "apple",
+      "detailFile": "apple__CNA-2009-0002.json",
+      "organizationName": "Apple Inc.",
+      "cnaType": "Vendor",
+      "cnaTypes": [
+        "Vendor"
+      ],
+      "rank": 359,
+      "active_cna_count": 363,
+      "percentile": 1.4,
+      "total_cves": 990,
+      "recent_cves": 990,
+      "is_active": true,
+      "scores": {
+        "overall_average_score": 50.0,
+        "foundational_completeness": 100.0,
+        "root_cause_analysis": 0.0,
+        "software_identification": 0.0,
+        "severity_and_impact": 0.0,
+        "patchinfo": 0.0
+      },
+      "trend": {
+        "direction": "steady",
+        "description": "No significant change",
+        "monthly_data": []
+      },
+      "scope": "Apple issues only.",
+      "advisories": [
+        {
+          "label": "Advisories",
+          "url": "https://support.apple.com/en-us/HT201222"
+        }
+      ],
+      "officialCnaID": "CNA-2009-0002",
+      "country": "USA",
+      "disclosurePolicy": [
+        {
+          "label": "Policy",
+          "language": "",
+          "url": "https://support.apple.com/en-us/HT201220"
+        }
+      ]
+    },
+    {
       "shortName": "mozilla",
       "detailFile": "mozilla__CNA-2012-0002.json",
       "organizationName": "Mozilla Corporation",
@@ -502,50 +546,6 @@
           "label": "Policy",
           "language": "",
           "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/bugs/"
-        }
-      ]
-    },
-    {
-      "shortName": "jenkins",
-      "detailFile": "jenkins__CNA-2018-0015.json",
-      "organizationName": "Jenkins Project",
-      "cnaType": "Open Source",
-      "cnaTypes": [
-        "Open Source"
-      ],
-      "rank": 359,
-      "active_cna_count": 363,
-      "percentile": 1.4,
-      "total_cves": 140,
-      "recent_cves": 140,
-      "is_active": true,
-      "scores": {
-        "overall_average_score": 50.0,
-        "foundational_completeness": 100.0,
-        "root_cause_analysis": 0.0,
-        "software_identification": 0.0,
-        "severity_and_impact": 0.0,
-        "patchinfo": 0.0
-      },
-      "trend": {
-        "direction": "steady",
-        "description": "No significant change",
-        "monthly_data": []
-      },
-      "scope": "Jenkins and Jenkins plugins distributed by the Jenkins Project (listed on <a href='https://plugins.jenkins.io/' target='_blank'>plugins.jenkins.io</a>) only.",
-      "advisories": [
-        {
-          "label": "Advisories",
-          "url": "https://jenkins.io/security/advisories/"
-        }
-      ],
-      "officialCnaID": "CNA-2018-0015",
-      "country": "USA",
-      "disclosurePolicy": [
-        {
-          "label": "Policy",
-          "language": "",
-          "url": "https://jenkins.io/security/"
         }
       ]
     },
