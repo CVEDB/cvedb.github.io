@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "LY-Corporation",
-    "total_cves": 8,
-    "total_cves_scored": 8,
+    "total_cves": 10,
+    "total_cves_scored": 10,
     "organizationName": "LY Corporation",
     "scope": "Current versions of LINE Messenger Application for iOS, Android, Mac, and Windows, plus LINE Open Source projects hosted on <a href='https://github.com/line' target='_blank'>https://github.com/line</a>.",
     "advisories": [
@@ -33,14 +33,14 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 122,
-  "active_cna_count": 364,
-  "percentile": 66.8,
+  "rank": 125,
+  "active_cna_count": 367,
+  "percentile": 66.2,
   "cna_scoring": [
     {
-      "total_cves": 8,
-      "total_cves_scored": 8,
-      "recent_cves_count": 8,
+      "total_cves": 10,
+      "total_cves_scored": 10,
+      "recent_cves_count": 10,
       "overall_average_score": 80.0,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
@@ -98,9 +98,35 @@
       }
     },
     {
+      "cveId": "CVE-2026-11749",
+      "assigningCna": "LY-Corporation",
+      "datePublished": "2026-11-04",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
       "cveId": "CVE-2026-11751",
       "assigningCna": "LY-Corporation",
       "datePublished": "2026-08-19",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-11753",
+      "assigningCna": "LY-Corporation",
+      "datePublished": "2026-11-04",
       "totalCveScore": 80,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
