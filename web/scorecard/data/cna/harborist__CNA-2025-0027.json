@@ -1,8 +1,8 @@
 {
   "cna_info": {
     "cna": "harborist",
-    "total_cves": 23,
-    "total_cves_scored": 23,
+    "total_cves": 22,
+    "total_cves_scored": 22,
     "organizationName": "Harborist",
     "scope": "All projects listed under <a href='https://www.npmjs.com/~ljharb' target='_blank'>https://www.npmjs.com/~ljharb</a>.",
     "advisories": [
@@ -33,31 +33,122 @@
   },
   "trend_direction": "steady",
   "trend_description": "No significant change",
-  "rank": 62,
-  "active_cna_count": 375,
-  "percentile": 83.7,
+  "rank": 63,
+  "active_cna_count": 376,
+  "percentile": 83.5,
   "cna_scoring": [
     {
-      "total_cves": 23,
-      "total_cves_scored": 23,
-      "recent_cves_count": 23,
-      "overall_average_score": 89.13,
+      "total_cves": 22,
+      "total_cves_scored": 22,
+      "recent_cves_count": 22,
+      "overall_average_score": 89.09,
       "average_foundational_completeness": 50.0,
       "average_root_cause_analysis": 15.0,
       "average_software_identification": 0.0,
       "average_severity_context": 15.0,
-      "average_patchinfo": 9.13,
+      "average_patchinfo": 9.09,
       "percent_foundational_completeness": 100.0,
       "percent_root_cause_analysis": 100.0,
       "percent_software_identification": 0.0,
       "percent_severity_and_impact": 100.0,
-      "percent_patchinfo": 91.3,
+      "percent_patchinfo": 90.91,
       "trend_direction": "steady",
       "trend_description": "No significant change",
       "monthly_trends": []
     }
   ],
   "recent_cves": [
+    {
+      "cveId": "CVE-2026-102414",
+      "assigningCna": "harborist",
+      "datePublished": "2026-09-29",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-102422",
+      "assigningCna": "harborist",
+      "datePublished": "2026-09-29",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-107353",
+      "assigningCna": "harborist",
+      "datePublished": "2026-10-07",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-118905",
+      "assigningCna": "harborist",
+      "datePublished": "2026-10-29",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-94185",
+      "assigningCna": "harborist",
+      "datePublished": "2026-09-21",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
+    {
+      "cveId": "CVE-2026-129319",
+      "assigningCna": "harborist",
+      "datePublished": "2026-11-14",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-13311",
+      "assigningCna": "harborist",
+      "datePublished": "2026-06-25",
+      "totalCveScore": 80,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 0
+      }
+    },
     {
       "cveId": "CVE-2026-82417",
       "assigningCna": "harborist",
@@ -85,19 +176,6 @@
       }
     },
     {
-      "cveId": "CVE-2026-12171",
-      "assigningCna": "harborist",
-      "datePublished": "2026-10-05",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
       "cveId": "CVE-2026-12143",
       "assigningCna": "harborist",
       "datePublished": "2026-06-12",
@@ -111,9 +189,9 @@
       }
     },
     {
-      "cveId": "CVE-2026-102422",
+      "cveId": "CVE-2026-12171",
       "assigningCna": "harborist",
-      "datePublished": "2026-09-29",
+      "datePublished": "2026-10-05",
       "totalCveScore": 90,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -124,22 +202,9 @@
       }
     },
     {
-      "cveId": "CVE-2026-102414",
+      "cveId": "CVE-2026-9277",
       "assigningCna": "harborist",
-      "datePublished": "2026-09-29",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-121750",
-      "assigningCna": "harborist",
-      "datePublished": "2026-11-04",
+      "datePublished": "2026-05-22",
       "totalCveScore": 90,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -176,33 +241,33 @@
       }
     },
     {
-      "cveId": "CVE-2026-121749",
-      "assigningCna": "harborist",
-      "datePublished": "2026-11-04",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-121747",
-      "assigningCna": "harborist",
-      "datePublished": "2026-11-04",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
       "cveId": "CVE-2026-121748",
+      "assigningCna": "harborist",
+      "datePublished": "2026-11-04",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-121750",
+      "assigningCna": "harborist",
+      "datePublished": "2026-11-04",
+      "totalCveScore": 90,
+      "scoreBreakdown": {
+        "foundationalCompleteness": 50,
+        "rootCauseAnalysis": 15,
+        "severityAndImpactContext": 15,
+        "softwareIdentification": 0,
+        "patchinfo": 10
+      }
+    },
+    {
+      "cveId": "CVE-2026-121749",
       "assigningCna": "harborist",
       "datePublished": "2026-11-04",
       "totalCveScore": 90,
@@ -228,9 +293,9 @@
       }
     },
     {
-      "cveId": "CVE-2026-110910",
+      "cveId": "CVE-2026-121747",
       "assigningCna": "harborist",
-      "datePublished": "2026-10-27",
+      "datePublished": "2026-11-04",
       "totalCveScore": 90,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -254,9 +319,9 @@
       }
     },
     {
-      "cveId": "CVE-2026-129319",
+      "cveId": "CVE-2026-110910",
       "assigningCna": "harborist",
-      "datePublished": "2026-11-14",
+      "datePublished": "2026-10-27",
       "totalCveScore": 90,
       "scoreBreakdown": {
         "foundationalCompleteness": 50,
@@ -277,84 +342,6 @@
         "severityAndImpactContext": 15,
         "softwareIdentification": 0,
         "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-107353",
-      "assigningCna": "harborist",
-      "datePublished": "2026-10-07",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-9277",
-      "assigningCna": "harborist",
-      "datePublished": "2026-05-22",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-13311",
-      "assigningCna": "harborist",
-      "datePublished": "2026-06-25",
-      "totalCveScore": 80,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 0
-      }
-    },
-    {
-      "cveId": "CVE-2026-8723",
-      "assigningCna": "harborist",
-      "datePublished": "2026-05-16",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-118905",
-      "assigningCna": "harborist",
-      "datePublished": "2026-10-29",
-      "totalCveScore": 90,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 10
-      }
-    },
-    {
-      "cveId": "CVE-2026-94185",
-      "assigningCna": "harborist",
-      "datePublished": "2026-09-21",
-      "totalCveScore": 80,
-      "scoreBreakdown": {
-        "foundationalCompleteness": 50,
-        "rootCauseAnalysis": 15,
-        "severityAndImpactContext": 15,
-        "softwareIdentification": 0,
-        "patchinfo": 0
       }
     }
   ]
